@@ -258,13 +258,13 @@ body:not( .home ) .custom-logo-link {
 	}
 }
 
-.wp15-locale-switcher-container {
+.wp20-locale-switcher-container {
 	text-align: center;
 	padding-bottom: 1em;
 }
 
 @supports ( display: grid ) {
-	.wp15-locale-switcher-container {
+	.wp20-locale-switcher-container {
 		grid-column: 1 / span 2;
 		grid-row: 1;
 		display: grid;
@@ -272,43 +272,43 @@ body:not( .home ) .custom-logo-link {
 		padding-bottom: 0;
 	}
 
-	#wp15-locale-switcher-form {
+	#wp20-locale-switcher-form {
 		padding: 13px 0 0;
 		display: flex;
 		margin: 0 auto;
 	}
 
 	@media screen and ( min-width: 48em ) {
-		.wp15-locale-switcher-container {
+		.wp20-locale-switcher-container {
 			grid-column: 2;
 			grid-row: 1;
 		}
 
-		#wp15-locale-switcher-form {
+		#wp20-locale-switcher-form {
 			padding: 20px 30px 0 0;
 		}
 	}
 }
 
-#wp15-locale-switcher-form label {
+#wp20-locale-switcher-form label {
 	display: inline;
 }
 
-#wp15-locale-switcher-form select {
+#wp20-locale-switcher-form select {
 	visibility: hidden; /* Prevent iOS native picker UI */
 }
 
-.wp15-locale-switcher-container .dashicons-translation {
+.wp20-locale-switcher-container .dashicons-translation {
 	margin: 5px 5px;
 }
 
 @media screen and ( min-width: 48em ) {
-	.wp15-locale-switcher-container .dashicons-translation {
+	.wp20-locale-switcher-container .dashicons-translation {
 		margin: 5px 10px;
 	}
 }
 
-.wp15-locale-notice {
+.wp20-locale-notice {
 	background: #fafafa;
 	margin-bottom: 5px;
 	padding: 1px 38px 1px 12px;
@@ -316,12 +316,12 @@ body:not( .home ) .custom-logo-link {
 	text-align: center;
 }
 
-.wp15-locale-notice p {
+.wp20-locale-notice p {
 	margin: 0.5em 0;
 	padding: 2px;
 }
 
-.wp15-locale-notice-dismiss:before {
+.wp20-locale-notice-dismiss:before {
 	background: none;
 	color: #333;
 	content: "\f153";
@@ -336,7 +336,7 @@ body:not( .home ) .custom-logo-link {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp15-locale-notice-dismiss {
+.wp20-locale-notice-dismiss {
 	position: absolute;
 	top: 0;
 	right: 1px;
@@ -348,28 +348,28 @@ body:not( .home ) .custom-logo-link {
 	cursor: pointer;
 }
 
-.rtl .wp15-locale-notice-dismiss {
+.rtl .wp20-locale-notice-dismiss {
 	left: 1px;
 	right: inherit;
 }
 
-.wp15-locale-notice-dismiss:hover,
-.wp15-locale-notice-dismiss:active,
-.wp15-locale-notice-dismiss:focus {
+.wp20-locale-notice-dismiss:hover,
+.wp20-locale-notice-dismiss:active,
+.wp20-locale-notice-dismiss:focus {
 	background: inherit;
 }
 
-.wp15-locale-notice-dismiss:hover:before,
-.wp15-locale-notice-dismiss:active:before,
-.wp15-locale-notice-dismiss:focus:before {
+.wp20-locale-notice-dismiss:hover:before,
+.wp20-locale-notice-dismiss:active:before,
+.wp20-locale-notice-dismiss:focus:before {
 	color: #0073AA;
 }
 
-.wp15-locale-notice-dismiss:focus {
+.wp20-locale-notice-dismiss:focus {
 	outline: none;
 }
 
-.ie8 .wp15-locale-notice-dismiss:focus {
+.ie8 .wp20-locale-notice-dismiss:focus {
 	outline: 1px solid #5b9dd9;
 }
 
@@ -389,13 +389,13 @@ body:not( .home ) .custom-logo-link {
     margin-top: 1em;
 }
 
-.wp15-confetti-divider {
+.wp20-confetti-divider {
 	display: block;
 	height: 73px;
 	margin: 0 auto;
 }
 
-#wp15-events-map {
+#wp20-events-map {
 	position: relative;
 	height: 500px;
 	width: 80vw;
@@ -412,13 +412,13 @@ body:not( .home ) .custom-logo-link {
  * IE <= 11 doesn't show SVG markers on the map, so treat it like a progressive enhancement.
  */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	#wp15-events-map {
+	#wp20-events-map {
 		display: none;
 	}
 }
 
 @media screen and ( max-width: 48em ) {
-	#wp15-events-map {
+	#wp20-events-map {
 		width: 100%;
 		margin: 2em auto 1em;
 		left: auto;
@@ -426,27 +426,27 @@ body:not( .home ) .custom-logo-link {
 	}
 }
 
-#wp15-events-filter {
+#wp20-events-filter {
 	margin-bottom: 3em;
 	text-align: center;
 }
 
-#wp15-events-filter input[type="text"] {
+#wp20-events-filter input[type="text"] {
 	display: inline;
 	width: auto;
 	margin-left: .5em;
 }
 
-#wp15-events-filter input[type="text"]::placeholder {
+#wp20-events-filter input[type="text"]::placeholder {
     opacity: 0.5;
 }
 
-.rtl #wp15-events-filter input[type="text"] {
+.rtl #wp20-events-filter input[type="text"] {
 	margin-left: 0;
 	margin-right: .5em;
 }
 
-.wp15-events-list {
+.wp20-events-list {
 	display: grid;
 	grid-template-columns: repeat( auto-fill, minmax( 250px, 1fr ) );
 	grid-gap: 2em;
@@ -455,27 +455,27 @@ body:not( .home ) .custom-logo-link {
 	list-style-type: none;
 }
 
-.rtl .wp15-events-list {
+.rtl .wp20-events-list {
 	margin-left: 0;
 	margin-right: calc( -1 * ( (80vw - 100%) / 2 ) );
 }
 
-.wp15-events-list li {
+.wp20-events-list li {
 	margin-bottom: 1em;
 }
 
-.wp15-event-group,
-.wp15-event-title,
-.wp15-event-date-time {
+.wp20-event-group,
+.wp20-event-title,
+.wp20-event-date-time {
 	margin-bottom: .5em;
 }
 
-.wp15-event-date-time {
+.wp20-event-date-time {
 	font-size: 16px;
 	color: #767676;
 }
 
-.wp15-organize-event {
+.wp20-organize-event {
 	text-align: center;
 }
 

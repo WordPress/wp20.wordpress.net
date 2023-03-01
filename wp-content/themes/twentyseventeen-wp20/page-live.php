@@ -12,9 +12,9 @@
 				</header>
 
 				<div class="entry-content">
-					<?php esc_html_e( 'Join the conversation by using #WP15 on your favorite social networks.', 'wp15' ); ?>
+					<?php esc_html_e( 'Join the conversation by using #WP20 on your favorite social networks.', 'wp20' ); ?>
 
-					<?php echo do_shortcode( '[tagregator hashtag="#WP15"]' ); ?>
+					<?php echo do_shortcode( '[tagregator hashtag="#WP20"]' ); ?>
 				</div>
 
 			</article>

@@ -1,5 +1,5 @@
 <?php
-use WP15\Theme;
+use WP20\Theme;
 ?>
 
 <?php get_header(); ?>
@@ -17,10 +17,10 @@ use WP15\Theme;
 
 					<div class="entry-content">
 						<h2>
-							<?php esc_html_e( 'Print your own', 'wp15' ); ?>
+							<?php esc_html_e( 'Print your own', 'wp20' ); ?>
 						</h2>
 
-						<p><?php esc_html_e( 'These 15th Anniversary logos and files are available for download for folks who want to print their own swag:', 'wp15' ); ?></p>
+						<p><?php esc_html_e( 'These 15th Anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?></p>
 
 						<ul class="downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
@@ -44,16 +44,16 @@ use WP15\Theme;
 							<?php endforeach; ?>
 						</ul>
 
-						<img class="wp15-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
+						<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
 
 						<h2>
-							<?php esc_html_e( 'Purchase', 'wp15' ); ?>
+							<?php esc_html_e( 'Purchase', 'wp20' ); ?>
 						</h2>
 
 						<p>
 							<?php
 							printf(
-								wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> if you\'d like to purchase WordPress 15th anniversary swag.', 'wp15' ) ),
+								wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> if you\'d like to purchase WordPress 15th anniversary swag.', 'wp20' ) ),
 								'https://mercantile.wordpress.org/product-category/wordpress-15/'
 							);
 							?>
