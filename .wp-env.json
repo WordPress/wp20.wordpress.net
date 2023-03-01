@@ -1,0 +1,15 @@
+{
+	"config": {
+		"WP_DEBUG": true,
+		"WP_ENVIRONMENT_TYPE": "local"
+	},
+	"plugins": [
+		"./wp-content/plugins/wp15-meetup-events"
+	],
+	"themes": [
+		"./wp-content/themes/twentyseventeen-wp15"
+	],
+	"mappings": {
+		"wp-content": "./wp-content"
+	}
+}
