@@ -29,12 +29,12 @@ use WP15\Locales;
 					</div>
 				</div>
 
-				<?php Locales\locale_switcher(); ?>
+				<?php // Locales\locale_switcher(); ?>
 			</div>
 			<?php endif; ?>
 		</header>
 
-		<?php Locales\locale_notice(); ?>
+		<?php // Locales\locale_notice(); ?>
 
 		<?php if ( ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) : ?>
 			<div class="single-featured-image-header">
