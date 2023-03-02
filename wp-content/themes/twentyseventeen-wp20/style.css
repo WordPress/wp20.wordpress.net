@@ -343,9 +343,15 @@ h3 {
 }
 
 .wp20-confetti-divider {
-	display: block;
-	height: 73px;
-	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 30px auto;
+	height: 145px;
+	background-image: url( 'images/confetti-tile.svg' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #wp15-events-map {

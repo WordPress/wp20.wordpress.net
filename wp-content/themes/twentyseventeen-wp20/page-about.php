@@ -17,15 +17,6 @@
 					<p>
 						<?php esc_html_e( 'Don&rsquo;t see your city? Get in touch with your local group, or organize a group in your town.', 'wp20' ); ?>
 					</p>
-
-					<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
-
-					<p class="wp10-nostalgia">
-						<?php printf(
-							wp_kses_data( __( 'Check out <a href="%s">this post about the WordPress 10th anniversary</a>.', 'wp20' ) ),
-							'https://wordpress.org/news/2013/05/ten-good-years/'
-						); ?>
-					</p>
 				</div>
 
 			</article>
