@@ -41,18 +41,8 @@
 			endif;
 			?>
 
-			<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
-
-			<p class="wp10-nostalgia">
-				<?php printf(
-					wp_kses_data( __( 'Check out <a href="%s">this post about the WordPress 10th anniversary</a>.', 'wp20' ) ),
-					'https://wordpress.org/news/2013/05/ten-good-years/'
-				); ?>
-			</p>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 
 <?php
