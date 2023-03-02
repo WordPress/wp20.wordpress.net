@@ -10,18 +10,11 @@ use WP20\Theme;
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<header class="entry-header">
-						<h1 class="entry-title">
-							<?php the_title(); ?>
-						</h1>
+						<h1 class="entry-title"><?php esc_html_e( 'Print your own swag', 'wp20' ); ?></h1>
+						<p><?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?></p>
 					</header>
 
 					<div class="entry-content">
-						<h2>
-							<?php esc_html_e( 'Print your own', 'wp20' ); ?>
-						</h2>
-
-						<p><?php esc_html_e( 'These 15th Anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?></p>
-
 						<ul class="downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
 								<li class="downloads-item">
@@ -44,23 +37,23 @@ use WP20\Theme;
 							<?php endforeach; ?>
 						</ul>
 
-						<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
-
-						<h2>
-							<?php esc_html_e( 'Purchase', 'wp20' ); ?>
-						</h2>
-
 						<p>
 							<?php
 							printf(
-								wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> if you\'d like to purchase WordPress 15th anniversary swag.', 'wp20' ) ),
+								wp_kses_post( __( 'Check out the <a href="%s">WordPress Store</a> if you\'d like to purchase WordPress 20th anniversary swag.', 'wp20' ) ),
 								'https://mercantile.wordpress.org/product-category/wordpress-15/'
 							);
 							?>
 						</p>
 
-						<?php echo wp_oembed_get( 'https://mercantile.wordpress.org/product/wordpress-15th-anniversary-mug/' ); ?>
-						<?php echo wp_oembed_get( 'https://mercantile.wordpress.org/product/wordpress-15th-anniversary-tshirt/' ); ?>
+						<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
+
+						<p class="wp10-nostalgia">
+							<?php printf(
+								wp_kses_data( __( 'Check out <a href="%s">this post about the WordPress 10th anniversary</a>.', 'wp20' ) ),
+								'https://wordpress.org/news/2013/05/ten-good-years/'
+							); ?>
+						</p>
 
 					</div>
 
