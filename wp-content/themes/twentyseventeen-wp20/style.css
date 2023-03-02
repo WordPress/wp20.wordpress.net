@@ -60,6 +60,8 @@ h3 {
  */
 .site-header {
 	overflow: visible;
+	display: grid;
+	grid-template-columns: auto 3fr;
 }
 
 .site-header:before,
@@ -67,38 +69,22 @@ h3 {
 	content: none;
 }
 
-@supports( display: grid ) {
+@media screen and ( min-width: 370px ) {
 	.site-header {
-		display: grid;
-		grid-template-columns: auto 3fr;
-	}
-
-	@media screen and ( min-width: 370px ) {
-		.site-header {
-			grid-template-columns: auto 300px;
-		}
+		grid-template-columns: auto 300px;
 	}
 }
 
 .custom-header {
-	height: 400px;
+	grid-column: 1 / span 2;
+	grid-row: 1;
+	height: 60vw;
+	max-height: 60vh;
 	margin-bottom: 0 !important;
-	background-color: #00A0D2;
+	background-color: var(--wp20--color-primary);
 	background-image: url( 'images/confetti-tile.svg' );
-	background-size: 400px 400px;
 	background-repeat: repeat;
-}
-
-@supports( display: grid ) {
-	.custom-header {
-		grid-column: 1 / span 2;
-		grid-row: 1;
-	}
-}
-
-.home .custom-header {
-	height: calc( 100vh - 105px );
-	background-size: 550px 550px;
+	background-position: center;
 }
 
 .custom-header-media:before {
@@ -106,72 +92,39 @@ h3 {
 }
 
 .site-branding {
-	text-align: center;
+	display: grid;
+	grid-template-rows: 2fr minmax(80px, 2fr) 1fr auto 0.5fr;
 	height: 100%;
-	min-height: 300px;
+	padding: 0 !important;
 }
 
-@supports( display: flex ) {
-	.site-branding {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-	}
-}
-
-.site-branding a:hover, .site-branding a:focus {
+.site-branding a:hover,
+.site-branding a:focus {
 	opacity: 1;
 }
 
 .custom-logo-link {
-	display: inline-block;
-	margin: auto auto 2em;
-	padding: 2.5em;
-	border-radius: 100%;
-	background-color: #00A0D2;
+	grid-row: 2;
+	padding: unset;
+	display: flex;
+	justify-content: center;
 }
 
 .custom-logo-link img {
-	max-width: 90%;
-	max-height: 90%;
+	height: 100%;
+	width: auto;
+	max-height: unset;
+	max-width: unset;
 }
 
-/*
- * IE <= 11 can't scale SVGs properly, so set fixed dimensions.
- *
- * @see https://gist.github.com/larrybotha/7881691
- */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.custom-header {
-		min-height: 260px;
-	}
-
-	.site-branding {
-		padding: 1em 0;
-	}
-
-	.custom-logo-link img {
-		max-width: 150px;
-		max-height: 100px;
-	}
-}
-
-@media screen and ( min-width: 475px ) {
-	@supports not (-ms-high-constrast: active) {
-		.custom-logo-link img {
-			max-width: 300px;
-			max-height: 218px;
-		}
-	}
-}
-
-body:not( .title-tagline-hidden ) .site-branding-text,
-body:not( .home ) .site-branding-text {
-	display: none;
-}
-
-body:not( .home ) .custom-logo-link {
-	margin-bottom: 0;
+.site-branding-text {
+	grid-row: 4;
+	color: white;
+	font-family: 'EB Garamond', serif;
+	font-size: 30px;
+	line-height: 40px;
+	text-align: center;
+	padding: 0 1em;
 }
 
 .navigation-top-container {
