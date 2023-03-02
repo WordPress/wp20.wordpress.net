@@ -131,7 +131,7 @@ function set_custom_logo() {
 	?>
 
 	<a href="<?php echo esc_url( home_url() ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 home', 'wp20' ); ?>" itemprop="logo" />
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-white.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 home', 'wp20' ); ?>" itemprop="logo" />
 	</a>
 
 	<?php
