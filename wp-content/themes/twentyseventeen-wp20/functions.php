@@ -42,18 +42,18 @@ function get_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
+	 * by Inter, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'wp20' ) ) {
-		$fonts[] = 'Source Sans Pro:400,400i,600,700';
+	if ( 'off' !== _x( 'on', 'Inter font: on or off', 'wp20' ) ) {
+		$fonts[] = 'Inter:400,400i,600,700';
 	}
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Crete Round, translate this to 'off'. Do not translate into your own language.
+	 * by EB Garamond, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Crete Round font: on or off', 'wp20' ) ) {
-		$fonts[] = 'Crete Round';
+	if ( 'off' !== _x( 'on', 'EB Garamond font: on or off', 'wp20' ) ) {
+		$fonts[] = 'EB Garamond:400';
 	}
 
 	if ( $fonts ) {
@@ -131,7 +131,7 @@ function set_custom_logo() {
 	?>
 
 	<a href="<?php echo esc_url( home_url() ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-white.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 home', 'wp20' ); ?>" itemprop="logo" />
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-white.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 logo', 'wp20' ); ?>" itemprop="logo" />
 	</a>
 
 	<?php

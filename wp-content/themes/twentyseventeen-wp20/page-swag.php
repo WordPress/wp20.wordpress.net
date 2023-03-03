@@ -11,11 +11,14 @@ use WP20\Theme;
 
 					<header class="entry-header">
 						<h1 class="entry-title"><?php esc_html_e( 'Print your own swag', 'wp20' ); ?></h1>
-						<p><?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?></p>
 					</header>
-
+					
 					<div class="entry-content">
-						<ul class="downloads-wrapper">
+						<p>
+							<?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
+						</p>
+
+						<ul class="entry-content-section downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
 								<li class="downloads-item">
 									<div class="downloads-item-preview">
@@ -41,7 +44,7 @@ use WP20\Theme;
 							<?php
 							printf(
 								wp_kses_post( __( 'Check out the <a href="%s">WordPress Store</a> if you\'d like to purchase WordPress 20th anniversary swag.', 'wp20' ) ),
-								'https://mercantile.wordpress.org/product-category/wordpress-15/'
+								'https://mercantile.wordpress.org/product-category/wordpress-20/'
 							);
 							?>
 						</p>

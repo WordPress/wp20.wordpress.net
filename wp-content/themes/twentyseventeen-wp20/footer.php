@@ -1,6 +1,6 @@
 			<div class="wrap">
 				<div class="wp20-confetti-divider">
-					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-blue.svg" alt="" />
+					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-blue.svg" alt="<?php esc_html_e( 'WP20 logo', 'wp20' ); ?>" itemprop="logo" />
 				</div>
 
 				<p class="wp10-nostalgia">
