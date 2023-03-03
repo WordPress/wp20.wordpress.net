@@ -9,35 +9,66 @@ Text Domain: wp20
 Template:    twentyseventeen
 */
 
+:root {
+	--wp20--color-primary: #3858E9;
+}
 
 body {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
 }
 
 a {
-	color: #0073AA;
-}
-
-.site-title,
-.entry-title {
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-.page .panel-content .entry-title,
-.page-title,
-body.page:not( .twentyseventeen-front-page ) .entry-title {
-	font-size: 1em;
-}
-
-h2, .home.blog .entry-title {
-	color: #C94300;
+	color: var(--wp20--color-primary);
 }
 
 h1,
 h2,
 h3 {
-	font-family: 'Crete Round', serif;
+	font-family: 'EB Garamond', serif;
+}
+
+.page-header,
+body.page:not(.twentyseventeen-front-page) .entry-content,
+body.page:not(.twentyseventeen-front-page) .entry-header {
+	margin-bottom: 50px;
+}
+
+.page-header,
+body.page:not(.twentyseventeen-front-page) .entry-header {
+	padding: 0;
+}
+
+body:not(.twentyseventeen-front-page) .entry-content,
+.wp10-nostalgia {
+	text-align: center;
+}
+
+.entry-content-section {
+	margin-bottom: 50px;
+}
+
+.entry-content-section:not(:first-child) {
+	margin-top: 50px;
+}
+
+.page .panel-content .entry-title, 
+.page-title, 
+body.page:not(.twentyseventeen-front-page) .entry-title {
+	font-family: 'EB Garamond', serif;
+	font-size: 36px;
+	font-weight: 400;
+	text-transform: unset;
+	letter-spacing: unset;
+	margin: 0;
+	text-align: center;
+}
+
+.single-post:not(.has-sidebar) #primary,
+.page.page-one-column:not(.twentyseventeen-front-page) #primary,
+.archive.page-one-column:not(.has-sidebar) .page-header,
+.archive.page-one-column:not(.has-sidebar) #primary {
+	max-width: unset;
 }
 
 .entry-content a,
@@ -45,15 +76,44 @@ h3 {
 .widget a,
 .site-footer .widget-area a,
 .posts-navigation a,
-.widget_authors a strong {
-	-webkit-box-shadow: inset 0 -1px 0 rgba( 0, 115, 170, 1 );
-	box-shadow: inset 0 -1px 0 rgba( 0, 115, 170, 1 );
+.widget_authors a strong,
+.wp10-nostalgia a {
+	-webkit-box-shadow: inset 0 -1px 0 rgba(56, 88, 233, 1);
+	box-shadow: inset 0 -1px 0 rgba(56, 88, 233, 1);
 }
 
-.home .entry-title {
-	display: none;
+.entry-content a:hover,
+.entry-summary a:hover,
+.widget a:hover,
+.site-footer .widget-area a:hover,
+.posts-navigation a:hover,
+.widget_authors a:hover strong,
+.wp10-nostalgia a:hover {
+	color: var(--wp20--color-primary);
+	-webkit-box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
+	box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
 }
 
+.blog:not(.has-sidebar) #primary article {
+	float: none;
+	width: unset;
+}
+
+.wp10-nostalgia {
+	margin: 30px 0 0;
+}
+
+.wp20-confetti-divider {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 30px auto;
+	height: 145px;
+	background-image: url( 'images/confetti-tile.svg' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 /*
  * Header
@@ -315,44 +375,16 @@ h3 {
 .wp15-locale-notice-dismiss:hover:before,
 .wp15-locale-notice-dismiss:active:before,
 .wp15-locale-notice-dismiss:focus:before {
-	color: #0073AA;
+	color: var(--wp--preset--color--primary);
 }
 
 .wp15-locale-notice-dismiss:focus {
 	outline: none;
 }
 
-.ie8 .wp15-locale-notice-dismiss:focus {
-	outline: 1px solid #5b9dd9;
-}
-
 /*
  * About
  */
-.page-slug-about h1,
-.wp10-nostalgia {
-	text-align: center;
-}
-
-.page-slug-about h1 {
-    margin: 2em auto 1em;
-}
-
-.wp10-nostalgia {
-    margin-top: 1em;
-}
-
-.wp20-confetti-divider {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 30px auto;
-	height: 145px;
-	background-image: url( 'images/confetti-tile.svg' );
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
 
 #wp15-events-map {
 	position: relative;
@@ -365,15 +397,6 @@ h3 {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	background-color: #AADAFF;
-}
-
-/*
- * IE <= 11 doesn't show SVG markers on the map, so treat it like a progressive enhancement.
- */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	#wp15-events-map {
-		display: none;
-	}
 }
 
 @media screen and ( max-width: 48em ) {
@@ -397,7 +420,7 @@ h3 {
 }
 
 #wp15-events-filter input[type="text"]::placeholder {
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 .rtl #wp15-events-filter input[type="text"] {
@@ -448,18 +471,8 @@ h3 {
 }
 
 .downloads-wrapper {
-	display: block;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	overflow: hidden;
-	font-size: 16px;
-	line-height: 1.618;
-	background: #fff;
-	color: rgba( 35, 40, 45, 0.5 );
-	margin: 0 .392%;
-	font-size: 0;
-	/*inline-block hack*/
+	display: flex;
+	text-align: left;
 }
 
 .downloads-wrapper ul,
@@ -473,16 +486,11 @@ h3 {
 
 .downloads-wrapper .downloads-item,
 #main ul#postlist .postcontent ul.downloads-wrapper li.downloads-item {
-	display: inline-block;
-	vertical-align: top;
-	width: 32.288%;
-	min-width: 8.625em;
-	margin: 0 .35% 1.5em !important;
-	font-size: 16px;
+	width: 25%;
 }
 
 .downloads-wrapper .downloads-item:hover .downloads-item-preview {
-	background: #00a0d2;
+	background: var(--wp--preset--color--primary);
 	-webkit-transition: background .2s ease-in-out;
 	-moz-transition: background .2s ease-in-out;
 	transition: background .2s ease-in-out;
@@ -643,14 +651,21 @@ iframe.wp-embedded-content {
 /*
  * Responsive
  */
+
 @media screen and ( min-width: 48em ) {
 	.site-content {
-		padding: 3em 0 0;
+		padding: 80px 0 0;
 	}
 
 	.page.page-one-column .entry-header,
 	.twentyseventeen-front-page.page-one-column .entry-header,
 	.archive.page-one-column:not( .has-sidebar) .page-header {
-		margin-bottom: 1em;
+		padding-bottom: 0;
+		margin-bottom: 50px;
+	}
+
+	.home .page-header,
+	body.page.page-slug-about .entry-header {
+		margin-bottom: 80px;
 	}
 }

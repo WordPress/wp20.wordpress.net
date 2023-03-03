@@ -3,7 +3,7 @@
 <div class="wrap">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<header>
+			<header class="page-header">
 				<h1 class="page-title">
 					<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2022. Join us!', 'wp20' ); ?>
 				</h1>
@@ -35,7 +35,6 @@
 				);
 
 			else :
-				echo 'No posts found.';
 				get_template_part( 'template-parts/post/content', 'none' );
 
 			endif;

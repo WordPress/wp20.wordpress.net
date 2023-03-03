@@ -12,10 +12,18 @@
 				</header>
 
 				<div class="entry-content">
-					<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
+					<div class="entry-content-section">
+						<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
+					</div>
 
 					<p>
-						<?php esc_html_e( 'Don&rsquo;t see your city? Get in touch with your local group, or organize a group in your town.', 'wp20' ); ?>
+						<?php
+							printf(
+								wp_kses_post( __( 'Don&rsquo;t see your city? Get in touch with <a href="%1$s">your local group</a> or <a href="%2$s">organize a group in your town</a>.', 'wp20' ) ),
+								'',
+								''
+							);
+						?>
 					</p>
 				</div>
 
