@@ -143,8 +143,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	margin-bottom: 0 !important;
 	background-color: var(--wp20--color-primary);
 	background-image: url( 'images/confetti-tile.svg' );
-	background-repeat: repeat;
+	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 }
 
 .custom-header-media:before {
