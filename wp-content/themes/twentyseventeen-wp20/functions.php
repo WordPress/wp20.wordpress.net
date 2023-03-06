@@ -45,7 +45,7 @@ function get_fonts_url() {
 	 * by Inter, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Inter font: on or off', 'wp20' ) ) {
-		$fonts[] = 'Inter:400,400i,600,700';
+		$fonts[] = 'Inter:200,400,400i,600,700';
 	}
 
 	/*

@@ -10,7 +10,12 @@ Template:    twentyseventeen
 */
 
 :root {
-	--wp20--color-primary: #3858E9;
+	--wp20--color-blueberry: #3858E9;
+
+	--wp20--color-grey-light: #D9D9D9;
+	--wp20--color-grey-dark: #656A71;
+
+	--wp20--spacing-edge-space: 80px;
 }
 
 body {
@@ -19,7 +24,7 @@ body {
 }
 
 a {
-	color: var(--wp20--color-primary);
+	color: var(--wp20--color-blueberry);
 }
 
 h1,
@@ -29,17 +34,18 @@ h3 {
 }
 
 .page-header,
-body.page:not(.twentyseventeen-front-page) .entry-content,
-body.page:not(.twentyseventeen-front-page) .entry-header {
+body.page .entry-content,
+body.page .entry-header {
 	margin-bottom: 50px;
 }
 
 .page-header,
-body.page:not(.twentyseventeen-front-page) .entry-header {
+body.page .entry-header {
 	padding: 0;
 }
 
-body:not(.twentyseventeen-front-page) .entry-content,
+body.page:not(.page-slug-news) .entry-title,
+body:not(.page-slug-news) .entry-content,
 .wp10-nostalgia {
 	text-align: center;
 }
@@ -61,6 +67,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	text-transform: unset;
 	letter-spacing: unset;
 	margin: 0;
+}
+
+ {
 	text-align: center;
 }
 
@@ -89,9 +98,13 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .posts-navigation a:hover,
 .widget_authors a:hover strong,
 .wp10-nostalgia a:hover {
-	color: var(--wp20--color-primary);
+	color: var(--wp20--color-blueberry);
 	-webkit-box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
 	box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
+}
+
+.entry-meta {
+	text-transform: unset;
 }
 
 .blog:not(.has-sidebar) #primary article {
@@ -141,7 +154,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	height: 60vw;
 	max-height: 60vh;
 	margin-bottom: 0 !important;
-	background-color: var(--wp20--color-primary);
+	background-color: var(--wp20--color-blueberry);
 	background-image: url( 'images/confetti-tile.svg' );
 	background-repeat: no-repeat;
 	background-position: center;
@@ -462,6 +475,66 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	text-align: center;
 }
 
+/*
+ * News
+ */
+
+.wp20-news-section {
+	overflow: hidden;
+	border-bottom: 1px solid var(--wp20--color-grey-light);
+}
+
+.wp20-news-section h2 {
+	font-size: 120px;
+	font-weight: 200;
+	font-family: Inter, sans-serif;
+	line-height: 1.35;
+	color: var(--wp20--color-grey-light);
+	margin-bottom: 30px;
+	transition: transform 0.2s ease-in-out;
+}
+
+.wp20-news-section ul {
+	flex: 1;
+	list-style: none;
+	padding-bottom: 60px;
+	margin-bottom: 0;
+}
+
+.wp20-news-section:not(:first-of-type) {
+	padding-top: 80px;
+}
+
+.wp20-news-section .entry-title a,
+.wp20-news-section .entry-meta a {
+	box-shadow: none;
+}
+
+.wp20-news-section .entry-meta time {
+	margin: 10px 0;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0;
+	color: var(--wp20--color-grey-dark);
+}
+
+@media screen and ( min-width: 48em ) {
+	.wp20-news-section .wrap {
+		display: flex;
+		align-items: flex-end;
+		gap: 30px;
+	}
+
+	.wp20-news-section h2 {
+		flex-basis: 33.33%;
+		margin-bottom: 0;
+		transform: translateY(50px);
+	}
+
+	.wp20-news-section:hover h2 {
+		transform: translateY(25px);
+	}
+}
 
 /*
  * Download Swag Assets
@@ -654,7 +727,17 @@ iframe.wp-embedded-content {
  */
 
 @media screen and ( min-width: 48em ) {
-	.site-content {
+	.wrap {
+		padding-left: var(--wp20--spacing-edge-space);
+		padding-right: var(--wp20--spacing-edge-space);
+	}
+
+	.wrap.wrap-unconstrained {
+		max-width: 1320px;
+	}
+
+	.site-content,
+	.twentyseventeen-front-page .site-content {
 		padding: 80px 0 0;
 	}
 
