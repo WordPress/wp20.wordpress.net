@@ -2,14 +2,6 @@
 
 use WP15\Locales;
 
-$body_classes = get_body_class();
-
-if ( is_home() ) {
-	$body_classes[] = 'page-one-column';
-}
-
-$body_classes = implode( ' ', $body_classes );
-
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
@@ -20,7 +12,7 @@ $body_classes = implode( ' ', $body_classes );
 	<?php wp_head(); ?>
 </head>
 
-<body class="<?php echo $body_classes; ?>">
+<body <?php body_class(); ?>>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content">
 			<?php esc_html_e( 'Skip to content', 'twentyseventeen' ); ?>

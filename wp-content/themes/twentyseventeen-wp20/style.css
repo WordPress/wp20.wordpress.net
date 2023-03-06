@@ -819,7 +819,6 @@ iframe.wp-embedded-content {
 		margin-bottom: var(--wp20--spacing--medium);
 	}
 
-	.home .page-header,
 	body.page.page-slug-about .entry-header {
 		margin-bottom: var(--wp20--spacing--large);
 	}
