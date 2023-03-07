@@ -233,8 +233,8 @@ function get_swag_download_items() {
 		),
 		*/
 		array(
-			'title'             => __( 'WP20 Logo', 'wp20' ),
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_preview.png',
+			'title'             => __( 'WP20 Logos', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
 					'name' => __( 'AI source file (vector)', 'wp20' ),
@@ -259,34 +259,48 @@ function get_swag_download_items() {
 			),
 		),
 		array(
-			'title'             => 'wp_is( 15 );',
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_preview.png',
+			'title'             => __( 'Colored Logos', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
 					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_source.ai',
+					'url'  => '',
 				),
 				array(
 					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15.pdf',
+					'url'  => '',
 				),
 				array(
 					'name' => __( 'PNG (gray/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_gray-transparent.png',
+					'url'  => '',
 				),
 			),
 		),
 		array(
 			'title'             => __( 'Sticker sheet', 'wp20' ),
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers_preview.png',
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
 					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers_source.ai',
+					'url'  => '',
 				),
 				array(
 					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers.pdf',
+					'url'  => '',
+				),
+			),
+		),
+		array(
+			'title'             => __( 'Mystery Pack', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
+			'files'             => array(
+				array(
+					'name' => __( 'AI source file (vector)', 'wp20' ),
+					'url'  => '',
+				),
+				array(
+					'name' => __( 'PDF (vector)', 'wp20' ),
+					'url'  => '',
 				),
 			),
 		),

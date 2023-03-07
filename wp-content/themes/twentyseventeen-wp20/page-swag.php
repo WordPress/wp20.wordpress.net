@@ -4,7 +4,7 @@ use WP20\Theme;
 
 <?php get_header(); ?>
 
-	<div class="wrap">
+	<div class="wrap wrap-unconstrained">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,7 +14,7 @@ use WP20\Theme;
 					</header>
 					
 					<div class="entry-content">
-						<p>
+						<p class="wrap wrap-constrained">
 							<?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
 						</p>
 
@@ -24,9 +24,9 @@ use WP20\Theme;
 									<div class="downloads-item-preview">
 										<img src="<?php echo esc_attr( $item['preview_image_url'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>" />
 									</div>
-									<div class="downloads-item-header">
-										<strong><?php echo esc_html( $item['title'] ); ?></strong>
-									</div>
+									<h3 class="downloads-item-header">
+										<?php echo esc_html( $item['title'] ); ?>
+									</h3>
 									<?php if ( ! empty( $item['files'] ) ) : ?>
 										<ul class="downloads-item-files">
 											<?php foreach ( $item['files'] as $file ) : ?>
@@ -40,7 +40,7 @@ use WP20\Theme;
 							<?php endforeach; ?>
 						</ul>
 
-						<p>
+						<p class="wrap wrap-constrained">
 							<?php
 							printf(
 								wp_kses_post( __( 'Check out the <a href="%s">WordPress Store</a> if you\'d like to purchase WordPress 20th anniversary swag.', 'wp20' ) ),
