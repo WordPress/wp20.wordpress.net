@@ -13,6 +13,7 @@
 
 			app.$nav          = app.$body.find( '.navigation-top' );
 			app.$navContainer = app.$body.find( '.navigation-top-container' );
+			app.$siteContent  = app.$body.find( '.site-content-contain' );
 
 			observer = new MutationObserver( app.observerCallback );
 
@@ -30,8 +31,10 @@
 
 				if ( $target.hasClass( app.classValue ) ) {
 					app.$navContainer.addClass( app.classValue );
+					app.$siteContent.css( 'margin-top', app.$navContainer.height() + 'px' );
 				} else {
 					app.$navContainer.removeClass( app.classValue );
+					app.$siteContent.css( 'margin-top', 0 );
 				}
 			} );
 		}
