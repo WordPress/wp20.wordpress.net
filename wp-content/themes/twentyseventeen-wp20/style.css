@@ -702,10 +702,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .downloads-wrapper .downloads-item-header {
-	margin: 0;
 	font-size: 30px;
 	line-height: 1.33;
-	margin: 1em 0 0.5em;
+	margin: 1em 0 0.6666em;
 	padding: 0;
 }
 
@@ -715,6 +714,10 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	line-height: 1;
 	color: rgba( 35, 40, 45, 0.5 );
 	margin: 0 0 1em;
+}
+
+.downloads-wrapper .downloads-item-content {
+	line-height: 1.875;
 }
 
 .downloads-wrapper .downloads-item-files {
