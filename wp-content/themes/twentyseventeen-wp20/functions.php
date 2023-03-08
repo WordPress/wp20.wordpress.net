@@ -280,7 +280,7 @@ function get_swag_download_items() {
 			),
 		),
 		array(
-			'title'             => __( 'Sticker sheet', 'wp20' ),
+			'title'             => __( 'Sticker Sheet', 'wp20' ),
 			'content'           => __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
