@@ -720,6 +720,12 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	line-height: 1.875;
 }
 
+@media screen and ( min-width: 60em ) {
+	.downloads-wrapper .downloads-item-content {
+		min-height: 90px;
+	}
+}
+
 .downloads-wrapper .downloads-item-files {
 	color: rgba( 35, 40, 45, 0.5 );
 	font-size: 12px;
@@ -735,6 +741,24 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	opacity: .5;
 }
 
+.downloads-wrapper .downloads-item-files a {
+	position: relative;
+}
+
+.downloads-wrapper .downloads-item-files a::after {
+	content: '';
+	display: inline-block;
+	height: 14px;
+	width: 13px;
+	position: absolute;
+	top: 0;
+	right: -21px;
+	vertical-align: middle;
+	background-image: url( 'images/download-icon.svg' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 /*
  * Tagregator
