@@ -239,24 +239,12 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_source.ai',
+					'name' => __( 'Logo Source Files (zip)', 'wp20' ),
+					'url'  => '',
 				),
 				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo.pdf',
-				),
-				array(
-					'name' => __( 'PNG (blue/white/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_blue-white-transparent.png',
-				),
-				array(
-					'name' => __( 'PNG (blue/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_blue-transparent.png',
-				),
-				array(
-					'name' => __( 'PNG (white/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_white-transparent.png',
+					'name' => __( 'Logo Pack (zip)', 'wp20' ),
+					'url'  => '',
 				),
 			),
 		),
@@ -266,15 +254,7 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => '',
-				),
-				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => '',
-				),
-				array(
-					'name' => __( 'PNG (gray/transparent)', 'wp20' ),
+					'name' => __( 'Colored Logos Pack (zip)', 'wp20' ),
 					'url'  => '',
 				),
 			),
@@ -285,11 +265,11 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
+					'name' => __( 'Sticker Sheet (Ai)', 'wp20' ),
 					'url'  => '',
 				),
 				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
+					'name' => __( 'Sticket Sheet (PDF)', 'wp20' ),
 					'url'  => '',
 				),
 			),
@@ -300,11 +280,11 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
+					'name' => __( 'Mystery Pack 1 (zip)', 'wp20' ),
 					'url'  => '',
 				),
 				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
+					'name' => __( 'Mystery Pack 2 (zip)', 'wp20' ),
 					'url'  => '',
 				),
 			),
