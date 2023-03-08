@@ -27,6 +27,7 @@ use WP20\Theme;
 									<h3 class="downloads-item-header">
 										<?php echo esc_html( $item['title'] ); ?>
 									</h3>
+									<p class="downloads-item-content"><?php echo esc_html( $item['content'] ); ?></p>
 									<?php if ( ! empty( $item['files'] ) ) : ?>
 										<ul class="downloads-item-files">
 											<?php foreach ( $item['files'] as $file ) : ?>

@@ -223,6 +223,7 @@ function get_swag_download_items() {
 		/*
 		array(
 			'title'             => __( '', 'wp20' ),
+			'excerpt'           => __( '', 'wp20' ),
 			'preview_image_url' => '',
 			'files'             => array(
 				array(
@@ -234,6 +235,7 @@ function get_swag_download_items() {
 		*/
 		array(
 			'title'             => __( 'WP20 Logos', 'wp20' ),
+			'content'           => __( 'Official anniversary logos in three signature colors: blueberry, black, and white.', 'wp20'	),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
@@ -260,6 +262,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Colored Logos', 'wp20' ),
+			'content'           => __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
@@ -278,6 +281,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Sticker sheet', 'wp20' ),
+			'content'           => __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
@@ -292,6 +296,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Mystery Pack', 'wp20' ),
+			'content'           => __( 'Safe to download, promise. Print them out and put them up wherever you like.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
 			'files'             => array(
 				array(
