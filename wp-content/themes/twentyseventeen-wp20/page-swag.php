@@ -43,7 +43,7 @@ use WP20\Theme;
 						<p class="wrap wrap-constrained">
 							<?php
 							printf(
-								wp_kses_post( __( 'Check out the <a href="%s">WordPress Store</a> if you\'d like to purchase WordPress 20th anniversary swag.', 'wp20' ) ),
+								wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> to get your hands on new, limited edition WP20 swag.', 'wp20' ) ),
 								'https://mercantile.wordpress.org/product-category/wordpress-20/'
 							);
 							?>
