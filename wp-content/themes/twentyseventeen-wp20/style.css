@@ -307,6 +307,16 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	}
 }
 
+.navigation-top a {
+	font-weight: 400;
+}
+
+.navigation-top .current-menu-item > a,
+.navigation-top .current_page_item > a {
+	color: var(--wp20--color--text-primary);
+	font-weight: 700;
+}
+
 .site-navigation-fixed.navigation-top {
 	position: relative;
 	left: auto;
@@ -315,10 +325,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 .admin-bar .site-navigation-fixed.navigation-top {
 	top: auto;
-}
-
-.menu-top-menu-container {
-	text-align: center;
 }
 
 .main-navigation.toggled-on .menu-top-menu-container {
