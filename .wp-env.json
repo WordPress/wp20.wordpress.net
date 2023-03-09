@@ -10,6 +10,7 @@
 		"./wp-content/themes/twentyseventeen-wp20"
 	],
 	"mappings": {
+		"env": "./env",
 		"wp-content": "./wp-content"
 	}
 }

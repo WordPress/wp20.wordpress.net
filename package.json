@@ -1,0 +1,23 @@
+{
+  "name": "wp20.wordpress.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wp-env": "wp-env",
+    "setup:wp": "wp-env run cli \"bash env/setup.sh\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WordPress/wp20.wordpress.net.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WordPress/wp20.wordpress.net/issues"
+  },
+  "homepage": "https://github.com/WordPress/wp20.wordpress.net#readme",
+  "devDependencies": {
+    "@wordpress/env": "^5.13.0"
+  }
+}

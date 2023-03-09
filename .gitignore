@@ -7,6 +7,7 @@ wp-content/jetpack-waf
 wp-content/themes/index.php
 wp-content/themes/twentyseventeen
 
+wp-content/plugins/hello.php
 wp-content/plugins/wordpress-importer
 wp-content/plugins/index.php
 wp-content/plugins/akismet
@@ -26,3 +27,18 @@ wp-includes
 index.php
 wp-*.php
 xmlrpc.php
+
+/**/.DS_STORE
+/**/.idea
+/**/.svn
+/**/build
+/**/node_modules
+/vendor
+*.map
+wp-cli.yml
+
+# Allow local environment overrides.
+.wp-env.override.json
+
+# ...except the actual source of this project.
+!/source/wp-content/themes/twnetyseventeen-wp20
