@@ -29,7 +29,7 @@ use WP15\Locales;
 					</div>
 				</div>
 
-				<?php // Locales\locale_switcher(); ?>
+				<?php Locales\locale_switcher(); ?>
 			</div>
 			<?php endif; ?>
 		</header>
