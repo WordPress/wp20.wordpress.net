@@ -90,7 +90,7 @@ body:not(.page-slug-news):not(.single) .entry-content,
 }
 
 .entry-content-section {
-	margin-bottom: var(--wp20--spacing--medium);
+	margin-bottom: var(--wp20--spacing--large);
 }
 
 .entry-content-section:not(:first-child) {
