@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wp rewrite structure '/%year%/%monthnum%/%postname%/'
+wp rewrite structure '/%postname%/'
 wp rewrite flush
 
 # Set the layout to One Column
