@@ -181,14 +181,26 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .custom-header {
 	grid-column: 1 / span 2;
 	grid-row: 1;
-	height: 60vw;
-	max-height: 60vh;
+	height: 100vw;
+	max-height: 33vh;
 	margin-bottom: 0 !important;
 	background-color: var(--wp20--color--primary);
 	background-image: url( 'images/confetti-tile.svg' );
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+
+@media screen and ( min-width: 768px ) {
+	.custom-header {
+		height: 33vw;
+		max-height: 33vh;
+	}
+}
+
+.home .custom-header {
+	height: 75vw;
+	max-height: 75vh;
 }
 
 .custom-header-media:before {
@@ -225,7 +237,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	grid-row: 4;
 	color: white;
 	font-family: 'EB Garamond', serif;
-	font-size: 30px;
+	font-size: clamp(1rem, 2.5vw, 30px);
 	line-height: 40px;
 	text-align: center;
 	padding: 0 1em;
