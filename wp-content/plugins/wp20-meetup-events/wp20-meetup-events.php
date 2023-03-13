@@ -28,7 +28,7 @@ if ( ! wp_next_scheduled( 'wp20_prime_events_cache' ) ) {
 /**
  * Fetch the latest WP20 events and cache them locally.
  */
-function prime_events_cache() {
+function prime_events_cache() : void {
 	// We can assume that all celebrations will be within a few weeks of the anniversary.
 	$start_date = strtotime( 'May  1, 2023' );
 	$end_date   = strtotime( 'June 10, 2023' );
@@ -57,12 +57,9 @@ function prime_events_cache() {
 /**
  * Get all events that might be WP20 events.
  *
- * @param int $start_date
- * @param int $end_date
- *
  * @return array|WP_Error
  */
-function get_potential_events( $start_date, $end_date ) {
+function get_potential_events( int $start_date, int $end_date ) {
 	require_once( __DIR__ . '/libraries/class-api-client.php' );
 	require_once( __DIR__ . '/libraries/class-meetup-client.php' );
 	require_once( __DIR__ . '/libraries/class-meetup-oauth2-client.php' );
@@ -87,12 +84,8 @@ function get_potential_events( $start_date, $end_date ) {
 
 /**
  * Extract the WP20 events from an array of all meetup events.
- *
- * @param array $potential_events
- *
- * @return array
  */
-function get_wp20_events( $potential_events ) {
+function get_wp20_events( array $potential_events ) : array {
 	$relevant_keys = array_flip( array( 'id', 'eventUrl', 'name', 'time', 'timezone', 'group', 'location', 'latitude', 'longitude' ) );
 
 	foreach ( $potential_events as $event ) {
@@ -134,14 +127,8 @@ function get_wp20_events( $potential_events ) {
 
 /**
  * Determine if a meetup event is a WP20 celebration.
- *
- * @param string $id
- * @param string $title
- * @param string $description
- *
- * @return bool
  */
-function is_wp20_event( $id, $title, $description ) {
+function is_wp20_event( string $id, string $title, string $description ) : bool {
 	$match           = false;
 	$false_positives = array();
 	$keywords        = array(
@@ -167,7 +154,7 @@ function is_wp20_event( $id, $title, $description ) {
 /**
  * Enqueue the plugin's scripts and styles.
  */
-function enqueue_scripts() {
+function enqueue_scripts() : void {
 	global $post;
 
 	if ( ! is_a( $post, 'WP_Post' ) || 'about' !== $post->post_name ) {
@@ -218,10 +205,8 @@ function enqueue_scripts() {
 
 /**
  * Internationalize strings that will be displayed via JavaScript.
- *
- * @return array
  */
-function get_js_strings() {
+function get_js_strings() : array {
 	return array(
 		'search_cleared' => __( 'Search cleared, showing all events.', 'wp20' ),
 		'search_match'   => __( 'Showing events that match %s.',       'wp20' ),
@@ -230,10 +215,8 @@ function get_js_strings() {
 
 /**
  * Get the configuration for the Google Map of events.
- *
- * @return array
  */
-function get_map_options() {
+function get_map_options() : array {
 	return array(
 		'mapContainer'            => 'wp20-events-map',
 		'markerIconBaseURL'       => plugins_url( '/images/', __FILE__ ),
@@ -249,10 +232,8 @@ function get_map_options() {
 
 /**
  * Format the WP20 events for presentation.
- *
- * @return array
  */
-function get_formatted_events() {
+function get_formatted_events() : array {
 	$events = get_option( 'wp20_events' );
 
 	if ( ! $events ) {
@@ -272,41 +253,32 @@ function get_formatted_events() {
 
 /**
  * Sort events by their timestamp.
- *
- * @param array $a
- * @param array $b
- *
- * @return int
  */
-function sort_events( $a, $b ) {
+function sort_events( array $a, array $b ) : int {
 	if ( $a['time'] === $b['time'] ) {
 		return 0;
 	}
 
-	return $a['time'] > $b['time'] ? 1 : -1;
+	return $a['time'] > $b['time'] ? 1 : - 1;
 }
 
 /**
  * Render the WP20 events shortcode.
  */
-function render_events_shortcode() {
+function render_events_shortcode() : string {
 	$events = get_formatted_events();
 
 	ob_start();
-	require_once( __DIR__ . '/views/events-map.php'  );
+	require_once( __DIR__ . '/views/events-map.php' );
 	require_once( __DIR__ . '/views/events-list.php' );
+
 	return ob_get_clean();
 }
 
 /**
  * Format a UTC timestamp with respect to the local timezone.
- *
- * @param int    $utc_timestamp
- * @param string $timezone
- *
- * @return string
  */
-function get_local_formatted_date( $utc_timestamp, $timezone ) {
+function get_local_formatted_date( int $utc_timestamp, string $timezone ) : string {
 	// translators: Do not include `T`, `P`, or `O`, because that will show the site's timezone/difference, not the event's. The event dates will already be converted to their local timezone.
 	$date_format = _x( 'F jS, Y g:ia', 'WP20 event date format', 'wp20' );
 
