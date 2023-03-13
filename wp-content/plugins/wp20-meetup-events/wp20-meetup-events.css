@@ -1,10 +1,10 @@
-#wp15-events-map {
+#wp20-events-map {
 	position: relative;
 	height: 400px;
 	background-color: #AADAFF;
 }
 
-.wp15-spinner {
+.wp20-spinner {
 	display: block;
 	position: absolute;
 	top: 50%;
@@ -19,6 +19,6 @@
 	filter: alpha( opacity=70 );
 }
 
-.wp15-events-list li[aria-hidden="true"] {
+.wp20-events-list li[aria-hidden="true"] {
 	display: none;
 }

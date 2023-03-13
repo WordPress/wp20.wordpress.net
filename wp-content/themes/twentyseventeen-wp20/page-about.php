@@ -18,7 +18,7 @@
 
 					<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
 
-					<?php echo do_shortcode( '[wp15_meetup_events]' ); ?>
+					<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
 
 					<img class="wp20-confetti-divider" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/confetti-divider.svg" alt="" />
 

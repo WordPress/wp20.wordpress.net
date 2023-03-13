@@ -1,11 +1,11 @@
 /**
- * WP15MeetupEvents
+ * WP20MeetupEvents
  *
  * Displays a Google Map with the provided markers.
  *
  * This is mostly copied from the `wordcamp-central-2012` theme.
  */
-var WP15MeetupEvents = ( function( $ ) {
+var WP20MeetupEvents = ( function( $ ) {
 	// `templateOptions` is copied from Core in order to avoid an extra HTTP request just to get `wp.template`.
 	var events,
 	    options,
@@ -25,7 +25,7 @@ var WP15MeetupEvents = ( function( $ ) {
 		strings = data.strings;
 
 		try {
-			$( '#wp15-events-query' ).keyup( filterEventList );
+			$( '#wp20-events-query' ).keyup( filterEventList );
 
 			if ( options.hasOwnProperty( 'mapContainer' ) ) {
 				loadMap( options.mapContainer, events );
@@ -77,7 +77,7 @@ var WP15MeetupEvents = ( function( $ ) {
 	 */
 	function createMarkers( map, markers ) {
 		var markerID,
-			infoWindowTemplate = _.template( $( '#tmpl-wp15-map-marker' ).html(), null, templateOptions ),
+			infoWindowTemplate = _.template( $( '#tmpl-wp20-map-marker' ).html(), null, templateOptions ),
 			infoWindow         = new google.maps.InfoWindow( {
 				pixelOffset: new google.maps.Size( -options.markerIconAnchorXOffset, 0 )
 			} );
@@ -168,7 +168,7 @@ var WP15MeetupEvents = ( function( $ ) {
 	 */
 	function filterEventList() {
 		var query  = this.value,
-		    events = $( '.wp15-events-list' ).children( 'li' );
+		    events = $( '.wp20-events-list' ).children( 'li' );
 		    speak  = _.debounce( wp.a11y.speak, 1000 );
 
 		if ( '' === query ) {
@@ -178,7 +178,7 @@ var WP15MeetupEvents = ( function( $ ) {
 		}
 
 		events.each( function( index, event ) {
-			var groupName = $( event ).children( '.wp15-event-group' ).text().trim(),
+			var groupName = $( event ).children( '.wp20-event-group' ).text().trim(),
 			    location  = $( event ).data( 'location' );
 
 			if ( -1 === groupName.search( new RegExp( query, 'i' ) ) && -1 === location.search( new RegExp( query, 'i' ) ) ) {
@@ -202,9 +202,9 @@ var WP15MeetupEvents = ( function( $ ) {
 		}
 
 		if ( 'string' === typeof( message ) ) {
-			console.log( 'WP15MeetupEvents: ' + message );
+			console.log( 'WP20MeetupEvents: ' + message );
 		} else {
-			console.log( 'WP15MeetupEvents: ', message );
+			console.log( 'WP20MeetupEvents: ', message );
 		}
 	}
 
@@ -213,4 +213,4 @@ var WP15MeetupEvents = ( function( $ ) {
 	};
 } )( jQuery );
 
-jQuery( document ).ready( WP15MeetupEvents.init( wp15MeetupEventsData ) );
+jQuery( document ).ready( WP20MeetupEvents.init( wp20MeetupEventsData ) );

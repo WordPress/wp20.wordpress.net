@@ -1,14 +1,14 @@
 <?php
 
 /*
-Plugin Name: WP15 Meetup Events
-Description: Provides a map of all the meetup events celebrating WP's 15th anniversary.
+Plugin Name: WP20 Meetup Events
+Description: Provides a map of all the meetup events celebrating WP's 20th anniversary.
 Author:      the WordPress Meta Team
 Author URI:  https://make.wordpress.org/meta
 License:     GPLv2 or later
 */
 
-namespace WP15\Meetup_Events;
+namespace WP20\Meetup_Events;
 
 use DateTime, DateTimeZone, Exception;
 use WP_Error;
@@ -16,22 +16,22 @@ use WordCamp\Utilities as WordCampOrg;
 
 defined( 'WPINC' ) || die();
 
-add_action(    'wp15_prime_events_cache', __NAMESPACE__ . '\prime_events_cache' );
+add_action(    'wp20_prime_events_cache', __NAMESPACE__ . '\prime_events_cache' );
 add_action(    'wp_enqueue_scripts',      __NAMESPACE__ . '\enqueue_scripts'         );
-add_shortcode( 'wp15_meetup_events',      __NAMESPACE__ . '\render_events_shortcode' );
+add_shortcode( 'wp20_meetup_events',      __NAMESPACE__ . '\render_events_shortcode' );
 
-if ( ! wp_next_scheduled( 'wp15_prime_events_cache' ) ) {
-	wp_schedule_event( time(), 'hourly', 'wp15_prime_events_cache' );
+if ( ! wp_next_scheduled( 'wp20_prime_events_cache' ) ) {
+	wp_schedule_event( time(), 'hourly', 'wp20_prime_events_cache' );
 }
 
 
 /**
- * Fetch the latest WP15 events and cache them locally.
+ * Fetch the latest WP20 events and cache them locally.
  */
 function prime_events_cache() {
 	// We can assume that all celebrations will be within a few weeks of the anniversary.
-	$start_date = strtotime( 'May   1, 2018' );
-	$end_date   = strtotime( 'June 10, 2018' );
+	$start_date = strtotime( 'May  13, 2023' );
+	$end_date   = strtotime( 'June 10, 2023' );
 
 	/*
 	 * This data will no longer be need to be updated after the event is over. Updating it anyway would use up API
@@ -49,19 +49,19 @@ function prime_events_cache() {
 		return;
 	}
 
-	$wp15_events = get_wp15_events( $potential_events );
+	$wp20_events = get_wp20_events( $potential_events );
 
 	// Don't overwrite valid date if the new data is invalid.
-	if ( empty( $wp15_events[0]['id'] ) || count( $wp15_events ) < 15 ) {
+	if ( empty( $wp20_events[0]['id'] ) || count( $wp20_events ) < 15 ) {
 		trigger_error( 'Event data was invalid. Aborting.' );
 		return;
 	}
 
-	update_option( 'wp15_events', $wp15_events );
+	update_option( 'wp20_events', $wp20_events );
 }
 
 /**
- * Get all events that might be WP15 events.
+ * Get all events that might be WP20 events.
  *
  * @param int $start_date
  * @param int $end_date
@@ -91,13 +91,13 @@ function get_potential_events( $start_date, $end_date ) {
 }
 
 /**
- * Extract the WP15 events from an array of all meetup events.
+ * Extract the WP20 events from an array of all meetup events.
  *
  * @param array $potential_events
  *
  * @return array
  */
-function get_wp15_events( $potential_events ) {
+function get_wp20_events( $potential_events ) {
 	$relevant_keys = array_flip( array( 'id', 'event_url', 'name', 'time', 'timezone', 'group', 'location', 'latitude', 'longitude' ) );
 
 	foreach ( $potential_events as $event ) {
@@ -114,32 +114,32 @@ function get_wp15_events( $potential_events ) {
 		$event['location']    = trim( implode( ' ', $location ) );
 		$trimmed_event        = array_intersect_key( $event, $relevant_keys );
 
-		if ( is_wp15_event( $event['id'], $event['name'], $event['description'] ) ) {
-			$wp15_events[] = $trimmed_event;
+		if ( is_wp20_event( $event['id'], $event['name'], $event['description'] ) ) {
+			$wp20_events[] = $trimmed_event;
 		} else {
 			$other_events[] = $trimmed_event;
 		}
 	}
 
 	if ( 'cli' === php_sapi_name() ) {
-		$wp15_names  = wp_list_pluck( $wp15_events,  'name' );
+		$wp20_names  = wp_list_pluck( $wp20_events,  'name' );
 		$other_names = wp_list_pluck( $other_events, 'name' );
 
-		sort( $wp15_names  );
+		sort( $wp20_names  );
 		sort( $other_names );
 
 		echo "\nIgnored these events. Double check for false-negatives.\n\n";
 		print_r( $other_names );
 
-		echo "\nWP15 events. Double check for false-positives.\n\n";
-		print_r( $wp15_names );
+		echo "\nWP20 events. Double check for false-positives.\n\n";
+		print_r( $wp20_names );
 	}
 
-	return $wp15_events;
+	return $wp20_events;
 }
 
 /**
- * Determine if a meetup event is a WP15 celebration.
+ * Determine if a meetup event is a WP20 celebration.
  *
  * @param string $id
  * @param string $title
@@ -147,11 +147,11 @@ function get_wp15_events( $potential_events ) {
  *
  * @return bool
  */
-function is_wp15_event( $id, $title, $description ) {
+function is_wp20_event( $id, $title, $description ) {
 	$match           = false;
 	$false_positives = array( 'jlzcqlyxhbvb', '250554949', '250458066', '250441988', '250678187' );
 	$keywords        = array(
-		'wp15', '15 year', '15 ano', '15 año', '15 candeline', 'wordt 15', '15 yaşında',
+		'wp20', '20 year', '20 ano', '20 año', '20 candeline', 'wordt 20', '20 yaşında',
 		'anniversary', 'aniversário', 'aniversario', 'birthday', 'cumpleaños',
 		'Tanti auguri'
 	);
@@ -181,10 +181,10 @@ function enqueue_scripts() {
 	}
 
 	wp_enqueue_style(
-		'wp15-meetup-events',
-		plugins_url( 'wp15-meetup-events.css', __FILE__ ),
+		'wp20-meetup-events',
+		plugins_url( 'wp20-meetup-events.css', __FILE__ ),
 		array(),
-		filemtime( __DIR__ . '/wp15-meetup-events.css' )
+		filemtime( __DIR__ . '/wp20-meetup-events.css' )
 	);
 
 	wp_register_script(
@@ -204,16 +204,16 @@ function enqueue_scripts() {
 	);
 
 	wp_enqueue_script(
-		'wp15-meetup-events',
-		plugins_url( 'wp15-meetup-events.js', __FILE__ ),
+		'wp20-meetup-events',
+		plugins_url( 'wp20-meetup-events.js', __FILE__ ),
 		array( 'jquery', 'underscore', 'wp-a11y', 'google-maps', 'marker-clusterer' ),
-		filemtime( __DIR__ . '/wp15-meetup-events.js' ),
+		filemtime( __DIR__ . '/wp20-meetup-events.js' ),
 		true
 	);
 
 	wp_localize_script(
-		'wp15-meetup-events',
-		'wp15MeetupEventsData',
+		'wp20-meetup-events',
+		'wp20MeetupEventsData',
 		array(
 			'strings'     => get_js_strings(),
 			'map_options' => get_map_options(),
@@ -229,8 +229,8 @@ function enqueue_scripts() {
  */
 function get_js_strings() {
 	return array(
-		'search_cleared' => __( 'Search cleared, showing all events.', 'wp15' ),
-		'search_match'   => __( 'Showing events that match %s.',       'wp15' ),
+		'search_cleared' => __( 'Search cleared, showing all events.', 'wp20' ),
+		'search_match'   => __( 'Showing events that match %s.',       'wp20' ),
 	);
 }
 
@@ -241,7 +241,7 @@ function get_js_strings() {
  */
 function get_map_options() {
 	return array(
-		'mapContainer'            => 'wp15-events-map',
+		'mapContainer'            => 'wp20-events-map',
 		'markerIconBaseURL'       => plugins_url( '/images/', __FILE__ ),
 		'markerIcon'              => 'map-marker.svg',
 		'markerIconAnchorXOffset' => 32,
@@ -254,12 +254,16 @@ function get_map_options() {
 }
 
 /**
- * Format the WP15 events for presentation.
+ * Format the WP20 events for presentation.
  *
  * @return array
  */
 function get_formatted_events() {
-	$events = get_option( 'wp15_events' );
+	$events = get_option( 'wp20_events' );
+
+	if ( ! $events ) {
+		return array();
+	}
 
 	// This needs to be done on the fly, in order to use the date format for the visitor's locale.
 	foreach ( $events as & $event ) {
@@ -289,7 +293,7 @@ function sort_events( $a, $b ) {
 }
 
 /**
- * Render the WP15 events shortcode.
+ * Render the WP20 events shortcode.
  */
 function render_events_shortcode() {
 	$events = get_formatted_events();
@@ -310,7 +314,7 @@ function render_events_shortcode() {
  */
 function get_local_formatted_date( $utc_timestamp, $timezone ) {
 	// translators: Do not include `T`, `P`, or `O`, because that will show the site's timezone/difference, not the event's. The event dates will already be converted to their local timezone.
-	$date_format = _x( 'F jS, Y g:ia', 'WP15 event date format', 'wp15' );
+	$date_format = _x( 'F jS, Y g:ia', 'WP20 event date format', 'wp20' );
 
 	try {
 		$utc_datetime = new DateTime( '@' . $utc_timestamp );
