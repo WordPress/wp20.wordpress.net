@@ -239,11 +239,7 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'Logo Source Files (zip)', 'wp20' ),
-					'url'  => '',
-				),
-				array(
-					'name' => __( 'Logo Pack (zip)', 'wp20' ),
+					'name' => __( 'WP20 Logos Pack (zip)', 'wp20' ),
 					'url'  => '',
 				),
 			),
@@ -254,7 +250,7 @@ function get_swag_download_items() {
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'Colored Logos Pack (zip)', 'wp20' ),
+					'name' => __( 'Multicolor Logos Pack (zip)', 'wp20' ),
 					'url'  => '',
 				),
 			),
@@ -276,15 +272,11 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Mystery Pack', 'wp20' ),
-			'content'           => __( 'Safe to download, promise. Print them out and put them up wherever you like.', 'wp20' ),
+			'content'           => __( 'Surprise designs you’ll want to keep. Print them and use them however you like.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'Mystery Pack 1 (zip)', 'wp20' ),
-					'url'  => '',
-				),
-				array(
-					'name' => __( 'Mystery Pack 2 (zip)', 'wp20' ),
+					'name' => __( 'Mystery Pack (zip)', 'wp20' ),
 					'url'  => '',
 				),
 			),
