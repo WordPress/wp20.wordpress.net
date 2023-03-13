@@ -23,7 +23,7 @@ defined( 'WPINC' ) || die();
 			</h3>
 
 			<p class="wp20-event-title">
-				<a href="<?php echo esc_url( $event['event_url'] ); ?>">
+				<a href="<?php echo esc_url( $event['eventUrl'] ); ?>">
 					<?php echo esc_html( $event['name'] ); ?>
 				</a>
 			</p>

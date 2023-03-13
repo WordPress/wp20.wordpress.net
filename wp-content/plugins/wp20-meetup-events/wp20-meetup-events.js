@@ -92,7 +92,7 @@ var WP20MeetupEvents = ( function( $ ) {
 				group     : markers[ markerID ].group,
 				name      : markers[ markerID ].name,
 				time      : markers[ markerID ].time,
-				url       : markers[ markerID ].event_url,
+				url       : markers[ markerID ].eventUrl,
 
 				icon : {
 					url        : options.markerIconBaseURL + options.markerIcon,

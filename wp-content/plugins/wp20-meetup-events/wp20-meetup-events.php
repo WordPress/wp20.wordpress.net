@@ -12,7 +12,7 @@ namespace WP20\Meetup_Events;
 
 use DateTime, DateTimeZone, Exception;
 use WP_Error;
-use WordCamp\Utilities as WordCampOrg;
+use WordPressdotorg\MU_Plugins\Utilities;
 
 defined( 'WPINC' ) || die();
 
@@ -30,7 +30,7 @@ if ( ! wp_next_scheduled( 'wp20_prime_events_cache' ) ) {
  */
 function prime_events_cache() {
 	// We can assume that all celebrations will be within a few weeks of the anniversary.
-	$start_date = strtotime( 'May  13, 2023' );
+	$start_date = strtotime( 'May  1, 2023' );
 	$end_date   = strtotime( 'June 10, 2023' );
 
 	/*
@@ -43,16 +43,10 @@ function prime_events_cache() {
 	}
 
 	$potential_events = get_potential_events( $start_date, $end_date );
-
-	if ( is_wp_error( $potential_events ) ) {
-		trigger_error( $potential_events->get_error_message() );
-		return;
-	}
-
-	$wp20_events = get_wp20_events( $potential_events );
+	$wp20_events      = get_wp20_events( $potential_events );
 
 	// Don't overwrite valid date if the new data is invalid.
-	if ( empty( $wp20_events[0]['id'] ) || count( $wp20_events ) < 15 ) {
+	if ( empty( $wp20_events[0]['id'] ) || count( $wp20_events ) < 5 ) {
 		trigger_error( 'Event data was invalid. Aborting.' );
 		return;
 	}
@@ -69,23 +63,24 @@ function prime_events_cache() {
  * @return array|WP_Error
  */
 function get_potential_events( $start_date, $end_date ) {
-	require_once( __DIR__ . '/libraries/meetup-client.php' );
+	require_once( __DIR__ . '/libraries/class-api-client.php' );
+	require_once( __DIR__ . '/libraries/class-meetup-client.php' );
+	require_once( __DIR__ . '/libraries/class-meetup-oauth2-client.php' );
 
-	$meetup_client = new WordCampOrg\Meetup_Client();
-	$groups        = $meetup_client->get_groups();
-	$group_ids     = wp_list_pluck( $groups, 'id' );
+	$meetup_client = new Utilities\Meetup_Client();
 
-	$event_args = array(
-		'status' => 'upcoming,past',
-		'fields' => 'timezone',
-		'time'   => sprintf(
-			'%d,%d',
-			$start_date * 1000,
-			$end_date   * 1000
-		),
+	$potential_events = $meetup_client->get_network_events(
+		array(
+			'status'         => 'past, upcoming',
+			'min_event_date' => $start_date,
+			'max_event_date' => $end_date,
+		)
 	);
 
-	$potential_events = $meetup_client->get_events( $group_ids, $event_args );
+	if ( ! empty( $meetup_client->error->has_errors() ) ) {
+		trigger_error( $meetup_client->error->get_error_message() );
+		return array();
+	}
 
 	return $potential_events;
 }
@@ -98,7 +93,7 @@ function get_potential_events( $start_date, $end_date ) {
  * @return array
  */
 function get_wp20_events( $potential_events ) {
-	$relevant_keys = array_flip( array( 'id', 'event_url', 'name', 'time', 'timezone', 'group', 'location', 'latitude', 'longitude' ) );
+	$relevant_keys = array_flip( array( 'id', 'eventUrl', 'name', 'time', 'timezone', 'group', 'location', 'latitude', 'longitude' ) );
 
 	foreach ( $potential_events as $event ) {
 		$location = array(
@@ -106,11 +101,10 @@ function get_wp20_events( $potential_events ) {
 			isset( $event['venue']['localized_country_name'] ) ? $event['venue']['localized_country_name'] : ''
 		);
 
-		$event['latitude']    = ! empty( $event['venue']['lat'] ) ? $event['venue']['lat'] : $event['group']['group_lat'];
-		$event['longitude']   = ! empty( $event['venue']['lon'] ) ? $event['venue']['lon'] : $event['group']['group_lon'];
+		$event['latitude']    = ! empty( $event['venue']['lat'] ) ? $event['venue']['lat'] : $event['group']['latitude'];
+		$event['longitude']   = ! empty( $event['venue']['lon'] ) ? $event['venue']['lon'] : $event['group']['longitude'];
 		$event['group']       = $event['group']['name'];
 		$event['description'] = isset( $event['description'] ) ? trim( $event['description'] ) : '';
-		$event['time']        = $event['time'] / 1000;  // Convert to seconds.
 		$event['location']    = trim( implode( ' ', $location ) );
 		$trimmed_event        = array_intersect_key( $event, $relevant_keys );
 
@@ -149,7 +143,7 @@ function get_wp20_events( $potential_events ) {
  */
 function is_wp20_event( $id, $title, $description ) {
 	$match           = false;
-	$false_positives = array( 'jlzcqlyxhbvb', '250554949', '250458066', '250441988', '250678187' );
+	$false_positives = array();
 	$keywords        = array(
 		'wp20', '20 year', '20 ano', '20 año', '20 candeline', 'wordt 20', '20 yaşında',
 		'anniversary', 'aniversário', 'aniversario', 'birthday', 'cumpleaños',
@@ -289,7 +283,7 @@ function sort_events( $a, $b ) {
 		return 0;
 	}
 
-	return $a['time'] > $b['time'];
+	return $a['time'] > $b['time'] ? 1 : -1;
 }
 
 /**
