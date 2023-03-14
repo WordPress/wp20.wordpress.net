@@ -303,3 +303,17 @@ function render_social_meta_tags() {
 	<meta name="twitter:image" content="https://wp20.wordpress.net/content/uploads/2018/03/wp20-logo-square.png" />
 	<?php
 }
+
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function render_news_posted_on() {
+	// Get the author name; wrap it in a link.
+	$byline = sprintf(
+		/* translators: %s: Post author. */
+		__( '%s', 'wp20' ),
+		'<span class="author vcard"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a></span>'
+	);
+
+	echo '<span class="byline"> ' . $byline . '</span>·<span class="posted-on">' . twentyseventeen_time_link() . '</span>';
+}

@@ -1,6 +1,6 @@
 			<div class="wrap">
 
-			<?php if ( has_nav_menu( 'social' ) ) :
+			<?php if ( has_nav_menu( 'social' ) && ( is_page('news') || is_single() ) ) :
 			?>
 				<div class="wp20-social">
 					<p>Follow WordPress for upcoming details</p>
