@@ -32,7 +32,7 @@ Template:    twentyseventeen
 	--wp20--spacing--small: 30px;
 	--wp20--spacing--medium: 50px;
 	--wp20--spacing--large: 80px;
-	--wp20--spacing--edge-space: var(--wp20--spacing--large);
+	--wp20--spacing--edge-space: 20px;
 	--wp20--spacing--top-nav-left: calc(var(--wp20--spacing--edge-space) - 1.25em);
 
 	--wp20--screen-width-constrained: 760px;
@@ -119,6 +119,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	letter-spacing: unset;
 	margin: 0;
 	color: var(--wp20--color--text);
+}
+
+.wrap {
+	padding-left: var(--wp20--spacing--edge-space);
+	padding-right: var(--wp20--spacing--edge-space);
 }
 
 .wrap .wrap {
@@ -978,6 +983,10 @@ iframe.wp-embedded-content {
  */
 
 @media screen and ( min-width: 48em ) {
+	:root {
+		--wp20--spacing--edge-space: var(--wp20--spacing--large);
+	}
+
 	#secondary {
 		padding: 0;
 	}
@@ -994,8 +1003,6 @@ iframe.wp-embedded-content {
 
 	.wrap {
 		max-width: calc( var(--wp20--screen-width) + 2 * var(--wp20--spacing--edge-space) );
-		padding-left: var(--wp20--spacing--edge-space);
-		padding-right: var(--wp20--spacing--edge-space);
 	}
 
 	.wrap.wrap-constrained {
@@ -1003,8 +1010,6 @@ iframe.wp-embedded-content {
 	}
 
 	.wrap .wrap.wrap-constrained {
-		padding-left: 0;
-		padding-right: 0;
 		max-width: var(--wp20--screen-width-constrained);
 	}
 
