@@ -132,7 +132,7 @@ function is_wp20_event( string $id, string $title, string $description ) : bool 
 	$match           = false;
 	$false_positives = array();
 	$keywords        = array(
-		'wp20', '20 year', '20 ano', '20 año', '20 candeline', 'wordt 20', '20 yaşında',
+		'wp20', '20 year', '20 ano', '20 año', '20 candeline', '20 jaar', 'wordt 20', '20 yaşında',
 		'anniversary', 'aniversário', 'aniversario', 'birthday', 'cumpleaños',
 		'Tanti auguri'
 	);
