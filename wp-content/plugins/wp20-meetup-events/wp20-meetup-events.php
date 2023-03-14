@@ -157,7 +157,7 @@ function is_wp20_event( string $id, string $title, string $description ) : bool 
 function enqueue_scripts() : void {
 	global $post;
 
-	if ( ! is_a( $post, 'WP_Post' ) || 'about' !== $post->post_name ) {
+	if ( ! is_a( $post, 'WP_Post' ) || 'whats-on' !== $post->post_name ) {
 		return;
 	}
 
