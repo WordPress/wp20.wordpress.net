@@ -322,6 +322,10 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 		background-color: #fff;
 	}
 
+	.main-navigation a {
+		padding: 16px 10px;
+	}
+
 	.main-navigation.toggled-on .menu-top-menu-container li {
 		border: none;
 	}
@@ -415,7 +419,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	line-height: 49px;
 }
 
-@media screen and (max-width:48em) {
+@media screen and (max-width:47em) {
 	.wp15-locale-switcher-container:focus-within {
 		background: #F7F7F7;
 		width: 50%;
@@ -538,7 +542,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 @media screen and (max-width: 48em) {
-	.navigation-top-menu-container .select2-results__option:last-child {
+	.navigation-top-menu-container .select2-results__options {
 		border-bottom: 1px solid #e5e5e5;
 	}
 }
