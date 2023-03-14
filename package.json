@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "wp-env": "wp-env",
+    "start": "wp-env start",
     "setup:wp": "wp-env run cli \"bash env/setup.sh\""
   },
   "repository": {

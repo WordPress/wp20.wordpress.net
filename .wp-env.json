@@ -4,9 +4,10 @@
 		"WP_ENVIRONMENT_TYPE": "local"
 	},
 	"plugins": [
-		"./wp-content/plugins/wp15-meetup-events"
+		"./wp-content/plugins/wp20-meetup-events"
 	],
 	"themes": [
+		"./wp-content/themes/twentyseventeen",
 		"./wp-content/themes/twentyseventeen-wp20"
 	],
 	"mappings": {
