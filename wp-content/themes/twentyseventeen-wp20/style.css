@@ -407,16 +407,19 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 .wp15-locale-switcher-container  {
 	position: absolute;
+	padding-left: 14px;
 	top: 0;
 	right: 0;
 	margin: 0 auto;
 	text-align: right;
-	height: 50px;
-	line-height: 50px;
+	height: 49px;
+	line-height: 49px;
 }
 
-.wp15-locale-switcher-container::focus-within {
-	background: #F7F7F7;
+@media screen and (max-width:48em) {
+	.wp15-locale-switcher-container:focus-within {
+		background: #F7F7F7;
+	}
 }
 
 .wp15-locale-switcher-container label {
@@ -455,8 +458,10 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	color: var(--wp20--color--grey-6) !important;
 }
 
-.wp15-locale-switcher-container .select2-container--focus .select2-selection__rendered {
-	outline: thin dotted;
+@media screen and (min-width: 48em) {
+	.wp15-locale-switcher-container .select2-container--focus .select2-selection__rendered {
+		outline: thin dotted;
+	}
 }
 
 .wp15-locale-switcher-container .select2-selection:hover .select2-selection__rendered,
