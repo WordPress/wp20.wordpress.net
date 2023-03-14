@@ -314,7 +314,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .main-navigation.toggled-on .menu-top-menu-container li a {
-	color: var(--wp20--color--text-meta);
+	color: var(--wp20--color--text);
 }
 
 @media screen and (min-width: 48em) {
@@ -337,15 +337,35 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 .menu-toggle {
 	margin: 0;
+	color: var(--wp20--color--text);
 	font-weight: 400;
 	text-align: left;
 	border-radius: 0;
+}
+
+/* TT17 Rule */
+.js .menu-toggle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 14px;
+}
+
+@media screen and (min-width: 48em ){
+	.js .menu-toggle {
+		display: none;
+	}
 }
 
 .menu-toggle:focus, 
 .menu-toggle:hover {
 	background: #F7F7F7 !important;
 	outline: none;
+}
+
+.menu-toggle > img {
+	width: 15px;
+	height: 15px;
 }
 
 .menu-toggle[aria-expanded="true"] .icon-bars {
@@ -424,7 +444,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .wp15-locale-switcher-container .select2-selection .select2-selection__rendered {
-	font-size: 13px !important;
+	font-size: 14px;
 }
 
 .wp15-locale-switcher-container .select2-container .select2-selection--single .select2-selection__rendered {
@@ -494,6 +514,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	background-repeat: no-repeat;
 	background-size: 12px 12px;
 	background-position: calc(100% - 20px) center;
+	font-size: 14px;
 	text-align: right;
 }
 
