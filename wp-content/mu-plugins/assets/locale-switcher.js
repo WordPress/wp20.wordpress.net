@@ -16,7 +16,7 @@
 			app.$notice   = $( '.wp15-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
 
-			var m = app.$switcher.select2( {
+			app.$switcher.select2( {
 				language: app.locale,
 				dir: app.dir,
 				dropdownParent: app.$container,
@@ -31,7 +31,7 @@
 			app.$switcher.on( 'select2:open', function() {
 				app.$container.find( 'input[type="search"]').attr('placeholder', app.$container.attr( 'data-placeholder' ) );
 
-				// Turn off the menu if we are already viewing the mobile menu.
+				// Turn off the menu if it's open.
 				if( $( '#site-navigation' ).hasClass( 'toggled-on' ) ) {
 					$( '.menu-toggle' ).trigger( 'click' );
 				}
