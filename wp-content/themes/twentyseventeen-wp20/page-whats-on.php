@@ -15,16 +15,6 @@
 					<div class="entry-content-section">
 						<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
 					</div>
-
-					<p>
-						<?php
-							printf(
-								wp_kses_post( __( 'Don&rsquo;t see your city? Get in touch with <a href="%1$s">your local group</a> or <a href="%2$s">organize a group in your town</a>.', 'wp20' ) ),
-								'',
-								''
-							);
-						?>
-					</p>
 				</div>
 
 			</article>
