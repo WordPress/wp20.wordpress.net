@@ -420,6 +420,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 		background: #F7F7F7;
 		width: 50%;
 	}
+
+	.wp15-locale-switcher-container:focus-within .select2-selection__rendered {
+		font-weight: 700;
+		text-decoration: none;
+	}
 }
 
 .wp15-locale-switcher-container label {
@@ -463,11 +468,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	.wp15-locale-switcher-container .select2-container--focus .select2-selection__rendered {
 		outline: thin dotted;
 	}
-}
-
-.wp15-locale-switcher-container .select2-selection:hover .select2-selection__rendered,
-.wp15-locale-switcher-container .select2-container--focus .select2-selection .select2-selection__rendered {
-	text-decoration: underline !important;
 }
 
 /* Arrow indicators */
