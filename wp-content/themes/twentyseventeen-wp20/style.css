@@ -199,8 +199,7 @@ h1.entry-title a,
 .custom-header {
 	grid-column: 1 / span 2;
 	grid-row: 1;
-	height: 100vw;
-	max-height: 33vh;
+	height: 240px;
 	margin-bottom: 0 !important;
 	background-color: var(--wp20--color--primary);
 	background-image: url( 'images/confetti-tile.svg' );
@@ -211,14 +210,13 @@ h1.entry-title a,
 
 @media screen and ( min-width: 768px ) {
 	.custom-header {
-		height: 33vw;
-		max-height: 33vh;
+		height: 330px;
 	}
 }
 
 .home .custom-header {
-	height: 75vw;
-	max-height: 75vh;
+	height: 112vw;
+	max-height: 68vh;
 }
 
 .custom-header-media:before {
@@ -255,8 +253,8 @@ h1.entry-title a,
 	grid-row: 4;
 	color: white;
 	font-family: 'EB Garamond', serif;
-	font-size: clamp(1rem, 2.5vw, 30px);
-	line-height: 40px;
+	font-size: clamp( 1rem, calc( 100vw / 18 ), 30px );
+	line-height: 1.33;
 	text-align: center;
 	padding: 0 1em;
 }
