@@ -367,7 +367,7 @@ body.page .entry-header {
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: var(--wp20--color--text-primary);
+	color: var(--wp20--color--text);
 	font-weight: 700;
 }
 
