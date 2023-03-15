@@ -5,8 +5,7 @@
 			<h1 class="entry-title">
 				<?php
 				printf(
-					wp_kses_post( __( 'Latest <a href="%s">#WP20</a> <br>Updates', 'wp20' ) ),
-					''
+					wp_kses_post( __( 'Latest #WP20 <br>Updates', 'wp20' ) )
 				);
 				?>
 			</h1>

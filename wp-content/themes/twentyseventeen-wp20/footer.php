@@ -1,38 +1,43 @@
-			<div class="wrap">
+			<div class="wp20-footer">
 
-			<?php if ( has_nav_menu( 'social' ) && ( is_page('news') || is_single() ) ) :
-			?>
-				<div class="wp20-social">
-					<p>Follow WordPress for upcoming details</p>
-					<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
-								'depth'          => 1,
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
-								)
-							);
-							?>
-					</nav><!-- .social-navigation -->
-				</div>
-				<?php
-			endif;
-			?>
+				<div class="wrap">
 
-				<div class="wp20-confetti-divider">
-					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-blue-ext.svg" alt="<?php esc_html_e( 'WP20 logo', 'wp20' ); ?>" itemprop="logo" />
-				</div>
+				<?php if ( has_nav_menu( 'social' ) && ( is_page('news') || is_single() ) ) :
+				?>
+					<div class="wp20-social">
+						<p>Follow WordPress for upcoming details</p>
+						<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'social',
+									'menu_class'     => 'social-links-menu',
+									'depth'          => 1,
+									'link_before'    => '<span class="screen-reader-text">',
+									'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
+									)
+								);
+								?>
+						</nav><!-- .social-navigation -->
+					</div>
+					<?php
+				endif;
+				?>
 
-				<p class="wp10-nostalgia">
-					<?php printf(
-						wp_kses_data( __( 'Feeling nostalgic? Check out <a href="%s">this post about the WordPress 15th anniversary</a>.', 'wp20' ) ),
-						'https://wordpress.org/news/2018/04/celebrate-the-wordpress-15th-anniversary-on-may-27/'
-					); ?>
-				</p>
-			</div>
+					<div class="wp20-confetti-divider">
+						<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-blue-ext.svg" alt="<?php esc_html_e( 'WP20 logo', 'wp20' ); ?>" itemprop="logo" />
+					</div>
+
+					<p class="wp15-nostalgia">
+						<?php printf(
+							wp_kses_post( __( 'Feeling nostalgic? <br>Check out <a href="%s">this post about the WordPress 15th anniversary</a>.', 'wp20' ) ),
+							'https://wordpress.org/news/2018/04/celebrate-the-wordpress-15th-anniversary-on-may-27/'
+						); ?>
+					</p>
+				</div><!-- .wrap -->
+
+			</div><!-- .wp20-footer -->
+
 		</div><!-- #content -->
 
 
