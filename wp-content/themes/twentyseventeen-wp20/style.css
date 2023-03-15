@@ -534,9 +534,8 @@ body.page .entry-header {
 /*
  * What's on
  */
-
  
-#wp15-events-map {
+#wp20-events-map {
 	position: relative;
 	height: 500px;
 	width: 80vw;
@@ -554,7 +553,7 @@ body.page .entry-header {
 		margin-bottom: var(--wp20--spacing--large);
 	}
 	
-	#wp15-events-map {
+	#wp20-events-map {
 		width: 100%;
 		margin: 2em auto 1em;
 		left: auto;
@@ -562,27 +561,27 @@ body.page .entry-header {
 	}
 }
 
-#wp15-events-filter {
+#wp20-events-filter {
 	margin-bottom: 3em;
 	text-align: center;
 }
 
-#wp15-events-filter input[type="text"] {
+#wp20-events-filter input[type="text"] {
 	display: inline;
 	width: auto;
 	margin-left: .5em;
 }
 
-#wp15-events-filter input[type="text"]::placeholder {
+#wp20-events-filter input[type="text"]::placeholder {
 	opacity: 0.5;
 }
 
-.rtl #wp15-events-filter input[type="text"] {
+.rtl #wp20-events-filter input[type="text"] {
 	margin-left: 0;
 	margin-right: .5em;
 }
 
-.wp15-events-list {
+.wp20-events-list {
 	display: grid;
 	grid-template-columns: repeat( auto-fill, minmax( 250px, 1fr ) );
 	grid-gap: 2em;
@@ -591,22 +590,22 @@ body.page .entry-header {
 	list-style-type: none;
 }
 
-.rtl .wp15-events-list {
+.rtl .wp20-events-list {
 	margin-left: 0;
 	margin-right: calc( -1 * ( (80vw - 100%) / 2 ) );
 }
 
-.wp15-events-list li {
+.wp20-events-list li {
 	margin-bottom: 1em;
 }
 
-.wp15-event-group,
-.wp15-event-title,
-.wp15-event-date-time {
+.wp20-event-group,
+.wp20-event-title,
+.wp20-event-date-time {
 	margin-bottom: .5em;
 }
 
-.wp15-event-date-time {
+.wp20-event-date-time {
 	font-size: 16px;
 	color: var(--wp20--color--grey-7);
 }
