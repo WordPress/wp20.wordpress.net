@@ -346,7 +346,7 @@ body.page .entry-header {
 	z-index: 20;
 	background: #fff;
 	border-top: 0;
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid var(--wp20--color--border);
 }
 
 @media screen and (min-width: 48em) {
@@ -392,7 +392,7 @@ body.page .entry-header {
 
 .main-navigation.toggled-on .menu-top-menu-container li {
 	padding: 12px var(--wp20--spacing--edge-space);
-	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid var(--wp20--color--border);
 	border-bottom: 0;
 	font-size: 14px;
 }
@@ -590,7 +590,7 @@ body.page .entry-header {
 
 .navigation-top-menu-container .select2-container--default .select2-selection--single {
 	text-align: left;
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid var(--wp20--color--border);
 }
 
 .navigation-top-menu-container .select2-container--default,
@@ -606,7 +606,7 @@ body.page .entry-header {
 	padding: 12px 40px 12px 12px;
 	border-radius: 0;
 	border: 0 !important;
-	border-bottom: 1px solid #e5e5e5 !important;
+	border-bottom: 1px solid var(--wp20--color--border) !important;
 	color: var(--wp20--color--text);
 	background-image:  url( 'images/search-icon.svg' );
 	background-repeat: no-repeat;
@@ -631,7 +631,7 @@ body.page .entry-header {
 
 @media screen and (max-width: 48em) {
 	.navigation-top-menu-container .select2-results__options {
-		border-bottom: 1px solid #e5e5e5;
+		border-bottom: 1px solid var(--wp20--color--border);
 	}
 }
 
