@@ -391,7 +391,7 @@ body.page .entry-header {
 }
 
 .main-navigation.toggled-on .menu-top-menu-container li {
-	padding: 12px 20px;
+	padding: 12px var(--wp20--spacing--edge-space);
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 0;
 	font-size: 14px;
@@ -407,7 +407,7 @@ body.page .entry-header {
 	}
 
 	.main-navigation a {
-		padding: 16px 10px;
+		padding: 16px var(--wp20--spacing--xxsmall);
 	}
 
 	.main-navigation.toggled-on .menu-top-menu-container li {
@@ -528,7 +528,7 @@ body.page .entry-header {
 }
 
 .wp15-locale-switcher-container .select2-container {
-	margin-right: 10px;
+	margin-right: var(--wp20--spacing--xxsmall);
 }
 
 @media screen and (min-width: 48em) {
@@ -640,7 +640,7 @@ body.page .entry-header {
 .navigation-top-menu-container .select2-container--default .select2-results__option--highlighted[aria-selected=false] {
 	background-color: transparent !important;
 	color: var(--wp20--color--text) !important;
-	padding: 12px 20px;
+	padding: 12px var(--wp20--spacing--edge-space);
 }
 
 .navigation-top-menu-container .select2-container--default .select2-results__option[aria-selected=true] {
