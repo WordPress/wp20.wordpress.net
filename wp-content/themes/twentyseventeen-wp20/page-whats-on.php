@@ -5,16 +5,15 @@
 		<main id="main" class="site-main" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<h1 class="entry-title screen-reader-text">
-					<?php the_title(); ?>
-				</h1>
-				
+				<header class="entry-header">
+					<h1 class="entry-title">
+						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2022. Join us!', 'wp20' ); ?>
+					</h1>
+				</header>
+
 				<div class="entry-content">
-					<p>
-						<?php esc_html_e( 'Join the conversation by using #WP20 on your favorite social networks.', 'wp20' ); ?>
-					</p>
 					<div class="entry-content-section">
-						<?php echo do_shortcode( '[tagregator hashtag="#WP20"]' ); ?>
+						<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
 					</div>
 				</div>
 

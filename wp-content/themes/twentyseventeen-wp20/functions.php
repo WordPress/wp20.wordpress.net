@@ -42,18 +42,18 @@ function get_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
+	 * by Inter, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'wp20' ) ) {
-		$fonts[] = 'Source Sans Pro:400,400i,600,700';
+	if ( 'off' !== _x( 'on', 'Inter font: on or off', 'wp20' ) ) {
+		$fonts[] = 'Inter:200,400,400i,600,700';
 	}
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Crete Round, translate this to 'off'. Do not translate into your own language.
+	 * by EB Garamond, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Crete Round font: on or off', 'wp20' ) ) {
-		$fonts[] = 'Crete Round';
+	if ( 'off' !== _x( 'on', 'EB Garamond font: on or off', 'wp20' ) ) {
+		$fonts[] = 'EB Garamond:400';
 	}
 
 	if ( $fonts ) {
@@ -131,7 +131,7 @@ function set_custom_logo() {
 	?>
 
 	<a href="<?php echo esc_url( home_url() ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 home', 'wp20' ); ?>" itemprop="logo" />
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wp20-logo-white.svg" class="custom-logo" alt="<?php esc_html_e( 'WP20 logo', 'wp20' ); ?>" itemprop="logo" />
 	</a>
 
 	<?php
@@ -223,6 +223,7 @@ function get_swag_download_items() {
 		/*
 		array(
 			'title'             => __( '', 'wp20' ),
+			'excerpt'           => __( '', 'wp20' ),
 			'preview_image_url' => '',
 			'files'             => array(
 				array(
@@ -233,60 +234,50 @@ function get_swag_download_items() {
 		),
 		*/
 		array(
-			'title'             => __( 'WP20 Logo', 'wp20' ),
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_preview.png',
+			'title'             => __( 'WP20 Logos', 'wp20' ),
+			'content'           => __( 'Official anniversary logos in three signature colors: blueberry, black, and white.', 'wp20'	),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_source.ai',
-				),
-				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo.pdf',
-				),
-				array(
-					'name' => __( 'PNG (blue/white/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_blue-white-transparent.png',
-				),
-				array(
-					'name' => __( 'PNG (blue/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_blue-transparent.png',
-				),
-				array(
-					'name' => __( 'PNG (white/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_logo_white-transparent.png',
+					'name' => __( 'WP20 Logos Pack (zip)', 'wp20' ),
+					'url'  => '',
 				),
 			),
 		),
 		array(
-			'title'             => 'wp_is( 15 );',
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_preview.png',
+			'title'             => __( 'Colored Logos', 'wp20' ),
+			'content'           => __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_source.ai',
-				),
-				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15.pdf',
-				),
-				array(
-					'name' => __( 'PNG (gray/transparent)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_is15_gray-transparent.png',
+					'name' => __( 'Multicolor Logos Pack (zip)', 'wp20' ),
+					'url'  => '',
 				),
 			),
 		),
 		array(
-			'title'             => __( 'Sticker sheet', 'wp20' ),
-			'preview_image_url' => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers_preview.png',
+			'title'             => __( 'Sticker Sheet', 'wp20' ),
+			'content'           => __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
-					'name' => __( 'AI source file (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers_source.ai',
+					'name' => __( 'Sticker Sheet (Ai)', 'wp20' ),
+					'url'  => '',
 				),
 				array(
-					'name' => __( 'PDF (vector)', 'wp20' ),
-					'url'  => 'https://wp20.wordpress.net/content/uploads/2018/03/swag_wp20_stickers.pdf',
+					'name' => __( 'Sticket Sheet (PDF)', 'wp20' ),
+					'url'  => '',
+				),
+			),
+		),
+		array(
+			'title'             => __( 'Mystery Pack', 'wp20' ),
+			'content'           => __( 'Surprise designs you’ll want to keep. Print them and use them however you like.', 'wp20' ),
+			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
+			'files'             => array(
+				array(
+					'name' => __( 'Mystery Pack (zip)', 'wp20' ),
+					'url'  => '',
 				),
 			),
 		),
@@ -311,4 +302,18 @@ function render_social_meta_tags() {
 	<meta name="twitter:description" content="<?php echo internationalize_titles( 'WordPress turns 15 on May 27, 2018' ); ?>" />
 	<meta name="twitter:image" content="https://wp20.wordpress.net/content/uploads/2018/03/wp20-logo-square.png" />
 	<?php
+}
+
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function render_news_posted_on() {
+	// Get the author name; wrap it in a link.
+	$byline = sprintf(
+		/* translators: %s: Post author. */
+		__( '%s', 'wp20' ),
+		'<span class="author vcard"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a></span>'
+	);
+
+	echo '<span class="byline"> ' . $byline . '</span>·<span class="posted-on">' . twentyseventeen_time_link() . '</span>';
 }
