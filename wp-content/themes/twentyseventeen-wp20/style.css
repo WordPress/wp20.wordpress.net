@@ -320,20 +320,6 @@ body.page .entry-header {
 	}
 }
 
-.site-navigation-fixed.navigation-top-container {
-	position: fixed;
-	top: 0;
-	bottom: auto;
-	left: 0;
-	right: 0;
-	width: 100%;
-	z-index: 7;
-}
-
-.admin-bar .site-navigation-fixed.navigation-top-container {
-	top: 32px;
-}
-
 @media screen and (min-width: 67em) {
 	.navigation-top .wrap {
 		padding-left: var(--wp20--spacing--top-nav-left);
