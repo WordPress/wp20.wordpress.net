@@ -240,22 +240,6 @@ body.page .entry-header {
 /*
  * Header
  */
-.site-header {
-	overflow: visible;
-	display: grid;
-	grid-template-columns: auto 3fr;
-}
-
-.site-header:before,
-.site-header:after {
-	content: none;
-}
-
-@media screen and ( min-width: 370px ) {
-	.site-header {
-		grid-template-columns: auto 300px;
-	}
-}
 
 .custom-header {
 	grid-column: 1 / span 2;
