@@ -188,7 +188,7 @@ function locale_switcher() {
 			<select id="wp15-locale-switcher" name="locale">
 				<?php
 
-				foreach ( ["en" =>"English", "kr" => "Korean", "ca" => "Super long language"] as $locale => $locale_name ) {
+				foreach ( get_locales() as $locale => $locale_name ) {
 					printf(
 						'<option value="%s"%s>%s</option>',
 						esc_attr( $locale ),
