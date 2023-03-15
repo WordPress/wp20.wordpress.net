@@ -182,14 +182,13 @@ function locale_switcher() {
 	<div class="wp15-locale-switcher-container">
 		<form id="wp15-locale-switcher-form" action="" method="GET">
 			<label for="wp15-locale-switcher">
-				<span aria-hidden="true" class="dashicons dashicons-translation"></span>
 				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp15' ); ?></span>
 			</label>
 
 			<select id="wp15-locale-switcher" name="locale">
 				<?php
 
-				foreach ( get_locales() as $locale => $locale_name ) {
+				foreach ( ["en" =>"English", "kr" => "Korean", "ca" => "Super long language"] as $locale => $locale_name ) {
 					printf(
 						'<option value="%s"%s>%s</option>',
 						esc_attr( $locale ),
