@@ -21,3 +21,7 @@ Your local environment should be running at http://localhost:8888
 1. In Appearance > Widgets, remove everything.
 1. In Customizer > Header Media, ensure no header image is set
 1. In Settings > Reading, ensure your homepage is set to the `What's on` static page
+
+## Other Documentation
+
+* [wp20-meetup-events](./wp-content/plugins/wp20-meetup-events/README.md)
