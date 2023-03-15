@@ -182,7 +182,6 @@ function locale_switcher() {
 	<div class="wp15-locale-switcher-container">
 		<form id="wp15-locale-switcher-form" action="" method="GET">
 			<label for="wp15-locale-switcher">
-				<span aria-hidden="true" class="dashicons dashicons-translation"></span>
 				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp15' ); ?></span>
 			</label>
 
