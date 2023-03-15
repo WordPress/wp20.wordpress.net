@@ -3,7 +3,7 @@
 
 	<?php if ( is_front_page() ): ?>
 	<div class="site-branding-text">
-		<em><? esc_html_e( 'On to the remaining 60% of the web.', 'twentyseventeen' ) ?></em>
+		<em><?php esc_html_e( 'On to the remaining 60% of the web.', 'twentyseventeen' ) ?></em>
 	</div><!-- .site-branding-text -->
 	<?php endif; ?>
 </div><!-- .site-branding -->
