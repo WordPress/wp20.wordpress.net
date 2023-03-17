@@ -1,4 +1,7 @@
 <?php
+
+// Forked from https://github.com/GlotPress/GlotPress/blob/82d29e3b7638a662fc0bc9d7f1dc247c3ad32a57/locales/locales.php
+
 if ( ! class_exists( 'GP_Locale' ) ) :
 
 class GP_Locale {

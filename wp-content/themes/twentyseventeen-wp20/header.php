@@ -1,6 +1,6 @@
 <?php
 
-use WP15\Locales;
+use WP20\Locales;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
@@ -30,7 +30,7 @@ use WP15\Locales;
 			<?php endif; ?>
 		</header>
 
-		<?php // Locales\locale_notice(); ?>
+		<?php Locales\locale_notice(); ?>
 
 		<?php if ( ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) : ?>
 			<div class="single-featured-image-header">

@@ -1,4 +1,7 @@
 <?php
+
+// Forked for WP20 from https://meta.trac.wordpress.org/browser/sites/trunk/wordpress.org/public_html/wp-content/plugins/locale-detection/locale-detection.php?rev=11640
+
 /**
  * Plugin Name: Locale Detection
  * Description: Sets a blog's locale to the users preferred locale.

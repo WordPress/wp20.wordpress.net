@@ -1,4 +1,7 @@
 <?php
+
+// Forked for WP20 from https://meta.trac.wordpress.org/browser/sites/trunk/wordpress.org/public_html/wp-content/plugins/locale-detection/class-detector.php?rev=10829
+
 /**
  * Class Detector
  *
