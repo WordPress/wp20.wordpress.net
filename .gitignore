@@ -3,6 +3,7 @@ wp-admin
 
 wp-content/cache
 wp-content/jetpack-waf
+wp-content/languages
 
 wp-content/themes/index.php
 wp-content/themes/twentyseventeen

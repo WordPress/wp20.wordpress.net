@@ -3,17 +3,17 @@
 
 	'use strict';
 
-	var WP15LocaleSwitcher = window.WP15LocaleSwitcher || {},
+	var WP20LocaleSwitcher = window.WP20LocaleSwitcher || {},
 		app;
 
-	app = $.extend( WP15LocaleSwitcher, {
+	app = $.extend( WP20LocaleSwitcher, {
 		$switcher: $(),
 
 		$notice: $(),
 
 		init: function() {
-			app.$switcher = $( '#wp15-locale-switcher' );
-			app.$notice   = $( '.wp15-locale-notice' );
+			app.$switcher = $( '#wp20-locale-switcher' );
+			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
 
 			app.$switcher.select2( {
@@ -37,7 +37,7 @@
 				}
 			} );
 
-			app.$notice.on( 'click', '.wp15-locale-notice-dismiss', function( event ) {
+			app.$notice.on( 'click', '.wp20-locale-notice-dismiss', function( event ) {
 				event.preventDefault();
 				app.dismissNotice();
 			} );
@@ -51,7 +51,7 @@
 			});
 
 			wpCookies.set(
-				'wp15-locale-notice-dismissed',
+				'wp20-locale-notice-dismissed',
 				true,
 				app.cookie.expires,
 				app.cookie.cpath,
