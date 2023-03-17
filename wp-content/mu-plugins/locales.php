@@ -182,7 +182,7 @@ function locale_switcher() {
 	<div class="wp15-locale-switcher-container">
 		<form id="wp15-locale-switcher-form" action="" method="GET">
 			<label for="wp15-locale-switcher">
-				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp15' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp20' ); ?></span>
 			</label>
 
 			<select id="wp15-locale-switcher" name="locale">
@@ -235,7 +235,7 @@ function locale_notice() {
 				<?php
 				printf(
 					/* translators: %s placeholder is a URL. */
-					wp_kses_post( __( 'The translation for this locale is incomplete. Help us get to 100 percent by <a href="%s">contributing a translation</a>.', 'wp15' ) ),
+					wp_kses_post( __( 'The translation for this locale is incomplete. Help us get to 100 percent by <a href="%s">contributing a translation</a>.', 'wp20' ) ),
 					esc_url( $contribute_url )
 				);
 				?>
