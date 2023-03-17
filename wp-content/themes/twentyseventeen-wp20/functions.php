@@ -153,19 +153,24 @@ function internationalize_titles( $title ) {
 			$title = esc_html__( 'WP20', 'wp20' );
 			break;
 
-		case 'WordPress turns 15 on May 27, 2018':
+		case 'WordPress turns 20 on May 27, 2023':
 			// translators: The tagline for the wp20.wordpress.net website.
-			$title = esc_html__( 'WordPress turns 15 on May 27, 2018', 'wp20' );
+			$title = esc_html__( 'WordPress turns 20 on May 27, 2023', 'wp20' );
 			break;
 
-		case 'About':
-			// translators: The name of the page that describes the WP20 celebrations.
-			$title = esc_html__( 'About', 'wp20' );
+		case "What's On":
+			// translators: The name of the page that lists the global WP20 meetup events. "What's on" means something similar to "what's going on" or "what's happening".
+			$title = esc_html__( "What's On", 'wp20' );
 			break;
 
-		case 'Live':
+		case 'News':
+			// translators: The name of the page that list recent posts.
+			$title = esc_html__( 'News', 'wp20' );
+			break;
+
+		case '#WP Live':
 			// translators: The name of the page that displays the #wp20 social media posts in real time.
-			$title = esc_html_x( 'Live', 'adjective', 'wp20' );
+			$title = esc_html_x( '#WP Live', 'adjective', 'wp20' );
 			break;
 
 		case 'Swag':
@@ -291,16 +296,16 @@ function render_social_meta_tags() {
 	?>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<?php echo wp_get_document_title(); ?>" />
-	<meta property="og:description" content="<?php echo internationalize_titles( 'WordPress turns 15 on May 27, 2018' ); ?>" />
+	<meta property="og:description" content="<?php echo internationalize_titles( 'WordPress turns 20 on May 27, 2023' ); ?>" />
 	<meta property="og:url" content="https://wp20.wordpress.net/" />
 	<meta property="og:site_name" content="<?php echo internationalize_titles( 'WP20' ); ?>" />
-	<meta property="og:image" content="https://wp20.wordpress.net/content/uploads/2018/03/wp20-logo-square.png" />
+	<meta property="og:image" content="https://wp20.wordpress.net/wp-content/uploads/wp20-logo-anniversary-blueberry@3x.jpeg" />
 	<meta property="og:locale" content="<?php echo get_locale(); ?>" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:url" content="https://wp20.wordpress.net/" />
 	<meta name="twitter:title" content="<?php echo wp_get_document_title(); ?>" />
-	<meta name="twitter:description" content="<?php echo internationalize_titles( 'WordPress turns 15 on May 27, 2018' ); ?>" />
-	<meta name="twitter:image" content="https://wp20.wordpress.net/content/uploads/2018/03/wp20-logo-square.png" />
+	<meta name="twitter:description" content="<?php echo internationalize_titles( 'WordPress turns 20 on May 27, 2023' ); ?>" />
+	<meta name="twitter:image" content="https://wp20.wordpress.net/wp-content/uploads/wp20-logo-anniversary-blueberry@3x.jpeg" />
 	<?php
 }
 
