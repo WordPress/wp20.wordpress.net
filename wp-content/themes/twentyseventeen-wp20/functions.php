@@ -88,7 +88,7 @@ function enqueue_scripts() {
 	);
 
 	// Styles for locale switcher.
-	wp_enqueue_style( 'select2' );
+	wp_enqueue_style( 'selectWoo' );
 
 	wp_enqueue_script(
 		'twentyseventeen-wp20-front-end',
