@@ -117,7 +117,7 @@ function register_assets() {
 	wp_register_script(
 		'locale-switcher',
 		WP_CONTENT_URL . '/mu-plugins/assets/locale-switcher.js',
-		array( 'jquery', 'select2', 'utils' ),
+		array( 'jquery', 'selectWoo', 'utils' ),
 		filemtime( __DIR__ . '/assets/locale-switcher.js' ),
 		true
 	);

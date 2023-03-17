@@ -16,7 +16,7 @@
 			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
 
-			app.$switcher.select2( {
+			app.$switcher.selectWoo( {
 				language: app.locale,
 				dir: app.dir,
 				dropdownParent: app.$container,
@@ -28,6 +28,7 @@
 				$(this).parents( 'form' ).submit();
 			} );
 
+			// This has to stay `select2`; `selectWoo:open` will not work.
 			app.$switcher.on( 'select2:open', function() {
 				app.$container.find( 'input[type="search"]').attr('placeholder', app.$container.attr( 'data-placeholder' ) );
 
