@@ -7,7 +7,7 @@
 
 				<header class="entry-header">
 					<h1 class="entry-title">
-						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2022. Join us!', 'wp20' ); ?>
+						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023. Join us!', 'wp20' ); ?>
 					</h1>
 				</header>
 
