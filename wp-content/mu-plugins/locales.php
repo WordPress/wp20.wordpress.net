@@ -14,17 +14,23 @@ use GP_Locales, WP_CLI, cli\progress\Bar;
 
 defined( 'WPINC' ) || die();
 
-require_once trailingslashit( dirname( __FILE__ ) ) . 'locale-detection/locale-detection.php';
-
 if ( ! wp_next_scheduled( 'wp20_update_pomo_files' ) ) {
 	wp_schedule_event( time(), 'hourly', 'wp20_update_pomo_files' );
 }
 
+add_action( 'plugins_loaded', __NAMESPACE__ . '\load_locale_detection' );
 add_filter( 'wp20_update_pomo_files', __NAMESPACE__ . '\update_pomo_files' );
 add_action( 'plugins_loaded', __NAMESPACE__ . '\textdomain' );
 add_filter( 'supercache_filename_str', __NAMESPACE__ . '\cache_key' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets' );
 
+
+/**
+ * Load the Locale Detection plugin.
+ */
+function load_locale_detection() : void {
+	require_once trailingslashit( dirname( __FILE__ ) ) . 'locale-detection/locale-detection.php';
+}
 
 /**
  * Update the PO/MO files for the wp20 text domain.
