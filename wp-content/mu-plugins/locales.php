@@ -10,7 +10,7 @@ Author URI:  https://make.wordpress.org/meta
 
 
 namespace WP20\Locales;
-use GP_Locales, WP_CLI;
+use GP_Locales, WP_CLI, cli\progress\Bar;
 
 defined( 'WPINC' ) || die();
 
@@ -44,6 +44,7 @@ function update_pomo_files() {
 	$set_response      = wp_remote_get( "$gp_api/api/projects/$gp_project" );
 	$body              = json_decode( wp_remote_retrieve_body( $set_response ) );
 	$translation_sets  = isset( $body->translation_sets ) ? $body->translation_sets : false;
+	$in_wpcli          = defined( 'WP_CLI' ) && WP_CLI;
 
 	if ( ! $translation_sets ) {
 		log( 'Translation sets missing from response body.' );
@@ -52,6 +53,10 @@ function update_pomo_files() {
 
 	update_option( 'wp20_locale_data', $translation_sets );
 	wp_mkdir_p( $localizations_dir );
+
+	if ( $in_wpcli ) {
+		$progress = new Bar( 'Importing PO/MO files', count( $translation_sets ) );
+	}
 
 	foreach ( $translation_sets as $set ) {
 		if ( empty( $set->locale ) || empty( $set->wp_locale ) ) {
@@ -75,6 +80,15 @@ function update_pomo_files() {
 		if ( ! $wrote_po || ! $wrote_mo ) {
 			log( "Failed to write PO and/or MO files for {$set->wp_locale}." );
 		}
+
+		if ( $in_wpcli ) {
+			$progress->tick();
+		}
+	}
+
+
+	if ( $in_wpcli ) {
+		$progress->finish();
 	}
 }
 
