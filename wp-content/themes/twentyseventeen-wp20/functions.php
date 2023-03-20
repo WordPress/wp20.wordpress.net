@@ -159,6 +159,8 @@ function internationalize_titles( $title ) {
 			break;
 
 		case "What's On":
+		case "What’s On":
+		case 'What&#8217;s On':
 			// translators: The name of the page that lists the global WP20 meetup events. "What's on" means something similar to "what's going on" or "what's happening".
 			$title = esc_html__( "What's On", 'wp20' );
 			break;
