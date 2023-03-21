@@ -16,6 +16,11 @@ Your local environment should be running at http://localhost:8888
 1. Activate the Twenty Seventeen - WP20 child theme
 1. Import the posts from wp20.wordpress.net
 1. Import `env/wporg_locales.sql` into your database
+1. Add the Surge constants to your `wp-config.php`:
+	```php
+	define( 'WP_CACHE', true );
+	define( 'WP_CACHE_CONFIG', __DIR__ . '/public_html/surge-config.php' );
+	```
 1. Add pages titled `What's on`, `News`, `Live` and `Swag`
 1. In Appearance > Menus, add a navigation menu with the pages `What's on`, `News`, `Live` and `Swag` and set as `Top Menu`
 1. In Appearance > Menus, add a social menu with items such as Facebook, Twitter, etc. and set as `Social Links Menu`
