@@ -21,7 +21,6 @@ if ( ! wp_next_scheduled( 'wp20_update_pomo_files' ) ) {
 add_action( 'plugins_loaded', __NAMESPACE__ . '\load_locale_detection' );
 add_filter( 'wp20_update_pomo_files', __NAMESPACE__ . '\update_pomo_files' );
 add_action( 'plugins_loaded', __NAMESPACE__ . '\textdomain' );
-add_filter( 'supercache_filename_str', __NAMESPACE__ . '\cache_key' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets' );
 
 
@@ -109,25 +108,6 @@ function textdomain() {
 
 	load_textdomain( 'wp20', $path . '/' . $mofile);
 }
-
-
-/**
- * Modify the key for WP Super Cache to take locale into account.
- *
- * @param string $cache_key
- *
- * @return string
- */
-function cache_key( $cache_key ) {
-	$locale = get_locale();
-
-	if ( $locale ) {
-		$cache_key .= '-' . $locale;
-	}
-
-	return $cache_key;
-}
-
 
 /**
  * Register style and script assets for later enqueueing.
