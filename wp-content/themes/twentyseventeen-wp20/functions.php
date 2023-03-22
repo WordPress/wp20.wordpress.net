@@ -258,7 +258,7 @@ function get_swag_download_items() {
 			'files'             => array(
 				array(
 					'name' => __( 'WP20 Logos Pack (zip)', 'wp20' ),
-					'url'  => '',
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/WP20-logos-pack.zip',
 				),
 			),
 		),
@@ -269,7 +269,7 @@ function get_swag_download_items() {
 			'files'             => array(
 				array(
 					'name' => __( 'Multicolor Logos Pack (zip)', 'wp20' ),
-					'url'  => '',
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/WP20-multicolor-logos-pack.zip',
 				),
 			),
 		),
@@ -280,11 +280,11 @@ function get_swag_download_items() {
 			'files'             => array(
 				array(
 					'name' => __( 'Sticker Sheet (Ai)', 'wp20' ),
-					'url'  => '',
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-sticker-sheet-1.ai',
 				),
 				array(
 					'name' => __( 'Sticket Sheet (PDF)', 'wp20' ),
-					'url'  => '',
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-sticker-sheet.pdf',
 				),
 			),
 		),
@@ -295,7 +295,7 @@ function get_swag_download_items() {
 			'files'             => array(
 				array(
 					'name' => __( 'Mystery Pack (zip)', 'wp20' ),
-					'url'  => '',
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/WP20-mystery-pack-1.zip',
 				),
 			),
 		),
