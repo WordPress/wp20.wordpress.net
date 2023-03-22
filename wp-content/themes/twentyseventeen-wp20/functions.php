@@ -12,7 +12,7 @@ add_filter( 'the_title',             __NAMESPACE__ . '\internationalize_titles' 
 add_filter( 'document_title_parts',  __NAMESPACE__ . '\internationalize_document_titles' );
 add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\internationalize_menu_items'      );
 add_action( 'wp_head',               __NAMESPACE__ . '\render_social_meta_tags'          );
-
+add_filter( 'upload_mimes' ,         __NAMESPACE__ . '\custom_upload_mimes'              );
 
 /**
  * Bypass TwentySeventeen's front-page template.
@@ -218,6 +218,17 @@ function internationalize_menu_items( $items ) {
 	}
 
 	return $items;
+}
+
+/**
+ * Allow extra mime types for the upload of swag files.
+ *
+ * @return array
+ */
+function custom_upload_mimes ( $mimes = [] ) {
+	$mimes['ai'] = 'application/pdf';
+
+	return $mimes;
 }
 
 /**
