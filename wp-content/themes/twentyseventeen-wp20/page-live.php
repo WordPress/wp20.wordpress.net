@@ -14,7 +14,7 @@
 						<?php esc_html_e( 'Join the conversation by using #WP20 on your favorite social networks.', 'wp20' ); ?>
 					</p>
 					<div class="entry-content-section">
-						<?php echo do_shortcode( '[tagregator hashtag="#WP20"]' ); ?>
+						<?php echo do_shortcode( '[custom-twitter-feeds feed=1]' ); ?>
 					</div>
 				</div>
 

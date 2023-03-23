@@ -77,7 +77,7 @@ p {
 
 body.page:not(.page-slug-news):not(.single) .entry-title,
 body:not(.page-slug-news):not(.single) .entry-content,
-.wp10-nostalgia,
+.wp15-nostalgia,
 .wp20-social {
 	text-align: center;
 }
@@ -1076,61 +1076,82 @@ body.page .entry-header {
 }
 
 /*
- * Tagregator
+ * Live (Twitter Feed Pro plugin customization)
  */
-#tggr-media-item-container {
-	position: relative;
-	width: 90vw;
-	left: 50%;
-	right: 50%;
-	margin-left: -45vw;
-	margin-right: -45vw;
+
+ #ctf.ctf-masonry .ctf-item {
+	border: 1px solid #D9D9D9;
 }
 
-@media screen and ( min-width: 48em ) {
-	#tggr-media-item-container {
-		width: 80vw;
-		left: 50%;
-		right: 50%;
-		margin-left: -40vw;
-		margin-right: -40vw;
-	}
-}
-
-.tggr-media-item {
-	background-color: var(--wp20--color--grey-9);
-	box-sizing: border-box;
-	border: 2px solid rgba( 180, 185, 190, 0.3 );
-	border-radius: .3em;
-}
-
-.tggr-media-item .tggr-actions {
-	text-align: left;
-}
-
-.tggr-actions a,
-.tggr-media-item a,
-.entry-content .tggr-media-item a {
-	text-decoration: none;
-	box-shadow: none;
-}
-
-#tggr-media-item-container .tggr-actions a span {
-	font-size: 13px;
-	font-weight: 600;
-	text-transform: uppercase;
-}
-
-.tggr-media-item a:hover,
-.tggr-media-item .tggr-actions a:hover span {
+#ctf a {
 	text-decoration: none;
 }
 
-a.tggr-author-profile,
-a:hover.tggr-author-profile {
-	box-shadow: none;
+#ctf a:hover,
+#ctf a:focus {
+	text-decoration: underline;
 }
 
+#ctf .ctf-corner-logo {
+	color: var(--wp20--color--grey-8);
+}
+
+#ctf .ctf-author-box,
+#ctf_lightbox .ctf-author-box {
+	width: 100%;
+	padding-left: 0;
+}
+
+#ctf .ctf-author-box-link,
+#ctf_lightbox .ctf-author-box-link {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto 1fr auto;
+	column-gap: 10px;
+}
+
+#ctf .ctf-author-name,
+#ctf .ctf-author-screenname,
+#ctf .ctf-tweet-meta,
+#ctf .ctf-verified,
+#ctf_lightbox .ctf-author-name,
+#ctf_lightbox .ctf-author-screenname,
+#ctf_lightbox .ctf-tweet-meta,
+#ctf_lightbox .ctf-verified {
+	margin: 0;
+}
+
+#ctf .ctf-author-avatar,
+#ctf_lightbox .ctf-author-avatar {
+	margin-left: 0;
+	grid-row-end: 4;
+	grid-row-start: 1;
+}
+
+#ctf .ctf-author-screenname,
+#ctf_lightbox .ctf-author-screenname {
+	grid-row-start: 2;
+}
+
+#ctf .ctf-screename-sep,
+#ctf_lightbox .ctf-screename-sep {
+	display: none;
+}
+
+#ctf .ctf-tweet-meta,
+#ctf_lightbox .ctf-tweet-meta {
+	grid-row-start: 3;
+}
+
+#ctf .ctf-tweet-actions,
+#ctf .ctf-tweet-content {
+	margin-left: 0;
+	margin-top: 15px;
+}
+
+.ctf_lb-data .ctf-caption-text {
+	margin-left: 0;
+}
 
 /*
  * Embeds
@@ -1143,7 +1164,6 @@ iframe.wp-embedded-content {
 	border: 2px solid rgba( 180, 185, 190, 0.3 );
 	border-radius: .3em;
 }
-
 
 /*
  * Footer
