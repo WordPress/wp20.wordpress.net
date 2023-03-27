@@ -1,4 +1,4 @@
-			<div class="wrap">
+			<div class="wrap wrap-wide">
 
 			<?php if ( has_nav_menu( 'social' ) && ( is_page('news') || is_single() ) ) :
 			?>
@@ -37,7 +37,7 @@
 
 
 		<footer id="colophon" class="site-footer">
-			<div class="wrap">
+			<div class="wrap wrap-wide">
 				<?php
 				get_template_part( 'template-parts/footer/footer', 'widgets' );
 
