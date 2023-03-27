@@ -363,10 +363,6 @@ body.page .entry-header {
 	padding: 0;
 }
 
-.main-navigation li {
-	padding: 0 var(--wp20--spacing--xsmall);
-}
-
 .main-navigation.toggled-on .menu-top-menu-container {
 	width: 100vw;
 }
@@ -385,6 +381,12 @@ body.page .entry-header {
 
 .main-navigation.toggled-on .menu-top-menu-container li a {
 	color: var(--wp20--color--text);
+}
+
+@media screen and (max-width: 48em) {
+	.main-navigation li {
+		padding: 0 var(--wp20--spacing--xsmall);
+	}
 }
 
 @media screen and (min-width: 48em) {
