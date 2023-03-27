@@ -47,7 +47,7 @@ Template:    twentyseventeen
 
 body {
 	font-family: 'Inter', sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	color: var(--wp20--color--text);
 }
 
@@ -72,13 +72,6 @@ p {
 /*
  * Typography
  */
-
-body.page:not(.page-slug-news):not(.single) .entry-title,
-body:not(.page-slug-news):not(.single) .entry-content,
-.wp10-nostalgia,
-.wp20-social {
-	text-align: center;
-}
 
 .page .panel-content .entry-title, 
 .page-title, 
@@ -119,8 +112,9 @@ body.page .entry-header {
 }
 
 .site-content,
-.twentyseventeen-front-page .site-content {
-	padding: var(--wp20--spacing--medium) 0 0;
+.twentyseventeen-front-page .site-content,
+.page:not(.home) #content {
+	padding: var(--wp20--spacing--medium) 0 var(--wp20--spacing--xsmall);
 }
 
 .entry-content-section {
@@ -162,11 +156,6 @@ body.page .entry-header {
 
 	.wrap.wrap-wide {
 		max-width: var(--wp20--screen-width-wide);
-	}
-
-	.site-content,
-	.twentyseventeen-front-page .site-content {
-		padding: var(--wp20--spacing--large) 0 0;
 	}
 
 	.page.page-one-column .entry-header,
@@ -1144,21 +1133,105 @@ iframe.wp-embedded-content {
  * Footer
  */
 
-.wp20-social {
-	padding-top: var(--wp20--spacing--large);
+.wp20-pre-footer {
+	border-top: 1px solid var(--wp20--color--border);
+}
+
+.wp20-pre-footer .wrap > p {
+	margin-top: var(--wp20--spacing--xsmall);
+	width: 65%;
+}
+
+.wp20-confetti-divider {
+	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: var(--wp20--spacing--small);
+	height: 120px;
+	background-image: url( 'images/confetti-footer.svg' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 @media screen and ( min-width: 48em ) {
-	.wp20-social {
+	.wp20-pre-footer .wrap {
 		display: flex;
+		align-items: center;
+		gap: var(--wp20--spacing--small);
+	}
+
+	.wp20-pre-footer .wrap > p {
+		width: 20%;
+	}
+
+	.wp20-confetti-divider {
+		order: 2;
+		flex: 1;
+		margin-top: var(--wp20--spacing--xsmall);
+	}
+
+	.wp20-nostalgia {
+		order: 3;
+		text-align: end;
 	}
 }
 
-.wp20-social p {
-	margin-bottom: 0;
-	margin-right: 7px;
+.site-footer {
+	margin-top: 0;
+	background-color: var(--wp20--color--primary);
+	color: white;
+	border: unset;
+}
+
+.site-footer .wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-top: var(--wp20--spacing--xsmall);
+	padding-bottom: var(--wp20--spacing--xsmall);
+}
+
+.site-footer .wrap a {
+	color: white;
+	height: 40px;
+	display: flex;
+	align-items: center;
+}
+
+.site-footer .wrap a.wp20-wordpress-logo {
+	display: none;
+}
+
+.wp20-wordpress-logo svg,
+.wp20-wordpress-mark svg,
+.social-navigation .icon {
+	display: inline-block;
+	height: 24px;
+}
+
+.wp20-wordpress-mark svg,
+.social-navigation .icon {
+	width: 24px;
+}
+
+.wp20-wordpress-logo svg {
+	width: auto;
+}
+
+.wp20-wordpress-mark {
+	display: block;
+}
+
+.wp20-poetry {
+	flex: 1;
+	text-align: center;
+}
+
+.wp20-social {
+	text-align: end;
 }
 
 .site-info,
@@ -1168,6 +1241,7 @@ iframe.wp-embedded-content {
 
 .social-navigation {
 	width: auto;
+	margin: unset;
 }
 
 .social-navigation li {
@@ -1175,10 +1249,14 @@ iframe.wp-embedded-content {
 }
 
 .social-navigation a {
-	color: var(--wp20--color--grey-0);
 	background-color: unset;
 	margin: 0;
-	width: 28px;
+	justify-content: center;
+	width: 37px;
+}
+
+.social-navigation .icon {
+	top: unset;
 }
 
 .social-navigation a:hover,
@@ -1187,45 +1265,23 @@ iframe.wp-embedded-content {
 	background-color: unset;
 }
 
-.wp10-nostalgia {
-	margin: var(--wp20--spacing--small) 0 0;
-}
-
-.wp20-confetti-divider {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: var(--wp20--spacing--small) auto;
-	height: 145px;
-	background-image: url( 'images/confetti-divider.svg' );
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.site-info {
-	width: 100%;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-
-.site-footer {
-	margin-top: var(--wp20--spacing--medium);
-	border-top-color: var(--wp20--color--border);
-}
-
-.site-footer .wrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 0;
-	padding-bottom: 0;
-	min-height: 80px;
+@media screen and ( max-width: 48em ) {
+	.wp20-poetry {
+		display: none;
+	}
 }
 
 @media screen and ( min-width: 48em ) {
-	.site-footer {
-		margin-top: var(--wp20--spacing--large);
+	.site-footer .wrap a.wp20-wordpress-mark {
+		display: none;
+	}
+
+	.site-footer .wrap a.wp20-wordpress-logo {
+		display: flex;
+	}
+
+	.wp20-wordpress-logo,
+	.wp20-social {
+		width: 20%;
 	}
 }
