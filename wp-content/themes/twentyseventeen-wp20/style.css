@@ -318,6 +318,12 @@ body.page .entry-header {
 	border-bottom: 1px solid var(--wp20--color--border);
 }
 
+@media screen and (max-width: 48em) {
+	.navigation-top {
+		padding: 0;
+	}
+}
+
 @media screen and (min-width: 48em) {
 	.navigation-top {
 		border-bottom: 0;
@@ -351,6 +357,14 @@ body.page .entry-header {
 
 .admin-bar .site-navigation-fixed.navigation-top {
 	top: auto;
+}
+
+.main-navigation > div > ul {
+	padding: 0;
+}
+
+.main-navigation li {
+	padding: 0 var(--wp20--spacing--xsmall);
 }
 
 .main-navigation.toggled-on .menu-top-menu-container {
