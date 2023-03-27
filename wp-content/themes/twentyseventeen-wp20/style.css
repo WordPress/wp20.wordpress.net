@@ -716,6 +716,12 @@ body.page .entry-header {
 	}
 }
 
+@media screen and ( min-width: 48em ) {
+	body.page.page-slug-whats-on .entry-header .entry-title {
+		width: 55%;
+	}
+}
+
 #wp20-events-filter {
 	margin-bottom: 3em;
 	text-align: center;
