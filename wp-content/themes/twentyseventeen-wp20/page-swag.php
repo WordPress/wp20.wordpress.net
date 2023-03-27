@@ -4,7 +4,7 @@ use WP20\Theme;
 
 <?php get_header(); ?>
 
-	<div class="wrap wrap-unconstrained">
+	<div class="wrap wrap-wide">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,9 +14,7 @@ use WP20\Theme;
 					</header>
 					
 					<div class="entry-content">
-						<p class="wrap wrap-constrained">
-							<?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
-						</p>
+						<?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
 
 						<ul class="entry-content-section downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
@@ -41,14 +39,12 @@ use WP20\Theme;
 							<?php endforeach; ?>
 						</ul>
 
-						<p class="wrap wrap-constrained">
-							<?php
-							printf(
-								wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> to get your hands on new, limited edition WP20 swag.', 'wp20' ) ),
-								'https://mercantile.wordpress.org/product-category/wordpress-20/'
-							);
-							?>
-						</p>
+						<?php
+						printf(
+							wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> to get your hands on new, limited edition WP20 swag.', 'wp20' ) ),
+							'https://mercantile.wordpress.org/product-category/wordpress-20/'
+						);
+						?>
 
 					</div>
 

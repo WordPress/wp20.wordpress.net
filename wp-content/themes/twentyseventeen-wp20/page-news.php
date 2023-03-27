@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="wrap wrap-unconstrained wp20-news">
+	<div class="wrap wp20-news">
 		<div id="secondary">
 			<h1 class="entry-title">
 				<?php

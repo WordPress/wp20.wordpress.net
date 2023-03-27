@@ -22,7 +22,7 @@ use WP20\Locales;
 			<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 			<?php if ( has_nav_menu( 'top' ) ) : ?>
-				<div class="navigation-top">
+				<div class="navigation-top wrap wrap-wide">
 					<?php get_template_part( 'template-parts/header/navigation', 'top' ); ?>
 					<?php Locales\locale_switcher(); ?>
 				</div>

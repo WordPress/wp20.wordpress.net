@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<div class="wrap wrap-unconstrained">
+<div class="wrap">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
