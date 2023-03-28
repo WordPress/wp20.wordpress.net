@@ -30,7 +30,7 @@
 
 			// This has to stay `select2`; `selectWoo:open` will not work.
 			app.$switcher.on( 'select2:open', function() {
-				app.$container.find( 'input[type="search"]').attr('placeholder', app.$container.attr( 'data-placeholder' ) );
+				app.$container.find( 'input' ).attr( 'placeholder', app.$container.attr( 'data-placeholder' ) );
 
 				// Turn off the menu if it's open.
 				if( $( '#site-navigation' ).hasClass( 'toggled-on' ) ) {
