@@ -531,7 +531,7 @@ body.page .entry-header {
 
 .menu-toggle:focus, 
 .menu-toggle:hover {
-	background: #F7F7F7 !important;
+	background: var(--wp20--color--active-menu) !important;
 	outline: none;
 }
 
@@ -585,17 +585,12 @@ body.page .entry-header {
 	text-align: right;
 	height: 55px;
 	line-height: 55px;
+	width: 50%;
 }
 
 @media screen and (max-width:47em) {
-	.wp20-locale-switcher-container:focus-within {
-		background: #F7F7F7;
-		width: 50%;
-	}
-
-	.wp20-locale-switcher-container:focus-within .select2-selection__rendered {
-		font-weight: 700;
-		text-decoration: none;
+	.wp20-locale-switcher-container.is-toggled {
+		background: var(--wp20--color--active-menu);
 	}
 }
 
@@ -630,6 +625,12 @@ body.page .entry-header {
 
 .wp20-locale-switcher-container .select2-container .select2-selection--single .select2-selection__rendered {
 	padding-right: 22px !important;
+	color: var(--wp20--color--grey-6);
+}
+
+.wp20-locale-switcher-container .select2-container--open .select2-selection--single .select2-selection__rendered {
+	color: var(--wp20--color--text);
+	font-weight: 700;
 }
 
 .wp20-locale-switcher-container.select2-selection--single .select2-selection__rendered {

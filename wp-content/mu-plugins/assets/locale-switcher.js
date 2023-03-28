@@ -15,6 +15,7 @@
 			app.$switcher = $( '#wp20-locale-switcher' );
 			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
+			app.$outerContainer = $( '.wp20-locale-switcher-container' );
 
 			app.$switcher.selectWoo( {
 				language: app.locale,
@@ -36,7 +37,13 @@
 				if( $( '#site-navigation' ).hasClass( 'toggled-on' ) ) {
 					$( '.menu-toggle' ).trigger( 'click' );
 				}
+
+				app.$outerContainer.addClass( 'is-toggled' );
 			} );
+
+			app.$switcher.on( 'select2:close', function() {
+				app.$outerContainer.removeClass( 'is-toggled' );
+			} )
 
 			app.$notice.on( 'click', '.wp20-locale-notice-dismiss', function( event ) {
 				event.preventDefault();
