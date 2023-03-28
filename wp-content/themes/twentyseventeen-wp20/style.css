@@ -619,8 +619,18 @@ body.page .entry-header {
 	text-align:right;
 }
 
+/* The select language label */
 .wp20-locale-switcher-container .select2-selection .select2-selection__rendered {
 	font-size: 14px;
+	max-width: 150px;
+	text-overflow: ellipsis;
+}
+
+/* Remove the ellipsis overflow */
+@media screen and (min-width: 375px) {
+	.wp20-locale-switcher-container .select2-selection .select2-selection__rendered {
+		max-width: unset;
+	}
 }
 
 .wp20-locale-switcher-container .select2-container .select2-selection--single .select2-selection__rendered {
