@@ -22,11 +22,15 @@ use WP20\Locales;
 			<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 			<?php if ( has_nav_menu( 'top' ) ) : ?>
-				<div class="navigation-top wrap wrap-wide">
-					<?php get_template_part( 'template-parts/header/navigation', 'top' ); ?>
-					<?php Locales\locale_switcher(); ?>
+				<div class="navigation-top-container">
+					<div class="navigation-top">
+						<div class="wrap wrap-wide">
+							<?php get_template_part( 'template-parts/header/navigation', 'top' ); ?>
+							<?php Locales\locale_switcher(); ?>
+						</div>
+					</div>
+					<div class="navigation-top-menu-container" data-placeholder="<?php esc_attr_e( 'Search languages...', 'wp20' ); ?>"></div>
 				</div>
-				<div class="navigation-top-menu-container" data-placeholder="<?php esc_attr_e( 'Search languages...', 'wp20' ); ?>"></div>
 			<?php endif; ?>
 		</header>
 
