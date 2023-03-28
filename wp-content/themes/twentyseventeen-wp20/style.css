@@ -719,7 +719,7 @@ body.page .entry-header {
 
 .navigation-top-menu-container .select2-container--default .select2-results__option[aria-selected=true] {
 	color: var(--wp20--color--text-link) !important;
-	font-weight: 500;
+	font-weight: 700;
 }
 
 /*
