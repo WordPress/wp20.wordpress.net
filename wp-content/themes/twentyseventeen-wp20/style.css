@@ -426,6 +426,7 @@ body.page .entry-header {
 .navigation-top a {
 	color: var(--wp20--color--text);
 	font-weight: 400;
+	padding: 12px 0;
 }
 
 .navigation-top .current-menu-item > a,
@@ -465,7 +466,6 @@ body.page .entry-header {
 }
 
 .main-navigation.toggled-on .menu-top-menu-container li {
-	padding: 12px var(--wp20--spacing--edge-space);
 	border-top: 1px solid var(--wp20--color--border);
 	border-bottom: 0;
 	font-size: 14px;
