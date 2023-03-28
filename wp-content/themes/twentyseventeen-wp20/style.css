@@ -54,6 +54,14 @@ body {
 
 a {
 	color: var(--wp20--color--text-link);
+	box-shadow: none !important;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: var(--wp20--color--text-link);
+	text-decoration: underline;
 }
 
 ol {
@@ -104,6 +112,88 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 	.single-post .entry-title, .page .entry-title {
 		font-size: 30px;
 	}
+}
+
+/*
+ * Links
+ */
+
+.entry-meta a,
+.page-links a,
+.page-links a .page-number,
+.entry-footer a,
+.entry-footer .cat-links a,
+.entry-footer .tags-links a,
+.edit-link a,
+.post-navigation a,
+.logged-in-as a,
+.comment-navigation a,
+.comment-metadata a,
+.comment-metadata a.comment-edit-link,
+.comment-reply-link,
+.pagination a,
+.comments-pagination a,
+.site-info a,
+.widget .widget-title a,
+.widget ul li a,
+.site-footer .widget-area ul li a,
+.site-footer .widget-area ul li a {
+	color: var(--wp20--color--text-link);
+}
+
+.entry-content a:focus,
+.entry-content a:hover,
+.entry-summary a:focus,
+.entry-summary a:hover,
+.comment-content a:focus,
+.comment-content a:hover,
+.widget a:focus,
+.widget a:hover,
+.site-footer .widget-area a:focus,
+.site-footer .widget-area a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:hover,
+.comment-metadata a:focus,
+.comment-metadata a:hover,
+.comment-metadata a.comment-edit-link:focus,
+.comment-metadata a.comment-edit-link:hover,
+.comment-reply-link:focus,
+.comment-reply-link:hover,
+.widget_authors a:focus strong,
+.widget_authors a:hover strong,
+.entry-title a:focus,
+.entry-title a:hover,
+.entry-meta a:focus,
+.entry-meta a:hover,
+.page-links a:focus .page-number,
+.page-links a:hover .page-number,
+.entry-footer a:focus,
+.entry-footer a:hover,
+.entry-footer .cat-links a:focus,
+.entry-footer .cat-links a:hover,
+.entry-footer .tags-links a:focus,
+.entry-footer .tags-links a:hover,
+.post-navigation a:focus,
+.post-navigation a:hover,
+.pagination a:not(.prev):not(.next):focus,
+.pagination a:not(.prev):not(.next):hover,
+.comments-pagination a:not(.prev):not(.next):focus,
+.comments-pagination a:not(.prev):not(.next):hover,
+.logged-in-as a:focus,
+.logged-in-as a:hover,
+a:focus .nav-title,
+a:hover .nav-title,
+.edit-link a:focus,
+.edit-link a:hover,
+.site-info a:focus,
+.site-info a:hover,
+.widget .widget-title a:focus,
+.widget .widget-title a:hover,
+.widget ul li a:focus,
+.widget ul li a:hover {
+	color: var(--wp20--color--text-link);
+	text-decoration: underline;
+	box-shadow: none !important;
 }
 
 /*
@@ -180,50 +270,6 @@ body.page .entry-header {
 	body.page .entry-content {
 		margin-bottom: var(--wp20--spacing--large);
 	}
-}
-
-/*
- * Links
- */
-
-.entry-content a,
-.entry-summary a,
-.widget a,
-.site-footer .widget-area a,
-.posts-navigation a,
-.widget_authors a strong,
-.wp10-nostalgia a,
-.entry-meta .author a {
-	color: var(--wp20--color--text-link);
-	-webkit-box-shadow: inset 0 -1px 0 rgba(56, 88, 233, 1);
-	box-shadow: inset 0 -1px 0 rgba(56, 88, 233, 1);
-}
-
-.entry-content a:hover,
-.entry-summary a:hover,
-.widget a:hover,
-.site-footer .widget-area a:hover,
-.posts-navigation a:hover,
-.widget_authors a:hover strong,
-.wp10-nostalgia a:hover,
-.entry-meta .author a:hover {
-	color: var(--wp20--color--text-link);
-	-webkit-box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
-	box-shadow: inset 0 0 0 rgb(56 88 233 / 0%), 0 3px 0 rgb(56 88 233);
-}
-
-.entry-meta a {
-	color: var(--wp20--color--text-meta);
-}
-
-.entry-meta a:hover {
-	color: var(--wp20--color--text-meta);
-	-webkit-box-shadow: inset 0 0 0 rgb(101 106 113 / 0%), 0 3px 0 rgb(101 106 113);
-	box-shadow: inset 0 0 0 rgb(101 106 113 / 0%), 0 3px 0 rgb(101 106 113);
-}
-
-.site-info a {
-	color: var(--wp20--color--text-muted);
 }
 
 /*
@@ -975,7 +1021,8 @@ body.page .entry-header {
  * Swag
  */
 
-.downloads-wrapper, .downloads-wrapper *,
+.downloads-wrapper,
+.downloads-wrapper *,
 .downloads-wrapper :before, .downloads-wrapper :after {
 	box-sizing: border-box;
 }
@@ -1268,6 +1315,7 @@ iframe.wp-embedded-content {
 	margin: 0;
 	justify-content: center;
 	width: 37px;
+	transition: opacity 0.2s ease-in-out;
 }
 
 .social-navigation .icon {
@@ -1276,7 +1324,7 @@ iframe.wp-embedded-content {
 
 .social-navigation a:hover,
 .social-navigation a:focus {
-	color: var(--wp20--color--primary);
+	opacity: 0.7;
 	background-color: unset;
 }
 
