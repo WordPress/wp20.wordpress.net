@@ -424,13 +424,21 @@ body.page .entry-header {
 }
 
 .navigation-top a {
+	color: var(--wp20--color--text);
 	font-weight: 400;
 }
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: var(--wp20--color--text);
+	color: var(--wp20--color--primary);
 	font-weight: 700;
+}
+
+@media screen and (min-width: 48em) {
+	.navigation-top .current-menu-item > a,
+	.navigation-top .current_page_item > a {
+		color: var(--wp20--color--text);
+	}
 }
 
 .site-navigation-fixed.navigation-top {
