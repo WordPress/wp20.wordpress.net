@@ -16,7 +16,7 @@ use WP20\Theme;
 							<?php esc_html_e( 'Print your own swag! These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
 						</p>
 
-						<ul class="entry-content-section downloads-wrapper">
+						<ul class="downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
 								<li class="downloads-item">
 									<div class="downloads-item-preview">

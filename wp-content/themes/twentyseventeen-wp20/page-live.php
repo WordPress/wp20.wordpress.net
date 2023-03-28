@@ -5,15 +5,13 @@
 		<main id="main" class="site-main" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<h1 class="entry-title screen-reader-text">
-					<?php the_title(); ?>
-				</h1>
+				<h1 class="entry-title screen-reader-text"><?php the_title(); ?></h1>
 				
 				<div class="entry-content">
 					<p>
-						<?php esc_html_e( 'Join the conversation by using #WP20 on your favorite social networks.', 'wp20' ); ?>
+						<?php echo wp_kses_post( __( 'Join the conversation by using <strong>#WP20</strong> on your favorite social networks.', 'wp20' ) ); ?>
 					</p>
-					<div class="entry-content-section">
+					<div>
 						<?php echo do_shortcode( '[tagregator hashtag="#WP20"]' ); ?>
 					</div>
 				</div>

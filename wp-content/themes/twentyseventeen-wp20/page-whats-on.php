@@ -12,9 +12,7 @@
 				</header>
 
 				<div class="entry-content">
-					<div class="entry-content-section">
-						<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
-					</div>
+					<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
 				</div>
 
 			</article>
