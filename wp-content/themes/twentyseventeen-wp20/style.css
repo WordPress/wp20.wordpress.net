@@ -513,6 +513,7 @@ body.page .entry-header {
 	text-align: left;
 	border-radius: 0;
 	width: 50%;
+	box-sizing: border-box;
 }
 
 /* TT17 Rule */
