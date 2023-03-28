@@ -1200,35 +1200,26 @@ iframe.wp-embedded-content {
 	padding-bottom: var(--wp20--spacing--xsmall);
 }
 
-.site-footer .wrap a {
+.site-footer a {
 	color: white;
 	height: 40px;
 	display: flex;
 	align-items: center;
 }
 
-.site-footer .wrap a.wp20-wordpress-logo {
+.site-footer a.wp20-wordpress-logo {
 	display: none;
 }
 
-.wp20-wordpress-logo svg,
-.wp20-wordpress-mark svg,
+.wp20-wordpress-logo img,
+.wp20-wordpress-mark img,
 .social-navigation .icon {
 	display: inline-block;
 	height: 24px;
 }
 
-.wp20-wordpress-mark svg,
 .social-navigation .icon {
 	width: 24px;
-}
-
-.wp20-wordpress-logo svg {
-	width: auto;
-}
-
-.wp20-wordpress-mark {
-	display: block;
 }
 
 .wp20-poetry {
@@ -1278,16 +1269,16 @@ iframe.wp-embedded-content {
 }
 
 @media screen and ( min-width: 48em ) {
-	.site-footer .wrap a.wp20-wordpress-mark {
+	.site-footer a.wp20-wordpress-mark {
 		display: none;
 	}
 
-	.site-footer .wrap a.wp20-wordpress-logo {
+	.site-footer a.wp20-wordpress-logo {
 		display: flex;
 	}
 
 	.wp20-wordpress-logo,
 	.wp20-social {
-		width: 20%;
+		width: 30%;
 	}
 }
