@@ -34,6 +34,8 @@ Template:    twentyseventeen
 	--wp20--spacing--large: 80px;
 	--wp20--spacing--edge-space: var(--wp20--spacing--xsmall);
 
+	--wp20--spacing--menu-spacing: 17px;
+
 	--wp20--screen-width: 940px;
 	--wp20--screen-width-wide: 1160px;
 
@@ -505,6 +507,7 @@ body.page .entry-header {
 
 .menu-toggle {
 	margin: 0;
+	padding: var(--wp20--spacing--menu-spacing) var(--wp20--spacing--edge-space);
 	color: var(--wp20--color--text);
 	font-weight: 400;
 	text-align: left;
@@ -579,8 +582,8 @@ body.page .entry-header {
 	right: 0;
 	margin: 0 auto;
 	text-align: right;
-	height: 49px;
-	line-height: 49px;
+	height: 55px;
+	line-height: 55px;
 }
 
 @media screen and (max-width:47em) {
