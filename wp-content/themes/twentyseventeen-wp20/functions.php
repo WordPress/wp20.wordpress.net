@@ -263,7 +263,7 @@ function get_swag_download_items() {
 			),
 		),
 		array(
-			'title'             => __( 'Colored Logos', 'wp20' ),
+			'title'             => __( 'Multicolor Logos', 'wp20' ),
 			'content'           => __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(

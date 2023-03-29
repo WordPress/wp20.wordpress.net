@@ -1,16 +1,13 @@
 <?php get_header(); ?>
 
 	<div class="wrap wp20-news">
+		
 		<div id="secondary">
 			<h1 class="entry-title">
-				<?php
-				printf(
-					wp_kses_post( __( 'Latest <a href="%s">#WP20</a> <br>Updates', 'wp20' ) ),
-					''
-				);
-				?>
+				<?php esc_html_e( 'Latest #WP20 News', 'wp20' ); ?>
 			</h1>
 		</div>
+
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 

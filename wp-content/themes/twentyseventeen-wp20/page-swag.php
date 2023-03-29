@@ -9,14 +9,14 @@ use WP20\Theme;
 			<main id="main" class="site-main" role="main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<header class="entry-header">
-						<h1 class="entry-title"><?php esc_html_e( 'Print your own swag', 'wp20' ); ?></h1>
-					</header>
+					<h1 class="entry-title screen-reader-text"><?php the_title(); ?></h1>
 					
 					<div class="entry-content">
-						<?php esc_html_e( 'These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
+						<p>
+							<?php esc_html_e( 'Print your own swag! These 20th anniversary logos and files are available for download for folks who want to print their own swag:', 'wp20' ); ?>
+						</p>
 
-						<ul class="entry-content-section downloads-wrapper">
+						<ul class="downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
 								<li class="downloads-item">
 									<div class="downloads-item-preview">
@@ -38,13 +38,6 @@ use WP20\Theme;
 								</li>
 							<?php endforeach; ?>
 						</ul>
-
-						<?php
-						printf(
-							wp_kses_post( __( 'Check out the <a href="%s">WordPress Swag Store</a> to get your hands on new, limited edition WP20 swag.', 'wp20' ) ),
-							'https://mercantile.wordpress.org/product-category/wordpress-20/'
-						);
-						?>
 
 					</div>
 
