@@ -55,8 +55,8 @@
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . __( 'Previous Post', 'wp20' ),
-					'next_text' => '<span class="nav-subtitle">' . __( 'Next Post', 'wp20' ),
+					'prev_text' => '<span class="nav-subtitle">' . __( 'Previous', 'wp20' ),
+					'next_text' => '<span class="nav-subtitle">' . __( 'Next', 'wp20' ),
 				)
 			);
 
