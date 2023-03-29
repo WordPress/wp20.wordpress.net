@@ -294,7 +294,7 @@ body.page .entry-header {
 	background-size: cover;
 }
 
-.page-slug-whats-on .custom-header {
+.twentyseventeen-front-page .custom-header {
 	height: 76vw;
 	max-height: 550px;
 	min-height: 285px;
@@ -306,12 +306,12 @@ body.page .entry-header {
 		background-image: url( 'images/confetti-header-mobile.svg' );
 	}
 	
-	.page-slug-whats-on .custom-header {
+	.twentyseventeen-front-page .custom-header {
 		height: 76vw;
 		max-height: 550px;
 	}
 	
-	body:not(.page-slug-whats-on) .custom-header {
+	body:not(.twentyseventeen-front-page) .custom-header {
 		min-height: 160px;
 		background-position-y: 38%;
 	}
@@ -328,7 +328,7 @@ body.page .entry-header {
 	padding: 0 !important;
 }
 
-.page-slug-whats-on .site-branding {
+.twentyseventeen-front-page .site-branding {
 	grid-template-rows: 2fr minmax(100px, 2.2fr) 1fr auto 0.5fr;
 }
 

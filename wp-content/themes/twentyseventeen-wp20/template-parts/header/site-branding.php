@@ -6,7 +6,7 @@
 
 	<?php the_custom_logo(); ?>
 
-	<?php if ( is_page( 'whats-on' ) ): ?>
+	<?php if ( is_front_page() ): ?>
 	<div class="site-branding-text">
 		<em><?php esc_html_e( 'WordPress celebrates twenty years', 'twentyseventeen' ) ?></em>
 	</div><!-- .site-branding-text -->
