@@ -7,12 +7,12 @@
 
 				<header class="entry-header">
 					<h1 class="entry-title">
-						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2022. Join the meetups throughout the whole year!', 'wp20' ); ?>
+						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023. Join the meetups throughout the whole year!', 'wp20' ); ?>
 					</h1>
 				</header>
 
 				<div class="entry-content">
-					<?php echo do_shortcode( '[wp20_meetup_events]' ); ?>
+					<?php echo do_shortcode( '[wp20_meetup_events]' ); ?> 
 				</div>
 
 			</article>
