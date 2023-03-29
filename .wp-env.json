@@ -7,7 +7,7 @@
 		"./wp-content/plugins/wp20-meetup-events"
 	],
 	"themes": [
-		"./wp-content/themes/twentyseventeen",
+		"https://downloads.wordpress.org/theme/twentyseventeen.3.1.zip",
 		"./wp-content/themes/twentyseventeen-wp20"
 	],
 	"mappings": {
