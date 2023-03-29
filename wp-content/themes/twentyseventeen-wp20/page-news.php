@@ -7,14 +7,14 @@
 				<?php esc_html_e( 'Latest #WP20 News', 'wp20' ); ?>
 			</h1>
 		</div>
-		
+
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
 				<?php
 				$query = new WP_Query( array(
 					'posts_per_page' => 3,
-					'paged'          => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+					'paged'          => is_front_page() ? get_query_var( 'page', 1 ) : get_query_var( 'paged', 1 ),
 				) );
 
 				if ( $query->have_posts() ) {
@@ -25,15 +25,19 @@
 
 					endwhile;
 
-					$links = paginate_links(
-						array(
-							'total'     => $query->max_num_pages,
-							'prev_text' => __( '<span class="nav-subtitle">Previous</span>', 'wp20' ),
-							'next_text' => __( '<span class="nav-subtitle">Next</span>', 'wp20' ),
-							'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'wp20' ) . ' </span><span class="nav-subtitle">',
-							'after_page_number'  => '</span>',
-						)
+					$paginate_links_args = array(
+						'total'              => $query->max_num_pages,
+						'prev_text'          => __( '<span class="nav-subtitle">Previous</span>', 'wp20' ),
+						'next_text'          => __( '<span class="nav-subtitle">Next</span>', 'wp20' ),
+						'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'wp20' ) . ' </span><span class="nav-subtitle">',
+						'after_page_number'  => '</span>',
 					);
+
+					if ( is_front_page() ) {
+						$paginate_links_args['current'] = $query->get( 'paged', 1 );
+					}
+
+					$links = paginate_links( $paginate_links_args );
 
 					if ( $links ) {
 						echo _navigation_markup( $links );
