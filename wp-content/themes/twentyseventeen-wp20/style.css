@@ -421,6 +421,19 @@ body.page .entry-header {
 	}
 }
 
+/* Override base styles */
+.navigation-top .wrap {
+	box-sizing: content-box;
+	padding: 0;
+}
+
+@media screen and (min-width: 48em) {
+	.navigation-top .wrap {
+		padding-left: var(--wp20--spacing--edge-space);
+		padding-right: var(--wp20--spacing--edge-space);
+	}
+}
+
 .navigation-top > * {
 	flex-basis: 50%;
 }
