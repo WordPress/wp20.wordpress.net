@@ -948,10 +948,6 @@ body.page .entry-header {
 		flex: 1;
 	}
 
-	.single .wp20-footer {
-		border-top: 1px solid var(--wp20--color--border);
-	}
-
 	.wp20-news .post {
 		margin-bottom: var(--wp20--spacing--small);
 	}
@@ -1325,12 +1321,12 @@ iframe.wp-embedded-content {
  * Footer
  */
 
-.wp20-pre-footer {
+.wp20-footer {
 	border-top: 1px solid var(--wp20--color--border);
 	padding-top: var(--wp20--spacing--small);
 }
 
-.wp20-pre-footer .wrap > p {
+.wp20-footer .wrap > p {
 	font-size: 14px;
 	line-height: 1.5;
 	width: 65%;
@@ -1352,17 +1348,17 @@ iframe.wp-embedded-content {
 }
 
 @media screen and ( min-width: 48em ) {
-	.wp20-pre-footer {
+	.wp20-footer {
 		margin-top: var(--wp20--spacing--small);
 	}
 
-	.wp20-pre-footer .wrap {
+	.wp20-footer .wrap {
 		display: flex;
 		align-items: center;
 		gap: var(--wp20--spacing--small);
 	}
 
-	.wp20-pre-footer .wrap > p {
+	.wp20-footer .wrap > p {
 		width: 20%;
 		margin-bottom: 0;
 	}
@@ -1461,12 +1457,6 @@ iframe.wp-embedded-content {
 @media screen and ( max-width: 48em ) {
 	.wp20-poetry {
 		display: none;
-	}
-}
-
-@media screen and ( max-width: 48em ) {
-	.wp20-footer {
-		font-size: 14px;
 	}
 }
 
