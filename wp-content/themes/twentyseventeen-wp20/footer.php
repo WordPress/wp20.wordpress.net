@@ -1,4 +1,4 @@
-			<div class="wp20-pre-footer">
+			<div class="wp20-footer">
 				<div class="wrap wrap-wide">
 					<p>
 						<?php 

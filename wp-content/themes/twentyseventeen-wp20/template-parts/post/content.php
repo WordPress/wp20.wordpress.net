@@ -52,6 +52,14 @@
 					'link_after'  => '</span>',
 				)
 			);
+
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . __( 'Previous <span>Post</span>', 'wp20' ),
+					'next_text' => '<span class="nav-subtitle">' . __( 'Next <span>Post</span>', 'wp20' ),
+				)
+			);
+
 			?>
 		</div><!-- .entry-content -->
 	</div>
