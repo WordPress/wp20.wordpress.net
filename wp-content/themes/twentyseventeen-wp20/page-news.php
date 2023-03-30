@@ -3,9 +3,11 @@
 	<div class="wrap wp20-news">
 		
 		<div id="secondary">
-			<h1 class="entry-title">
-				<?php esc_html_e( 'Latest #WP20 News', 'wp20' ); ?>
-			</h1>
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php esc_html_e( 'Latest #WP20 News', 'wp20' ); ?>
+				</h1>
+			</header>
 		</div>
 
 		<div id="primary" class="content-area">

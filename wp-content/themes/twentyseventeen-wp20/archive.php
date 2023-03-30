@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="wrap wrap-unconstrained">
+<div class="wrap">
 
 	<div id="secondary">
 		<header class="page-header">
