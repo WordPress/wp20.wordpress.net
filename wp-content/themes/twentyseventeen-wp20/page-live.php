@@ -12,7 +12,7 @@
 						<?php echo wp_kses_post( __( 'Join the conversation by using <strong>#WP20</strong> on your favorite social networks.', 'wp20' ) ); ?>
 					</p>
 					<div>
-						<?php echo do_shortcode( '[tagregator hashtag="#WP20"]' ); ?>
+						<?php echo do_shortcode( '[custom-twitter-feeds feed=1]' ); ?>
 					</div>
 				</div>
 
