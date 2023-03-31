@@ -1021,6 +1021,16 @@ body.page .entry-header {
 	margin: var(--wp20--spacing--small) 0;
 }
 
+.single-featured-image-header {
+	background-color: var(--wp20--color--grey-9);
+	border-bottom: 1px solid var(--wp20--color--border);
+}
+
+.single-featured-image-header img {
+	width: 100%;
+	max-width: var(--wp20--screen-width-wide);
+}
+
 /* 
  * Pagination
  */
