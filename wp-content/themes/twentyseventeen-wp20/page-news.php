@@ -15,7 +15,7 @@
 
 				<?php
 				$query = new WP_Query( array(
-					'posts_per_page' => 3,
+					'posts_per_page' => 8,
 					'paged'          => is_front_page() ? get_query_var( 'page', 1 ) : get_query_var( 'paged', 1 ),
 				) );
 
