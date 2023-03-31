@@ -310,7 +310,7 @@ body.page .entry-header {
 	min-height: 285px;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 767px) {
 	.custom-header {
 		height: 160px;
 		background-image: url( 'images/confetti-header-mobile.svg' );
