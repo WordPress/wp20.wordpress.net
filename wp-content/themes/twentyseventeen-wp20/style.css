@@ -424,14 +424,7 @@ body.page .entry-header {
 
 /* Override styles from twentyseventeen */
 .navigation-top .wrap {
-	padding: 0;
-}
-
-@media screen and (min-width: 48em) {
-	.navigation-top .wrap {
-		padding-left: var(--wp20--spacing--edge-space);
-		padding-right: var(--wp20--spacing--edge-space);
-	}
+	padding: 0 var(--wp20--spacing--edge-space);
 }
 
 .navigation-top > * {
@@ -516,7 +509,7 @@ body.page .entry-header {
 
 .menu-toggle {
 	margin: 0;
-	padding: var(--wp20--spacing--menu-spacing) var(--wp20--spacing--edge-space);
+	padding: var(--wp20--spacing--menu-spacing) 0;
 	color: var(--wp20--color--text);
 	font-weight: 400;
 	text-align: left;
@@ -597,8 +590,7 @@ body.page .entry-header {
 	margin: 0 auto;
 	padding-right: inherit;
 	text-align: right;
-	height: 55px;
-	line-height: 55px;
+	line-height: 52px;
 }
 
 @media screen and (max-width:47em) {
@@ -613,10 +605,6 @@ body.page .entry-header {
 
 .wp20-locale-switcher-container select {
 	visibility: hidden; /* Prevent iOS native picker UI */
-}
-
-.wp20-locale-switcher-container .select2-container {
-	margin-right: var(--wp20--spacing--xxxsmall);
 }
 
 @media screen and (min-width: 769px) {
