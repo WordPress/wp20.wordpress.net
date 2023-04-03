@@ -1074,10 +1074,6 @@ body.page .entry-header {
 	font-size: 16px;
 }
 
-.post-navigation .nav-links > * {
-	flex: 1;
-}
-
 .posts-navigation .page-numbers:not(.next):not(.prev) {
 	padding-left: var(--wp20--spacing--xxxsmall);
 	padding-right: var(--wp20--spacing--xxxsmall);
@@ -1141,6 +1137,10 @@ body.page .entry-header {
 }
 
 @media screen and ( max-width: 48em ) {
+	.post-navigation .nav-links > * {
+		flex: 1;
+	}
+	
 	.post-navigation .nav-links .nav-subtitle span {
 		display: none;
 	}
