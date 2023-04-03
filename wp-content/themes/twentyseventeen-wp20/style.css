@@ -537,15 +537,23 @@ body.page .entry-header {
 	}
 }
 
-.menu-toggle:focus, 
+.menu-toggle:focus {
+	background: unset !important; /* Override TT17 Rule */
+	outline: none;
+}
+
 .menu-toggle:hover {
-	background: var(--wp20--color--active-menu) !important;
+	background: var(--wp20--color--active-menu) !important; /* Override TT17 Rule */
 	outline: none;
 }
 
 .menu-toggle > img {
 	width: 15px;
 	height: 15px;
+}
+
+.menu-toggle.toggle-on {
+	background: var(--wp20--color--active-menu) !important; /* Override TT17 Rule */
 }
 
 .menu-toggle.toggle-on > span {
