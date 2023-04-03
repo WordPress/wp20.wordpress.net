@@ -404,6 +404,7 @@ body.page .entry-header {
 	z-index: 20;
 	background: #fff;
 	border: unset;
+	font-size: 14px;
 }
 
 @media screen and (max-width: 48em) {
