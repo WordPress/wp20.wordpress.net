@@ -25,6 +25,7 @@ Template:    twentyseventeen
 	--wp20--color--text-link: var(--wp20--color--blueberry);
 	--wp20--color--border: var(--wp20--color--grey-8);
 	--wp20--color--card-background: var(--wp20--color--grey-9);
+	--wp20--color--active-menu: #F7F7F7;
 
 	--wp20--spacing--xxxsmall: 8px;
 	--wp20--spacing--xxsmall: 15px;
@@ -486,10 +487,6 @@ body.page .entry-header {
 	font-size: 14px;
 }
 
-.main-navigation.toggled-on .menu-top-menu-container li a {
-	color: var(--wp20--color--text);
-}
-
 @media screen and (max-width: 767px) {
 	.main-navigation li {
 		padding: 0 var(--wp20--spacing--xsmall);
@@ -576,7 +573,16 @@ body.page .entry-header {
 	top: 0 !important;
 }
 
+.navigation-top-menu-container .select2-dropdown {
+	border-top: 1px solid var(--wp20--color--border) !important;
+}
+
 @media screen and (min-width: 769px) {
+	.navigation-top-menu-container {
+		margin: 0 var(--wp20--spacing--edge-space) 0;
+		max-width: calc( var(--wp20--screen-width-wide) + var(--wp20--spacing--edge-space) * 2 );
+	}
+
 	.navigation-top-menu-container > * {
 		position: absolute !important;
 		left: auto !important;
