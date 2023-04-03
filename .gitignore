@@ -4,27 +4,10 @@ wp-admin
 wp-content/cache
 wp-content/jetpack-waf
 wp-content/languages
-
-wp-content/themes/index.php
-wp-content/themes/twentyseventeen
-wp-content/themes/twentytwentythree
-
-wp-content/plugins/hello.php
-wp-content/plugins/wordpress-importer
-wp-content/plugins/index.php
-wp-content/plugins/akismet
-wp-content/plugins/custom-facebook-feed-pro
-wp-content/plugins/custom-twitter-feeds*
-wp-content/plugins/google-language-translator
-wp-content/plugins/google-site-kit
-wp-content/plugins/instagram-feed-pro
-wp-content/plugins/jetpack
-wp-content/plugins/jetpack-social
-wp-content/plugins/social-wall
-wp-content/plugins/surge
-wp-content/plugins/wordpress-seo
-
 wp-content/uploads
+
+wp-content/themes/*
+wp-content/plugins/*
 
 wp-includes
 index.php
@@ -45,3 +28,4 @@ wp-cli.yml
 
 # ...except the actual source of this project.
 !/source/wp-content/themes/twnetyseventeen-wp20
+!/source/wp-content/plugins/wp20-meetup-events
