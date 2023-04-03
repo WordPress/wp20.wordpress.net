@@ -577,11 +577,6 @@ body.page .entry-header {
 }
 
 @media screen and (min-width: 769px) {
-	.navigation-top-menu-container {
-		margin: 0 var(--wp20--spacing--edge-space) 0;
-		max-width: calc( var(--wp20--screen-width-wide) + var(--wp20--spacing--edge-space) * 2 );
-	}
-
 	.navigation-top-menu-container > * {
 		position: absolute !important;
 		left: auto !important;
