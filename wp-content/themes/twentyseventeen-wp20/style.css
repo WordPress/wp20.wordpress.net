@@ -13,19 +13,18 @@ Template:    twentyseventeen
 	--wp20--color--blueberry: #3858E9;
 
 	--wp20--color--grey-0: #1E1E1E;
-	--wp20--color--grey-3: #333;
+	--wp20--color--grey-2: #23282D;
 	--wp20--color--grey-4: #40464D;
 	--wp20--color--grey-6: #656A71;
-	--wp20--color--grey-7: #767676;
 	--wp20--color--grey-8: #D9D9D9;
-	--wp20--color--grey-9: #F7F7F7;
+	--wp20--color--grey-9: #F6F6F6;
 
 	--wp20--color--primary: var(--wp20--color--blueberry);
 	--wp20--color--text: var(--wp20--color--grey-0);
-	--wp20--color--text-muted: var(--wp20--color--grey-4);
 	--wp20--color--text-meta: var(--wp20--color--grey-6);
 	--wp20--color--text-link: var(--wp20--color--blueberry);
 	--wp20--color--border: var(--wp20--color--grey-8);
+	--wp20--color--card-background: var(--wp20--color--grey-9);
 
 	--wp20--spacing--xxxsmall: 8px;
 	--wp20--spacing--xxsmall: 15px;
@@ -730,7 +729,7 @@ body.page .entry-header {
 
 .wp20-locale-notice-dismiss:before {
 	background: none;
-	color: var(--wp20--color--grey-3);
+	color: var(--wp20--color--grey-2);
 	content: "\f153";
 	display: block;
 	font: normal 16px/20px dashicons;
@@ -751,7 +750,7 @@ body.page .entry-header {
 	margin: 0;
 	padding: 7px;
 	background: none;
-	color: var(--wp20--color--grey-3);
+	color: var(--wp20--color--grey-2);
 	cursor: pointer;
 }
 
@@ -858,7 +857,7 @@ body.page .entry-header {
 
 .wp20-event-date-time {
 	font-size: 16px;
-	color: var(--wp20--color--grey-7);
+	color: var(--wp20--color--grey-6);
 }
 
 .wp20-organize-event {
@@ -1295,61 +1294,90 @@ body.page .entry-header {
 }
 
 /*
- * Tagregator
+ * Live
  */
-#tggr-media-item-container {
-	position: relative;
-	width: 90vw;
-	left: 50%;
-	right: 50%;
-	margin-left: -45vw;
-	margin-right: -45vw;
+
+#ctf.ctf-narrow .ctf-author-box {
+	padding-left: 50px;
+	margin-bottom: var(--wp20--spacing--xxxsmall);
 }
 
-@media screen and ( min-width: 769px ) {
-	#tggr-media-item-container {
-		width: 80vw;
-		left: 50%;
-		right: 50%;
-		margin-left: -40vw;
-		margin-right: -40vw;
-	}
+#ctf .ctf-author-box,
+#ctf_lightbox .ctf-author-box {
+	width: 100%;
 }
 
-.tggr-media-item {
-	background-color: var(--wp20--color--grey-9);
-	box-sizing: border-box;
-	border: 2px solid rgba( 180, 185, 190, 0.3 );
-	border-radius: .3em;
+#ctf.ctf-narrow .ctf-author-avatar {
+	margin-left: -50px;
 }
 
-.tggr-media-item .tggr-actions {
-	text-align: left;
+#ctf .ctf-author-avatar,
+#ctf_lightbox .ctf-author-avatar {
+	border-radius: 50%;
 }
 
-.tggr-actions a,
-.tggr-media-item a,
-.entry-content .tggr-media-item a {
-	text-decoration: none;
-	box-shadow: none;
+#ctf.ctf-narrow .ctf-author-avatar,
+#ctf.ctf-narrow .ctf-author-avatar img {
+	width: 40px;
+	height: 40px;
 }
 
-#tggr-media-item-container .tggr-actions a span {
+#ctf .ctf-author-box-link,
+#ctf_lightbox .ctf-author-box-link {
+	display: block;
+	line-height: 1.1 !important;
+}
+
+#ctf .ctf-author-name,
+#ctf_lightbox .ctf-author-name {
+	width: 100%;
+	margin-top: var(--wp20--spacing--xxxsmall);
+}
+
+#ctf.ctf-styles .ctf-author-screenname,
+#ctf .ctf-tweet-date,
+#ctf .ctf-tweet-actions a.ctf-like,
+#ctf .ctf-tweet-actions a.ctf-reply,
+#ctf .ctf-tweet-actions a.ctf-retweet {
+	color: var(--wp20--color--text-meta) !important;
+	font-size: 10px;
+	line-height: 1.2;
+}
+
+#ctf.ctf-styles .ctf-author-screenname {
+	margin-left: 0;
+}
+
+#ctf p.ctf-tweet-text {
 	font-size: 13px;
-	font-weight: 600;
-	text-transform: uppercase;
 }
 
-.tggr-media-item a:hover,
-.tggr-media-item .tggr-actions a:hover span {
-	text-decoration: none;
+#ctf #ctf-more {
+	padding: var(--wp20--spacing--xxxsmall) 0;
+	margin-top: var(--wp20--spacing--xxsmall);
+	background-color: var(--wp20--color--card-background);
 }
 
-a.tggr-author-profile,
-a:hover.tggr-author-profile {
-	box-shadow: none;
+#ctf .ctf-out-of-tweets {
+	margin-top: var(--wp20--spacing--xxsmall);
+	border: none;
 }
 
+#ctf .ctf-out-of-tweets p {
+	padding: 0;
+}
+
+#ctf_lightbox .ctf-author-screenname,
+.ctf_lb-data .ctf_lb-caption .ctf-tweet-date {
+	color: var(--wp20--color--grey-8) !important;
+	font-size: 10px;
+	line-height: 1.2;
+}
+
+#ctf .ctf-out-of-tweets p > *,
+.ctf_lightbox_action.ctf_instagram {
+	display: none;
+}
 
 /*
  * Embeds
