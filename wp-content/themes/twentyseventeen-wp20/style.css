@@ -25,7 +25,7 @@ Template:    twentyseventeen
 	--wp20--color--text-link: var(--wp20--color--blueberry);
 	--wp20--color--border: var(--wp20--color--grey-8);
 	--wp20--color--card-background: var(--wp20--color--grey-9);
-	--wp20--color--active-menu: #F7F7F7;
+	--wp20--color--active-menu: var(--wp20--color--grey-9);
 
 	--wp20--spacing--xxxsmall: 8px;
 	--wp20--spacing--xxsmall: 15px;
@@ -422,9 +422,8 @@ body.page .entry-header {
 	}
 }
 
-/* Override base styles */
+/* Override styles from twentyseventeen */
 .navigation-top .wrap {
-	box-sizing: content-box;
 	padding: 0;
 }
 
