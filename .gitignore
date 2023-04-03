@@ -27,5 +27,5 @@ wp-cli.yml
 .wp-env.override.json
 
 # ...except the actual source of this project.
-!/source/wp-content/themes/twnetyseventeen-wp20
-!/source/wp-content/plugins/wp20-meetup-events
+!wp-content/themes/twentyseventeen-wp20
+!wp-content/plugins/wp20-meetup-events
