@@ -15,6 +15,7 @@
 			app.$navContainer = app.$body.find( '.navigation-top-container' );
 			app.$siteContent  = app.$body.find( '.site-content-contain' );
 			app.$menuToggle   = $( '.menu-toggle' );
+			app.$menuDropdown = $( '.main-navigation' );
 
 			observer = new MutationObserver( app.observerCallback );
 
@@ -25,12 +26,24 @@
 				} );
 			}
 
+			// Change button text when menu toggle is clicked
 			app.$menuToggle.on('click', function () {
 				if( $(this).hasClass( 'toggle-on' ) ) {
 					$(this).removeClass( 'toggle-on' ).children('span').text(menuTitle);;
 				} else {
 					menuTitle = $(this).text();
 					$(this).addClass( 'toggle-on' ).children('span').text( 'Menu' );
+				}
+			});
+
+			// When clicking outside of the dropdown menu, close the dropdown menu
+			$( document ).click( function( event ) {
+				var $target = $( event.target );
+
+				if ( ! $target.closest( app.$menuToggle ).length && 
+				! $target.closest( app.$menuDropdown ).length && 
+				app.$menuDropdown.hasClass( 'toggled-on' ) ) {
+					app.$menuDropdown.removeClass( 'toggled-on' );
 				}
 			});
 		},
