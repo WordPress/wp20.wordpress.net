@@ -552,11 +552,11 @@ body.page .entry-header {
 	height: 15px;
 }
 
-.menu-toggle.toggle-on {
+.menu-toggle.toggled-on {
 	background: var(--wp20--color--active-menu) !important; /* Override TT17 Rule */
 }
 
-.menu-toggle.toggle-on > span {
+.menu-toggle.toggled-on > span {
 	font-weight: 700;
 }
 
