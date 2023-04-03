@@ -5,7 +5,7 @@
 							if ( is_page( 'swag' ) ) {
 								printf(
 									wp_kses_data( __( 'Check out the <a href="%s">WordPress Swag Store</a> to get your hands on new, limited edition WP20 swag.', 'wp20' ) ),
-									'https://mercantile.wordpress.org/product-category/wordpress-20/'
+									'https://mercantile.wordpress.org/product-category/wp20/'
 								);
 							} elseif ( is_page( 'whats-on' )) {
 								printf(
