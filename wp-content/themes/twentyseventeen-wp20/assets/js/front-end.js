@@ -9,11 +9,12 @@
 		classValue: 'site-navigation-fixed',
 
 		init: function() {
-			var observer;
+			var observer, menuTitle;
 
 			app.$nav          = app.$body.find( '.navigation-top' );
 			app.$navContainer = app.$body.find( '.navigation-top-container' );
 			app.$siteContent  = app.$body.find( '.site-content-contain' );
+			app.$menuToggle   = $( '.menu-toggle' );
 
 			observer = new MutationObserver( app.observerCallback );
 
@@ -23,6 +24,15 @@
 					attributeFilter: [ 'class' ]
 				} );
 			}
+
+			app.$menuToggle.on('click', function () {
+				if( $(this).hasClass( 'toggle-on' ) ) {
+					$(this).removeClass( 'toggle-on' ).children('span').text(menuTitle);;
+				} else {
+					menuTitle = $(this).text();
+					$(this).addClass( 'toggle-on' ).children('span').text( 'Menu' );
+				}
+			});
 		},
 
 		observerCallback: function( events ) {

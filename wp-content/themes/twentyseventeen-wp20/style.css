@@ -517,6 +517,7 @@ body.page .entry-header {
 	border-radius: 0;
 	width: 50%;
 	box-sizing: border-box;
+	font-family: 'Inter', sans-serif; /* Override TT17 Rule */
 }
 
 /* TT17 Rule */
@@ -541,6 +542,10 @@ body.page .entry-header {
 .menu-toggle > img {
 	width: 15px;
 	height: 15px;
+}
+
+.menu-toggle.toggle-on > span {
+	font-weight: 700;
 }
 
 .menu-toggle[aria-expanded="true"] .icon-bars {
