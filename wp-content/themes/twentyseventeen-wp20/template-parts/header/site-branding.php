@@ -8,7 +8,7 @@
 
 	<?php if ( is_front_page() ): ?>
 	<div class="site-branding-text">
-		<em><?php esc_html_e( 'WordPress celebrates twenty years', 'twentyseventeen' ) ?></em>
+		<em><?php esc_html_e( 'WordPress celebrates twenty&nbsp;years', 'twentyseventeen' ) ?></em>
 	</div><!-- .site-branding-text -->
 	<?php endif; ?>
 </div><!-- .site-branding -->
