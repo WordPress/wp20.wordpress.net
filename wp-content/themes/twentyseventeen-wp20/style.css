@@ -23,7 +23,7 @@ Template:    twentyseventeen
 	--wp20--color--text: var(--wp20--color--grey-0);
 	--wp20--color--text-meta: var(--wp20--color--grey-6);
 	--wp20--color--text-link: var(--wp20--color--blueberry);
-	--wp20--color--border: var(--wp20--color--grey-8);
+	--wp20--color--border: rgba(0, 0, 0, 0.1);
 	--wp20--color--card-background: var(--wp20--color--grey-9);
 	--wp20--color--active-menu: var(--wp20--color--grey-9);
 
@@ -47,7 +47,12 @@ Template:    twentyseventeen
  * Base
  */
 
-body {
+body,
+button,
+input,
+select,
+textarea,
+input::placeholder {
 	font-family: 'Inter', sans-serif;
 	font-size: 13px;
 	line-height: 1.4;
@@ -698,16 +703,14 @@ body.page .entry-header {
 
 
 .wp20-locale-switcher-container .select2-selection--single .select2-selection__arrow b {
-	width: 5px !important;
-	height: 5px !important;
-	border: 1px solid var(--wp20--color--grey-0) !important;
+	width: 6px !important;
+	height: 6px !important;
+	border: 1px solid var(--wp20--color--text) !important;
 	border-bottom: none !important;
 	border-left: none !important;
 	transform: rotate(135deg) !important;
-}
-
-.wp20-locale-switcher-container .select2-container--open .select2-selection--single .select2-selection__arrow b {
-	transform: rotate(-45deg) !important;
+	margin-left: -2px !important;
+	margin-top: -4px !important;
 }
 
 /*
@@ -728,18 +731,22 @@ body.page .entry-header {
 	padding: 0;
 }
 
-.navigation-top-menu-container  .select2-search--dropdown .select2-search__field {
-	padding: 12px 40px 12px 12px;
+.navigation-top-menu-container .select2-search--dropdown .select2-search__field {
+	padding: 13px 50px 13px 12px;
 	border-radius: 0;
 	border: 0 !important;
 	border-bottom: 1px solid var(--wp20--color--border) !important;
 	color: var(--wp20--color--text);
 	background-image:  url( 'images/search-icon.svg' );
 	background-repeat: no-repeat;
-	background-size: 12px 12px;
+	background-size: 13px;
 	background-position: calc(100% - 20px) center;
 	font-size: 14px;
-	text-align: right;
+	text-align: end;
+}
+
+.navigation-top-menu-container .select2-search--dropdown .select2-search__field::placeholder {
+	font-size: 14px;
 }
 
 .navigation-top-menu-container  .select2-search--dropdown .select2-search__field::placeholder {
