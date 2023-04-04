@@ -29,7 +29,7 @@
 			// Change button text when menu toggle is clicked
 			app.$menuToggle.on('click', function () {
 				if( $(this).hasClass( 'toggled-on' ) ) {
-					$(this).removeClass( 'toggled-on' ).children('span').text(menuTitle);;
+					$( this ).removeClass( 'toggled-on' ).children( 'span' ).text( menuTitle );
 				} else {
 					menuTitle = $(this).text();
 					$(this).addClass( 'toggled-on' ).children('span').text( 'Menu' );
