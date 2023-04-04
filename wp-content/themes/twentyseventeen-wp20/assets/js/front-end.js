@@ -9,13 +9,16 @@
 		classValue: 'site-navigation-fixed',
 
 		init: function() {
-			var observer;
+			var observer, menuTitle;
 
 			app.$nav          = app.$body.find( '.navigation-top' );
 			app.$navContainer = app.$body.find( '.navigation-top-container' );
 			app.$siteContent  = app.$body.find( '.site-content-contain' );
+			app.$menuToggle   = $( '.menu-toggle' );
+			app.$menuDropdown = $( '.main-navigation' );
 
 			observer = new MutationObserver( app.observerCallback );
+			menuTitle = app.$menuToggle.text();
 
 			if ( app.$navContainer.length ) {
 				observer.observe( app.$nav.get(0), {
@@ -23,9 +26,31 @@
 					attributeFilter: [ 'class' ]
 				} );
 			}
+
+			// Change button text when menu toggle is clicked
+			app.$menuToggle.on( 'click', function() {
+				if ( $( this ).hasClass( 'toggled-on' ) ) {
+					$( this ).removeClass( 'toggled-on' ).children( 'span' ).text( menuTitle );
+				} else {
+					$( this ).addClass( 'toggled-on' ).children( 'span' ).text( 'Menu' );
+				}
+			});
+
+			// When clicking outside of the dropdown menu, close the dropdown menu
+			$( document ).click( function( event ) {
+				var $target = $( event.target );
+
+				if ( ! $target.closest( app.$menuToggle ).length && 
+					! $target.closest( app.$menuDropdown ).length && 
+					app.$menuDropdown.hasClass( 'toggled-on' )
+				) {
+					app.$menuDropdown.removeClass( 'toggled-on' );
+					app.$menuToggle.removeClass( 'toggled-on' ).attr( 'aria-expanded', false ).children( 'span' ).text( menuTitle );
+				}
+			});
 		},
 
-		observerCallback: function( events ) {
+		observerCallback: function ( events ) {
 			$.each( events, function ( i, event ) {
 				var $target = $( event.target );
 
