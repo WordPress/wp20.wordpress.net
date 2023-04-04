@@ -27,12 +27,12 @@
 			}
 
 			// Change button text when menu toggle is clicked
-			app.$menuToggle.on('click', function () {
-				if( $(this).hasClass( 'toggled-on' ) ) {
+			app.$menuToggle.on( 'click', function() {
+				if ( $( this ).hasClass( 'toggled-on' ) ) {
 					$( this ).removeClass( 'toggled-on' ).children( 'span' ).text( menuTitle );
 				} else {
-					menuTitle = $(this).text();
-					$(this).addClass( 'toggled-on' ).children('span').text( 'Menu' );
+					menuTitle = $( this ).text();
+					$( this ).addClass( 'toggled-on' ).children( 'span' ).text( 'Menu' );
 				}
 			});
 
@@ -41,14 +41,15 @@
 				var $target = $( event.target );
 
 				if ( ! $target.closest( app.$menuToggle ).length && 
-				! $target.closest( app.$menuDropdown ).length && 
-				app.$menuDropdown.hasClass( 'toggled-on' ) ) {
+					! $target.closest( app.$menuDropdown ).length && 
+					app.$menuDropdown.hasClass( 'toggled-on' )
+				) {
 					app.$menuDropdown.removeClass( 'toggled-on' );
 				}
 			});
 		},
 
-		observerCallback: function( events ) {
+		observerCallback: function ( events ) {
 			$.each( events, function ( i, event ) {
 				var $target = $( event.target );
 
