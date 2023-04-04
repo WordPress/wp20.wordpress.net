@@ -18,6 +18,7 @@
 			app.$menuDropdown = $( '.main-navigation' );
 
 			observer = new MutationObserver( app.observerCallback );
+			menuTitle = app.$menuToggle.text();
 
 			if ( app.$navContainer.length ) {
 				observer.observe( app.$nav.get(0), {
@@ -31,7 +32,6 @@
 				if ( $( this ).hasClass( 'toggled-on' ) ) {
 					$( this ).removeClass( 'toggled-on' ).children( 'span' ).text( menuTitle );
 				} else {
-					menuTitle = $( this ).text();
 					$( this ).addClass( 'toggled-on' ).children( 'span' ).text( 'Menu' );
 				}
 			});
@@ -45,6 +45,7 @@
 					app.$menuDropdown.hasClass( 'toggled-on' )
 				) {
 					app.$menuDropdown.removeClass( 'toggled-on' );
+					app.$menuToggle.removeClass( 'toggled-on' ).attr( 'aria-expanded', false ).children( 'span' ).text( menuTitle );
 				}
 			});
 		},
