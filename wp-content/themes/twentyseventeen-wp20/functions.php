@@ -13,7 +13,7 @@ add_filter( 'document_title_parts',  __NAMESPACE__ . '\internationalize_document
 add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\internationalize_menu_items'      );
 add_action( 'wp_head',               __NAMESPACE__ . '\render_social_meta_tags'          );
 add_filter( 'upload_mimes' ,         __NAMESPACE__ . '\custom_upload_mimes'              );
-add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_titles'         );
+add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_content'        );
 
 /**
  * Bypass TwentySeventeen's front-page template.
@@ -34,24 +34,24 @@ function get_front_page_template( $template ) {
 }
 
 /**
- * Prevent widows in titles by using entities in place of spaces and hyphens.
+ * Prevent widows in strings by using entities in place of spaces and hyphens.
  */
-function prevent_widows_in_titles( $title ) {
-	if ( strpos( $title, ' ' ) !== false ) {
-		$last_space_position = strrpos( $title, ' ' );
-		$last_word = substr( $title, $last_space_position + 1 );
+function prevent_widows_in_content( $string ) {
+	if ( strpos( $string, ' ' ) !== false ) {
+		$last_space_position = strrpos( $string, ' ' );
+		$last_word = substr( $string, $last_space_position + 1 );
 
 		// check if $last_word contains a hyphen and if so replace it with a non-breaking hyphen
 		if ( strpos( $last_word, '-' ) !== false ) {
 			$last_word = str_replace( '-', '&#8209;', $last_word );
-			$title = substr_replace( $title, $last_word, $last_space_position + 1 );
+			$string = substr_replace( $string, $last_word, $last_space_position + 1 );
 		}
 
 		// replace the last space with a non-breaking space
-		$title = substr_replace( $title, '&nbsp;', $last_space_position, 1 );
+		$string = substr_replace( $string, '&nbsp;', $last_space_position, 1 );
 	}
 
-	return $title;
+	return $string;
 }
 
 /**
@@ -275,7 +275,7 @@ function get_swag_download_items() {
 		*/
 		array(
 			'title'             => __( 'WP20 Logos', 'wp20' ),
-			'content'           => __( 'Official anniversary logos in three signature colors: blueberry, black, and&nbsp;white.', 'wp20'	),
+			'content'           => prevent_widows_in_content( __( 'Official anniversary logos in three signature colors: blueberry, black, and white.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
@@ -286,7 +286,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Multicolor Logos', 'wp20' ),
-			'content'           => __( 'A collection of anniversary logos in six wild color combinations. Made for&nbsp;fun.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
@@ -297,7 +297,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Sticker Sheet', 'wp20' ),
-			'content'           => __( 'Stuck on WordPress? Bring the WP20 celebration to any&nbsp;surface.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
@@ -312,7 +312,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Mystery Pack', 'wp20' ),
-			'content'           => __( 'Surprise designs you’ll want to keep. Print them and use them however you&nbsp;like.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'Surprise designs you’ll want to keep. Print them and use them however you like.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
 			'files'             => array(
 				array(
