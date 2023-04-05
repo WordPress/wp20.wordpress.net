@@ -205,6 +205,15 @@ a:hover .nav-title,
 	box-shadow: none !important;
 }
 
+:not( .mejs-button ) > button:hover,
+:not( .mejs-button ) > button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: unset;
+}
+
 /*
  * Layout
  */
@@ -821,14 +830,28 @@ body:not(.title-tagline-hidden) .site-branding-text {
 .wp20-locale-notice {
 	background: var(--wp20--color--grey-9);
 	margin-bottom: 5px;
-	padding: 1px 38px 1px 12px;
+	padding: var(--wp20--spacing--xxsmall) var(--wp20--spacing--medium) var(--wp20--spacing--xxsmall) var(--wp20--spacing--xsmall);
 	position: relative;
 	text-align: center;
 }
 
 .wp20-locale-notice p {
-	margin: 0.5em 0;
-	padding: 2px;
+	margin: 0;
+}
+
+.wp20-locale-notice-dismiss {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	padding: var(--wp20--spacing--xxsmall);
+	background: none;
+	color: var(--wp20--color--grey-2);
+}
+
+.rtl .wp20-locale-notice-dismiss {
+	left: 0;
+	right: unset;
 }
 
 .wp20-locale-notice-dismiss:before {
@@ -838,7 +861,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: block;
 	font: normal 16px/20px dashicons;
 	speak: none;
-	margin: 0.5em 0;
 	height: 20px;
 	text-align: center;
 	width: 20px;
@@ -846,37 +868,10 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp20-locale-notice-dismiss {
-	position: absolute;
-	top: 0;
-	right: 1px;
-	border: none;
-	margin: 0;
-	padding: 7px;
-	background: none;
-	color: var(--wp20--color--grey-2);
-	cursor: pointer;
-}
-
-.rtl .wp20-locale-notice-dismiss {
-	left: 1px;
-	right: inherit;
-}
-
-.wp20-locale-notice-dismiss:hover,
-.wp20-locale-notice-dismiss:active,
-.wp20-locale-notice-dismiss:focus {
-	background: inherit;
-}
-
-.wp20-locale-notice-dismiss:hover:before,
-.wp20-locale-notice-dismiss:active:before,
-.wp20-locale-notice-dismiss:focus:before {
-	color: var(--wp--preset--color--primary);
-}
-
-.wp20-locale-notice-dismiss:focus {
-	outline: none;
+.wp20-locale-notice-dismiss:hover::before,
+.wp20-locale-notice-dismiss:active::before,
+.wp20-locale-notice-dismiss:focus::before {
+	color: var(--wp20--color--primary);
 }
 
 /*
