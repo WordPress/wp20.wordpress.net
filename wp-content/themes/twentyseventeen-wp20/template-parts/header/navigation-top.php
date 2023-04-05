@@ -3,7 +3,9 @@
  * Displays top navigation
  */
 
-$title = is_single() ? __( 'News', 'wp20' ) : get_the_title();
+$title = is_single() || is_archive()
+	? __( 'News', 'wp20' )
+	: get_the_title();
 ?>
 
 <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
