@@ -13,6 +13,7 @@ add_filter( 'document_title_parts',  __NAMESPACE__ . '\internationalize_document
 add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\internationalize_menu_items'      );
 add_action( 'wp_head',               __NAMESPACE__ . '\render_social_meta_tags'          );
 add_filter( 'upload_mimes' ,         __NAMESPACE__ . '\custom_upload_mimes'              );
+add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_titles'         );
 
 /**
  * Bypass TwentySeventeen's front-page template.
@@ -30,6 +31,27 @@ function get_front_page_template( $template ) {
 	}
 
 	return $template;
+}
+
+/**
+ * Prevent widows in titles by using entities in place of spaces and hyphens.
+ */
+function prevent_widows_in_titles( $title ) {
+	if ( strpos( $title, ' ' ) !== false ) {
+		$last_space_position = strrpos( $title, ' ' );
+		$last_word = substr( $title, $last_space_position + 1 );
+
+		// check if $last_word contains a hyphen and if so replace it with a non-breaking hyphen
+		if ( strpos( $last_word, '-' ) !== false ) {
+			$last_word = str_replace( '-', '&#8209;', $last_word );
+			$title = substr_replace( $title, $last_word, $last_space_position + 1 );
+		}
+
+		// replace the last space with a non-breaking space
+		$title = substr_replace( $title, '&nbsp;', $last_space_position, 1 );
+	}
+
+	return $title;
 }
 
 /**
