@@ -7,14 +7,6 @@ defined( 'WPINC' ) || die();
 
 ?>
 
-<form id="wp20-events-filter">
-	<label>
-		<span><?php esc_html_e( 'Search events:', 'wp20' ); ?></span>
-		<?php // translators: Change this to a city in your locale that has a WP20 event planned. If none do, then choose a recognizable city in your locale. ?>
-		<input id="wp20-events-query" type="text" value="" placeholder="<?php echo esc_attr_x( 'Seattle', 'Event query placeholder', 'wp20' ); ?>" />
-	</label>
-</form>
-
 <ul class="wp20-events-list">
 	<?php foreach ( $events as $event ) : ?>
 		<li data-location="<?php echo esc_attr( $event['location'] ); ?>">

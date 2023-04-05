@@ -18,7 +18,9 @@ defined( 'WPINC' ) || die();
 
 add_action(    'wp20_prime_events_cache', __NAMESPACE__ . '\prime_events_cache' );
 add_action(    'wp_enqueue_scripts',      __NAMESPACE__ . '\enqueue_scripts'         );
-add_shortcode( 'wp20_meetup_events',      __NAMESPACE__ . '\render_events_shortcode' );
+add_shortcode( 'wp20_meetup_events_filter', __NAMESPACE__ . '\render_events_filter_shortcode' );
+add_shortcode( 'wp20_meetup_events_map', __NAMESPACE__ . '\render_events_map_shortcode' );
+add_shortcode( 'wp20_meetup_events_list', __NAMESPACE__ . '\render_events_list_shortcode' );
 
 if ( ! wp_next_scheduled( 'wp20_prime_events_cache' ) ) {
 	wp_schedule_event( time(), 'hourly', 'wp20_prime_events_cache' );
@@ -263,15 +265,35 @@ function sort_events( array $a, array $b ) : int {
 }
 
 /**
- * Render the WP20 events shortcode.
+ * Render the WP20 events map shortcode.
  */
-function render_events_shortcode() : string {
+function render_events_map_shortcode() : string {
 	$events = get_formatted_events();
 
 	ob_start();
 	require_once( __DIR__ . '/views/events-map.php' );
-	require_once( __DIR__ . '/views/events-list.php' );
+	return ob_get_clean();
+}
 
+/**
+ * Render the WP20 events list shortcode.
+ */
+function render_events_list_shortcode() : string {
+	$events = get_formatted_events();
+
+	ob_start();
+	require_once( __DIR__ . '/views/events-list.php' );
+	return ob_get_clean();
+}
+
+/**
+ * Render the WP20 events filter shortcode.
+ */
+function render_events_filter_shortcode() : string {
+	$events = get_formatted_events();
+
+	ob_start();
+	require_once( __DIR__ . '/views/events-filter.php' );
 	return ob_get_clean();
 }
 

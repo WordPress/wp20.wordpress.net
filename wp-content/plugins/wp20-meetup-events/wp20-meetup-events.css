@@ -1,3 +1,7 @@
+/*
+ * These are foundational styles that provide a reasonable default for any theme.
+ */
+
 #wp20-events-map {
 	position: relative;
 	height: 400px;

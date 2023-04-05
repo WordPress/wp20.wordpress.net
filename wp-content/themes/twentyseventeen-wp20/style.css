@@ -93,8 +93,9 @@ p {
 h1,
 h2,
 h3,
-.page .panel-content .entry-title, 
-.page-title, 
+h3.wp20-event-group,
+.page .panel-content .entry-title,
+.page-title,
 body.page:not(.twentyseventeen-front-page) .entry-title,
 .entry-header .entry-title {
 	font-family: 'EB Garamond', serif;
@@ -112,8 +113,8 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 	h1,
 	h2,
 	h3,
-	.page .panel-content .entry-title, 
-	.page-title, 
+	.page .panel-content .entry-title,
+	.page-title,
 	body.page:not(.twentyseventeen-front-page) .entry-title,
 	.entry-header .entry-title,
 	.single-post .entry-title, .page .entry-title {
@@ -322,12 +323,12 @@ body.page .entry-header {
 		height: 160px;
 		background-image: url( 'images/confetti-header-mobile.svg' );
 	}
-	
+
 	.twentyseventeen-front-page .custom-header {
 		height: 76vw;
 		max-height: 550px;
 	}
-	
+
 	body:not(.twentyseventeen-front-page) .custom-header {
 		min-height: 160px;
 		background-position-y: 38%;
@@ -863,93 +864,156 @@ body.page .entry-header {
 }
 
 /*
- * What's on
+ * What's On - Builds on top of plugin's default styles.
  */
 
-#wp20-events-map {
-	position: relative;
-	height: 500px;
-	width: 80vw;
-	left: 50%;
-	right: 50%;
-	margin-left: -40vw;
-	margin-right: -40vw;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	background-color: #AADAFF;
+body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header,
+body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-content {
+	float: none;
+	display: block;
+	width: 100%;
+}
+
+body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 }
 
 @media screen and ( max-width: 48em ) {
-	body.page.page-slug-whats-on .entry-header {
+	body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header {
+		display: block;
 		margin-bottom: var(--wp20--spacing--small);
-	}
-
-	#wp20-events-map {
-		width: 100%;
-		margin: 2em auto 1em;
-		left: auto;
-		right: auto;
 	}
 }
 
-@media screen and ( min-width: 769px ) {
-	body.page.page-slug-whats-on .entry-header .entry-title {
-		width: 55%;
+body.page-slug-whats-on h1.entry-title {
+	width: 639px;
+	font-size: clamp( 20px, 2.4vw, 30px);
+	margin-right: var(--wp20--spacing--medium);
+	margin-bottom: 0;
+}
+@media screen and ( max-width: 48em ) {
+	body.page-slug-whats-on h1.entry-title {
+		width: auto;
+		margin-bottom: var(--wp20--spacing--small);
+	}
+}
+
+#wp20-events-map {
+	background-color: #AADAFF;
+	margin: 0 auto 40px;
+}
+@media screen and ( max-width: 48em ) {
+	#wp20-events-map {
+		position: relative;
+		width: 100vw;
+		left: calc( -1 * var(--wp20--spacing--edge-space) );
 	}
 }
 
 #wp20-events-filter {
-	margin-bottom: 3em;
-	text-align: center;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	box-sizing: border-box;
+	min-width: 325px;
+	margin-bottom: 0;
+	padding-right: 0;
 }
 
-#wp20-events-filter input[type="text"] {
-	display: inline;
-	width: auto;
-	margin-left: .5em;
+#wp20-events-filter label {
+	margin-right: 30px;
+	margin-bottom: 0;
+	padding: 0.7em 0; /* Must match `.wp20-events-query` (inherited from TwentySeventeen. */
 }
 
-#wp20-events-filter input[type="text"]::placeholder {
+#wp20-events-filter label span {
+	font-size: 13px;
+}
+
+#wp20-events-filter .wp20-events-query {
+	flex-shrink: 0;
+	flex-grow: 1;
+	flex-basis: 200px;
+	border-radius: 2px;
+	border-color: var(--wp20--color--grey-0);
+	font-size: 12px;
+}
+
+#wp20-events-filter .wp20-events-query::placeholder {
 	opacity: 0.5;
 }
 
-.rtl #wp20-events-filter input[type="text"] {
-	margin-left: 0;
-	margin-right: .5em;
+#wp20-events-query-mobile {
+	display: none;
 }
+
+#wp20-events-filter button {
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	background-color: transparent;
+}
+
+@media screen and ( max-width: 48em ) {
+	#wp20-events-filter {
+		display: block;
+		min-width: 100%;
+	}
+
+	#wp20-events-filter label {
+		display: none;
+	}
+
+	#wp20-events-query-mobile {
+		display: block;
+	}
+
+	#wp20-events-query-desktop {
+		display: none;
+	}
+}
+
 
 .wp20-events-list {
 	display: grid;
-	grid-template-columns: repeat( auto-fill, minmax( 250px, 1fr ) );
-	grid-gap: 2em;
-	width: 80vw;
-	margin-left: calc( -1 * ( (80vw - 100%) / 2 ) );
+	grid-template-columns: repeat( auto-fill, minmax( 208px, 1fr ) );
+	gap: 30px;
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
 	list-style-type: none;
+}
+@media screen and ( max-width: 48em ) {
+	.wp20-events-list {
+		row-gap: 22px;
+	}
 }
 
 .rtl .wp20-events-list {
 	margin-left: 0;
-	margin-right: calc( -1 * ( (80vw - 100%) / 2 ) );
+	margin-right: 0;
 }
 
-.wp20-events-list li {
-	margin-bottom: 1em;
-}
-
-.wp20-event-group,
-.wp20-event-title,
-.wp20-event-date-time {
-	margin-bottom: .5em;
+h3.wp20-event-group,
+.wp20-event-title {
+	margin-bottom: 6px;
 }
 
 .wp20-event-date-time {
-	font-size: 16px;
+	margin-bottom: 0;
+	font-size: 12px;
 	color: var(--wp20--color--grey-6);
 }
 
 .wp20-organize-event {
 	text-align: center;
 }
+
 
 /*
  * News
@@ -1117,7 +1181,7 @@ body.page .entry-header {
 	max-width: var(--wp20--screen-width-wide);
 }
 
-/* 
+/*
  * Pagination
  */
 
@@ -1227,7 +1291,7 @@ body.page .entry-header {
 	.post-navigation .nav-links > * {
 		flex: 1;
 	}
-	
+
 	.post-navigation .nav-links .nav-subtitle span {
 		display: none;
 	}

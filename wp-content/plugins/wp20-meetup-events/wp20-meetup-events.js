@@ -25,7 +25,8 @@ var WP20MeetupEvents = ( function( $ ) {
 		strings = data.strings;
 
 		try {
-			$( '#wp20-events-query' ).keyup( filterEventList );
+			$( '#wp20-events-query-mobile' ).keyup( filterEventList );
+			$( '#wp20-events-query-desktop' ).keyup( filterEventList );
 
 			if ( options.hasOwnProperty( 'mapContainer' ) ) {
 				loadMap( options.mapContainer, events );
