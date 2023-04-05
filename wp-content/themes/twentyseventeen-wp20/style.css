@@ -1369,31 +1369,15 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	margin: var(--wp20--spacing--xxxsmall) 0;
 }
 
-.downloads-wrapper .downloads-item-header span {
-	display: block;
-	font-size: 14px;
-	line-height: 1;
-	color: rgba( 35, 40, 45, 0.5 );
-	margin: 0 0 1em;
-}
-
 .downloads-wrapper .downloads-item-files {
-	color: rgba( 35, 40, 45, 0.5 );
 	font-size: 12px;
 	margin: 0;
-	padding: 0;
-}
-
-.downloads-wrapper .downloads-item-files li {
-	padding: 0 0 .5em;
-}
-
-.downloads-wrapper .downloads-item-files span {
-	opacity: .5;
 }
 
 .downloads-wrapper .downloads-item-files a {
-	position: relative;
+	display: flex;
+	padding: 5px 0;
+	gap: var(--wp20--spacing--xxxsmall);
 }
 
 .downloads-wrapper .downloads-item-files a::after {
@@ -1401,9 +1385,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline-block;
 	height: 14px;
 	width: 13px;
-	position: absolute;
-	top: 0;
-	right: -21px;
 	vertical-align: middle;
 	background-image: url( 'images/download-icon.svg' );
 	background-position: center;
