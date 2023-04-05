@@ -5,7 +5,7 @@
 		<div id="secondary">
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php esc_html_e( 'Latest #WP20 News', 'wp20' ); ?>
+					<?php echo wp_kses_post( __( 'Latest #WP20 <br>News', 'wp20' ) ); ?>
 				</h1>
 			</header>
 		</div>

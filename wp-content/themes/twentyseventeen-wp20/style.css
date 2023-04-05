@@ -57,6 +57,7 @@ input::placeholder {
 	font-size: 13px;
 	line-height: 1.4;
 	color: var(--wp20--color--text);
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -98,6 +99,7 @@ h3,
 body.page:not(.twentyseventeen-front-page) .entry-title,
 .entry-header .entry-title {
 	font-family: 'EB Garamond', serif;
+	-webkit-font-smoothing: antialiased;
 	font-size: 20px;
 	line-height: 1.3;
 	font-weight: 400;
@@ -201,6 +203,15 @@ a:hover .nav-title,
 	color: var(--wp20--color--text-link);
 	text-decoration: underline;
 	box-shadow: none !important;
+}
+
+:not( .mejs-button ) > button:hover,
+:not( .mejs-button ) > button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: unset;
 }
 
 /*
@@ -315,22 +326,30 @@ body.page .entry-header {
 	height: 76vw;
 	max-height: 550px;
 	min-height: 285px;
+	background-image: url( 'images/confetti-header-home.svg' );
 }
 
 @media screen and (max-width: 767px) {
 	.custom-header {
 		height: 160px;
-		background-image: url( 'images/confetti-header-mobile.svg' );
 	}
 	
 	.twentyseventeen-front-page .custom-header {
 		height: 76vw;
 		max-height: 550px;
+		background-image: url( 'images/confetti-header-mobile.svg' );
 	}
 	
 	body:not(.twentyseventeen-front-page) .custom-header {
 		min-height: 160px;
 		background-position-y: 38%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.custom-header {
+		height: 160px;
+		background-image: url( 'images/confetti-header-mobile.svg' );
 	}
 }
 
@@ -341,6 +360,7 @@ body.page .entry-header {
 .site-branding {
 	display: grid;
 	grid-template-rows: 1fr minmax(80px, 2fr) 1fr;
+	grid-template-columns: 1fr auto 1fr;
 	height: 100%;
 	padding: 0 !important;
 }
@@ -350,8 +370,8 @@ body.page .entry-header {
 }
 
 .site-branding .wp20-wordpress-mark {
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 	margin-top: var(--wp20--spacing--xsmall);
 	margin-left: var(--wp20--spacing--xsmall);
 }
@@ -364,6 +384,8 @@ body.page .entry-header {
 
 .custom-logo-link {
 	grid-row: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
 	padding: unset;
 	display: flex;
 	justify-content: center;
@@ -376,14 +398,18 @@ body.page .entry-header {
 	max-width: unset;
 }
 
-.site-branding-text {
+body:not(.title-tagline-hidden) .site-branding-text {
 	grid-row: 4;
 	color: white;
 	font-family: 'EB Garamond', serif;
+	-webkit-font-smoothing: antialiased;
 	font-size: clamp( 20px, calc( 100vw / 32 ), 30px );
 	line-height: 1.3;
 	text-align: center;
 	padding: 0 1em;
+	display: inherit;
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
 
 /*
@@ -804,14 +830,28 @@ body.page .entry-header {
 .wp20-locale-notice {
 	background: var(--wp20--color--grey-9);
 	margin-bottom: 5px;
-	padding: 1px 38px 1px 12px;
+	padding: var(--wp20--spacing--xxsmall) var(--wp20--spacing--medium) var(--wp20--spacing--xxsmall) var(--wp20--spacing--xsmall);
 	position: relative;
 	text-align: center;
 }
 
 .wp20-locale-notice p {
-	margin: 0.5em 0;
-	padding: 2px;
+	margin: 0;
+}
+
+.wp20-locale-notice-dismiss {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	padding: var(--wp20--spacing--xxsmall);
+	background: none;
+	color: var(--wp20--color--grey-2);
+}
+
+.rtl .wp20-locale-notice-dismiss {
+	left: 0;
+	right: unset;
 }
 
 .wp20-locale-notice-dismiss:before {
@@ -821,7 +861,6 @@ body.page .entry-header {
 	display: block;
 	font: normal 16px/20px dashicons;
 	speak: none;
-	margin: 0.5em 0;
 	height: 20px;
 	text-align: center;
 	width: 20px;
@@ -829,37 +868,10 @@ body.page .entry-header {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp20-locale-notice-dismiss {
-	position: absolute;
-	top: 0;
-	right: 1px;
-	border: none;
-	margin: 0;
-	padding: 7px;
-	background: none;
-	color: var(--wp20--color--grey-2);
-	cursor: pointer;
-}
-
-.rtl .wp20-locale-notice-dismiss {
-	left: 1px;
-	right: inherit;
-}
-
-.wp20-locale-notice-dismiss:hover,
-.wp20-locale-notice-dismiss:active,
-.wp20-locale-notice-dismiss:focus {
-	background: inherit;
-}
-
-.wp20-locale-notice-dismiss:hover:before,
-.wp20-locale-notice-dismiss:active:before,
-.wp20-locale-notice-dismiss:focus:before {
-	color: var(--wp--preset--color--primary);
-}
-
-.wp20-locale-notice-dismiss:focus {
-	outline: none;
+.wp20-locale-notice-dismiss:hover::before,
+.wp20-locale-notice-dismiss:active::before,
+.wp20-locale-notice-dismiss:focus::before {
+	color: var(--wp20--color--primary);
 }
 
 /*
@@ -972,6 +984,10 @@ body.page .entry-header {
 	color: var(--wp20--color--text-link);
 }
 
+.entry-date {
+	color: var(--wp20--color--text-meta);
+}
+
 .single .entry-meta {
 	flex-direction: column;
 	margin-bottom: var(--wp20--spacing--xsmall);
@@ -1024,6 +1040,10 @@ body.page .entry-header {
 }
 
 @media screen and ( max-width: 48em ) {
+	.wp20-news .page-title br {
+		display: none;
+	}
+
 	.archive #secondary,
 	.wp20-news #secondary,
 	.posts-navigation,
@@ -1048,6 +1068,13 @@ body.page .entry-header {
 	.single .entry-meta {
 		font-size: 12px;
 	}
+
+	.wp20-news .post .entry-summary p {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 }
 
 @media screen and ( min-width: 769px ) {
@@ -1067,6 +1094,12 @@ body.page .entry-header {
 	.archive #secondary .page-title,
 	.wp20-news #secondary .page-title {
 		font-size: 20px;
+	}
+
+	.archive #secondary .page-title,
+	.wp20-news #secondary .page-title,
+	.single .entry-meta {
+		margin-top: 5px;
 	}
 
 	.archive #primary,
@@ -1338,31 +1371,15 @@ body.page .entry-header {
 	margin: var(--wp20--spacing--xxxsmall) 0;
 }
 
-.downloads-wrapper .downloads-item-header span {
-	display: block;
-	font-size: 14px;
-	line-height: 1;
-	color: rgba( 35, 40, 45, 0.5 );
-	margin: 0 0 1em;
-}
-
 .downloads-wrapper .downloads-item-files {
-	color: rgba( 35, 40, 45, 0.5 );
 	font-size: 12px;
 	margin: 0;
-	padding: 0;
-}
-
-.downloads-wrapper .downloads-item-files li {
-	padding: 0 0 .5em;
-}
-
-.downloads-wrapper .downloads-item-files span {
-	opacity: .5;
 }
 
 .downloads-wrapper .downloads-item-files a {
-	position: relative;
+	display: flex;
+	padding: 5px 0;
+	gap: var(--wp20--spacing--xxxsmall);
 }
 
 .downloads-wrapper .downloads-item-files a::after {
@@ -1370,9 +1387,6 @@ body.page .entry-header {
 	display: inline-block;
 	height: 14px;
 	width: 13px;
-	position: absolute;
-	top: 0;
-	right: -21px;
 	vertical-align: middle;
 	background-image: url( 'images/download-icon.svg' );
 	background-position: center;
