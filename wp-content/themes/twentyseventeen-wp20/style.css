@@ -995,7 +995,7 @@ body.page-slug-whats-on h1.entry-title {
 }
 @media screen and ( max-width: 48em ) {
 	.wp20-events-list {
-		row-gap: 22px;
+		row-gap: var(--wp20--spacing--xsmall);
 	}
 }
 
