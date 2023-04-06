@@ -1,6 +1,8 @@
 <?php
 
 namespace WP20\Meetup_Events;
+use WP20\Theme;
+
 defined( 'WPINC' ) || die();
 
 /** @var array $events */
@@ -11,12 +13,12 @@ defined( 'WPINC' ) || die();
 	<?php foreach ( $events as $event ) : ?>
 		<li data-location="<?php echo esc_attr( $event['location'] ); ?>">
 			<h3 class="wp20-event-group">
-				<?php echo esc_html( $event['group'] ); ?>
+				<?php echo Theme\prevent_widows_in_content( esc_html( $event['group'] ) ); ?>
 			</h3>
 
 			<p class="wp20-event-title">
 				<a href="<?php echo esc_url( $event['eventUrl'] ); ?>">
-					<?php echo esc_html( $event['name'] ); ?>
+					<?php echo esc_html( Theme\prevent_widows_in_content( $event['name'] ) ); ?>
 				</a>
 			</p>
 
