@@ -876,24 +876,17 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 /*
- * What's On - Builds on top of plugin's default styles.
+ * What's On - Builds on top of the default styles from WP20 Meetup Events.
  */
 
-body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header,
-body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-content {
-	float: none;
-	display: block;
-	width: 100%;
-}
-
-body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header {
+body.page-slug-whats-on #primary .entry-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 }
 
 @media screen and ( max-width: 48em ) {
-	body.page-slug-whats-on.page-two-column:not(.archive) #primary .entry-header {
+	body.page-slug-whats-on #primary .entry-header {
 		display: block;
 		margin-bottom: var(--wp20--spacing--small);
 	}
