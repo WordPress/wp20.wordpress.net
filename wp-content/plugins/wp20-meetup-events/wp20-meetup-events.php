@@ -212,6 +212,7 @@ function get_js_strings() : array {
 	return array(
 		'search_cleared' => __( 'Search cleared, showing all events.', 'wp20' ),
 		'search_match'   => __( 'Showing events that match %s.',       'wp20' ),
+		'search_no_matches' => __( 'No events were found matching that search term.', 'wp20' ),
 	);
 }
 
@@ -280,6 +281,7 @@ function render_events_map_shortcode() : string {
  */
 function render_events_list_shortcode() : string {
 	$events = get_formatted_events();
+	$strings = get_js_strings();
 
 	ob_start();
 	require_once( __DIR__ . '/views/events-list.php' );

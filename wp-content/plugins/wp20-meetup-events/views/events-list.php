@@ -5,7 +5,10 @@ use WP20\Theme;
 
 defined( 'WPINC' ) || die();
 
-/** @var array $events */
+/**
+ * @var array $events
+ * @var array $strings
+ */
 
 ?>
 
@@ -28,3 +31,7 @@ defined( 'WPINC' ) || die();
 		</li>
 	<?php endforeach; ?>
 </ul>
+
+<p class="wp20-events-list-no-results">
+	<?php echo esc_html( $strings['search_no_matches'] ); ?>
+</p>

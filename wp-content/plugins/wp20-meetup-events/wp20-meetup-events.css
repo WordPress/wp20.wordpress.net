@@ -26,3 +26,7 @@
 .wp20-events-list li[aria-hidden="true"] {
 	display: none;
 }
+
+.wp20-events-list-no-results {
+	display: none;
+}
