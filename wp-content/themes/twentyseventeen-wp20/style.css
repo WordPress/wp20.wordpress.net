@@ -1012,7 +1012,7 @@ h3.wp20-event-group,
 .wp20-event-date-time {
 	margin-bottom: 0;
 	font-size: 12px;
-	color: var(--wp20--color--grey-6);
+	color: var(--wp20--color--text-meta);
 }
 
 .wp20-organize-event {
