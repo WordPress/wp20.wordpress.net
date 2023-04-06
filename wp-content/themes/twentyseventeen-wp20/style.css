@@ -987,7 +987,7 @@ body.page-slug-whats-on h1.entry-title {
 .wp20-events-list {
 	display: grid;
 	grid-template-columns: repeat( auto-fill, minmax( 208px, 1fr ) );
-	gap: 30px;
+	gap: var(--wp20--spacing--small);
 	width: 100%;
 	margin-left: 0;
 	margin-bottom: 0;
