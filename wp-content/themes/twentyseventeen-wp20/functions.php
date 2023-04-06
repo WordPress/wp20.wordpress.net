@@ -13,6 +13,7 @@ add_filter( 'document_title_parts',  __NAMESPACE__ . '\internationalize_document
 add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\internationalize_menu_items'      );
 add_action( 'wp_head',               __NAMESPACE__ . '\render_social_meta_tags'          );
 add_filter( 'upload_mimes' ,         __NAMESPACE__ . '\custom_upload_mimes'              );
+add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_content'        );
 
 /**
  * Bypass TwentySeventeen's front-page template.
@@ -30,6 +31,27 @@ function get_front_page_template( $template ) {
 	}
 
 	return $template;
+}
+
+/**
+ * Prevent widows in strings by using entities in place of spaces and hyphens.
+ */
+function prevent_widows_in_content( $string ) {
+	if ( strpos( $string, ' ' ) !== false ) {
+		$last_space_position = strrpos( $string, ' ' );
+		$last_word = substr( $string, $last_space_position + 1 );
+
+		// check if $last_word contains a hyphen and if so replace it with a non-breaking hyphen
+		if ( strpos( $last_word, '-' ) !== false ) {
+			$last_word = str_replace( '-', '&#8209;', $last_word );
+			$string = substr_replace( $string, $last_word, $last_space_position + 1 );
+		}
+
+		// replace the last space with a non-breaking space
+		$string = substr_replace( $string, '&nbsp;', $last_space_position, 1 );
+	}
+
+	return $string;
 }
 
 /**
@@ -253,7 +275,7 @@ function get_swag_download_items() {
 		*/
 		array(
 			'title'             => __( 'WP20 Logos', 'wp20' ),
-			'content'           => __( 'Official anniversary logos in three signature colors: blueberry, black, and white.', 'wp20'	),
+			'content'           => prevent_widows_in_content( __( 'Official anniversary logos in three signature colors: blueberry, black, and white.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logo-blue.svg',
 			'files'             => array(
 				array(
@@ -264,7 +286,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Multicolor Logos', 'wp20' ),
-			'content'           => __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'A collection of anniversary logos in six wild color combinations. Made for fun.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/wp20-logos-colored.svg',
 			'files'             => array(
 				array(
@@ -275,7 +297,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Sticker Sheet', 'wp20' ),
-			'content'           => __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'Stuck on WordPress? Bring the WP20 celebration to any surface.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/stickers.svg',
 			'files'             => array(
 				array(
@@ -290,7 +312,7 @@ function get_swag_download_items() {
 		),
 		array(
 			'title'             => __( 'Mystery Pack', 'wp20' ),
-			'content'           => __( 'Surprise designs you’ll want to keep. Print them and use them however you like.', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'Surprise designs you’ll want to keep. Print them and use them however you like.', 'wp20' ) ),
 			'preview_image_url' => get_stylesheet_directory_uri() . '/images/mystery.svg',
 			'files'             => array(
 				array(
@@ -323,6 +345,30 @@ function render_social_meta_tags() {
 }
 
 /**
+ * Gets a nicely formatted string for the published date.
+ */
+function posted_datetime() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf(
+		$time_string,
+		get_the_date( DATE_W3C ),
+		get_the_date(),
+		get_the_modified_date( DATE_W3C ),
+		get_the_modified_date()
+	);
+
+	return sprintf(
+		/* translators: %s: Post date. */
+		__( '<span class="screen-reader-text">Posted on</span> %s', 'twentyseventeen' ),
+		$time_string
+	);
+}
+
+/**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function render_news_posted_on() {
@@ -333,5 +379,5 @@ function render_news_posted_on() {
 		'<span class="author vcard"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a></span>'
 	);
 
-	echo '<span class="byline"> ' . $byline . '</span>·<span class="posted-on">' . twentyseventeen_time_link() . '</span>';
+	echo '<span class="byline"> ' . $byline . '</span>·<span class="posted-on">' . posted_datetime() . '</span>';
 }

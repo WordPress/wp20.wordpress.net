@@ -1,3 +1,7 @@
+<?php
+use WP20\Theme;
+?>
+
 <div class="site-branding">
 
 	<a class="wp20-wordpress-mark" href="https://wordpress.org/">
@@ -8,7 +12,9 @@
 
 	<?php if ( is_front_page() ): ?>
 	<div class="site-branding-text">
-		<em><?php esc_html_e( 'WordPress celebrates twenty years', 'twentyseventeen' ) ?></em>
+		<em>
+			<?php echo esc_html( Theme\prevent_widows_in_content( __( 'WordPress celebrates twenty years', 'twentyseventeen' ) ) ) ?>
+		</em>
 	</div><!-- .site-branding-text -->
 	<?php endif; ?>
 </div><!-- .site-branding -->
