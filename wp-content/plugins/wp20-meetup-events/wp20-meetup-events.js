@@ -51,12 +51,29 @@ var WP20MeetupEvents = ( function( $ ) {
 			throw 'Google Maps library is not loaded.';
 		}
 
-		/*
-		 * These styles were generated from https://mapstyle.withgoogle.com/.
-		 * The following settings were used: Silver theme, roads 2, landmarks 2, labels 3.
-		 * The water color was change to #c7d1ff.
-		 */
-		var mapStyle = [
+		var map, markerCluster,
+			mapOptions = {
+				center            : new google.maps.LatLng( 15.000, 7.000 ),
+				zoom              : 2,
+				zoomControl       : true,
+				mapTypeControl    : false,
+				streetViewControl : false,
+				styles            : getMapStyles()
+		};
+
+		map           = new google.maps.Map( document.getElementById( container ), mapOptions );
+		markers       = createMarkers(  map, markers );
+		markerCluster = clusterMarkers( map, markers );
+	}
+
+	/**
+	 * Get the styles for the map.
+	 *
+	 * These were generated from https://mapstyle.withgoogle.com/ with these settings:
+	 * Theme Silver, Roads 2, Landmarks 2, Labels 3, Water color #c7d1ff.
+	 */
+	function getMapStyles() {
+		var styles = [
 			{
 				"elementType": "geometry",
 				"stylers": [
@@ -303,19 +320,7 @@ var WP20MeetupEvents = ( function( $ ) {
 			}
 		];
 
-		var map, markerCluster,
-			mapOptions = {
-				center            : new google.maps.LatLng( 15.000, 7.000 ),
-				zoom              : 2,
-				zoomControl       : true,
-				mapTypeControl    : false,
-				streetViewControl : false,
-				styles            : mapStyle
-		};
-
-		map           = new google.maps.Map( document.getElementById( container ), mapOptions );
-		markers       = createMarkers(  map, markers );
-		markerCluster = clusterMarkers( map, markers );
+		return styles;
 	}
 
 	/**
