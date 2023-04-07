@@ -25,7 +25,8 @@ var WP20MeetupEvents = ( function( $ ) {
 		strings = data.strings;
 
 		try {
-			$( '#wp20-events-query' ).keyup( filterEventList );
+			$( '#wp20-events-query-mobile' ).keyup( filterEventList );
+			$( '#wp20-events-query-desktop' ).keyup( filterEventList );
 
 			if ( options.hasOwnProperty( 'mapContainer' ) ) {
 				loadMap( options.mapContainer, events );
@@ -170,9 +171,12 @@ var WP20MeetupEvents = ( function( $ ) {
 		var query  = this.value,
 		    events = $( '.wp20-events-list' ).children( 'li' );
 		    speak  = _.debounce( wp.a11y.speak, 1000 );
+		var noMatches = $( '.wp20-events-list-no-results' );
+		var countHidden = 0;
 
 		if ( '' === query ) {
 			events.attr( 'aria-hidden', false );
+			noMatches.css( 'display', 'none' );
 			speak( strings.search_cleared );
 			return;
 		}
@@ -183,12 +187,19 @@ var WP20MeetupEvents = ( function( $ ) {
 
 			if ( -1 === groupName.search( new RegExp( query, 'i' ) ) && -1 === location.search( new RegExp( query, 'i' ) ) ) {
 				$( event ).attr( 'aria-hidden', true );
+				countHidden++;
 			} else {
 				$( event ).attr( 'aria-hidden', false );
 			}
 		} );
 
-		speak( strings.search_match.replace( '%s', query ) );
+		if ( events.length === countHidden ) {
+			noMatches.css( 'display', 'block' );
+			speak( strings.search_no_matches );
+		} else {
+			noMatches.css( 'display', 'none' );
+			speak( strings.search_match.replace( '%s', query ) );
+		}
 	}
 
 	/**

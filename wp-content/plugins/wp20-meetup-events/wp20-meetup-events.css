@@ -1,3 +1,7 @@
+/*
+ * These are foundational styles that provide a reasonable default for any theme.
+ */
+
 #wp20-events-map {
 	position: relative;
 	height: 400px;
@@ -20,5 +24,9 @@
 }
 
 .wp20-events-list li[aria-hidden="true"] {
+	display: none;
+}
+
+.wp20-events-list-no-results {
 	display: none;
 }
