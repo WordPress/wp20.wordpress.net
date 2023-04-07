@@ -1015,6 +1015,10 @@ h3.wp20-event-group,
 	color: var(--wp20--color--text-meta);
 }
 
+.wp20-events-list-no-results {
+	text-align: center;
+}
+
 .wp20-organize-event {
 	text-align: center;
 }
