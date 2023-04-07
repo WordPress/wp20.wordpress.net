@@ -50,9 +50,9 @@ var WP20MeetupEvents = app = ( function( $ ) {
 	 * Build a Google Map in the given container with the given marker data.
 	 *
 	 * @param {string} container
-	 * @param {object} markers
+	 * @param {object} events
 	 */
-	function loadMap( container, markers ) {
+	function loadMap( container, events ) {
 		if ( ! $( '#' + container ).length ) {
 			throw "Map container element isn't present in the DOM.";
 		}
@@ -71,7 +71,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 		};
 
 		app.map           = new google.maps.Map( document.getElementById( container ), mapOptions );
-		app.markers       = createMarkers( markers );
+		app.markers       = createMarkers( events );
 		app.markerCluster = clusterMarkers();
 	}
 
@@ -338,28 +338,29 @@ var WP20MeetupEvents = app = ( function( $ ) {
 	 * Normally the markers would be assigned to the map at this point, but we'll run them through MarkerClusterer
 	 * later on, so adding them to the map now is unnecessary and negatively affects performance.
 	 *
-	 * @param {object}          markers
+	 * @param {object}          events
 	 *
 	 * @return {object}
 	 */
-	function createMarkers( markers ) {
+	function createMarkers( events ) {
 		var markerID,
+			markers            = {},
 			infoWindowTemplate = _.template( $( '#tmpl-wp20-map-marker' ).html(), null, templateOptions ),
 			infoWindow         = new google.maps.InfoWindow( {
 				pixelOffset: new google.maps.Size( -options.markerIconAnchorXOffset, 0 )
 			} );
 
-		for ( markerID in markers ) {
-			if ( ! markers.hasOwnProperty( markerID ) ) {
+		for ( markerID in events ) {
+			if ( ! events.hasOwnProperty( markerID ) ) {
 				continue;
 			}
 
 			markers[ markerID ] = new google.maps.Marker( {
 				id        : markerID,
-				group     : markers[ markerID ].group,
-				name      : markers[ markerID ].name,
-				time      : markers[ markerID ].time,
-				url       : markers[ markerID ].eventUrl,
+				group     : events[ markerID ].group,
+				name      : events[ markerID ].name,
+				time      : events[ markerID ].time,
+				url       : events[ markerID ].eventUrl,
 
 				icon : {
 					url        : options.markerIconBaseURL + options.markerIcon,
@@ -369,8 +370,8 @@ var WP20MeetupEvents = app = ( function( $ ) {
 				},
 
 				position : new google.maps.LatLng(
-					markers[ markerID ].latitude,
-					markers[ markerID ].longitude
+					events[ markerID ].latitude,
+					events[ markerID ].longitude
 				)
 			} );
 
