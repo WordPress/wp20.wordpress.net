@@ -224,12 +224,12 @@ function get_map_options() : array {
 		'mapContainer'            => 'wp20-events-map',
 		'markerIconBaseURL'       => plugins_url( '/images/', __FILE__ ),
 		'markerIcon'              => 'map-marker.svg',
-		'markerIconAnchorXOffset' => 32,
-		'markerIconHeight'        => 64,
-		'markerIconWidth'         => 64,
-		'clusterIcon'             => 'clustered-markers.png',
-		'clusterIconWidth'        => 53,
-		'clusterIconHeight'       => 52,
+		'markerIconAnchorXOffset' => 34,
+		'markerIconHeight'        => 68,
+		'markerIconWidth'         => 68,
+		'clusterIcon'             => 'cluster-background.svg',
+		'clusterIconWidth'        => 38,
+		'clusterIconHeight'       => 38,
 	);
 }
 
