@@ -35,8 +35,9 @@ var WP20MeetupEvents = app = ( function( $ ) {
 		strings = data.strings;
 
 		try {
-			$( '#wp20-events-query-mobile' ).keyup( filterEventList );
-			$( '#wp20-events-query-desktop' ).keyup( filterEventList );
+			$( '#wp20-events-query-mobile' ).keyup( handleFilterInput );
+			$( '#wp20-events-query-desktop' ).keyup( handleFilterInput );
+			$( '#wp20-events-filter' ).submit( handleFilterInput );
 
 			if ( options.hasOwnProperty( 'mapContainer' ) ) {
 				loadMap( options.mapContainer, events );
@@ -429,11 +430,30 @@ var WP20MeetupEvents = app = ( function( $ ) {
 	}
 
 	/**
+	 * Handle user input in the filter form.
+	 *
+	 * @param {object} event
+	 */
+	function handleFilterInput( event ) {
+		event.preventDefault();
+
+		filterEventList( this.value );
+
+		/*
+		 * Sometimes the map may be taking up most of the viewport, so the user won't see the list changing as
+		 * they type their query. This helps direct them to the results.
+		 */
+		event.target.scrollIntoView( {
+			inline: 'start',
+			behavior: 'smooth',
+		} );
+	}
+
+	/**
 	 * Filter the list of events based on a user's search query.
 	 */
-	function filterEventList() {
-		var query  = this.value,
-		    events = $( '.wp20-events-list' ).children( 'li' );
+	function filterEventList( query ) {
+		var events = $( '.wp20-events-list' ).children( 'li' );
 		    speak  = _.debounce( wp.a11y.speak, 1000 );
 		var noMatches = $( '.wp20-events-list-no-results' );
 		var countHidden = 0;
