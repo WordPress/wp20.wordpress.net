@@ -8,6 +8,16 @@
 	background-color: #AADAFF;
 }
 
+
+@media screen and ( max-width: 385px ) {
+	/* This is fragile and will break if they ever change the wording, but it's the only way to target it. */
+	a[aria-label*="Open this area"] img,
+	a[title*="Open this area"] img {
+		/* Prevent the logo from overlapping with the "Keyboard Shortcuts" link. */
+		top: -15px !important;
+	}
+}
+
 .wp20-spinner {
 	display: block;
 	position: absolute;

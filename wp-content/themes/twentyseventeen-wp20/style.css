@@ -908,13 +908,23 @@ body.page-slug-whats-on h1.entry-title {
 #wp20-events-map {
 	background-color: #AADAFF;
 	margin: 0 auto 40px;
+	height: 530px;
 }
 @media screen and ( max-width: 48em ) {
 	#wp20-events-map {
 		position: relative;
 		width: 100vw;
+		height: 490px;
 		left: calc( -1 * var(--wp20--spacing--edge-space) );
 	}
+}
+
+.entry-content #wp20-events-map a img {
+	box-shadow: none;
+}
+
+#wp20-events-map button {
+	font-weight: 400;
 }
 
 #wp20-events-filter {
