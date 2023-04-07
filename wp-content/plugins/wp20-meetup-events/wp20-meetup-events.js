@@ -5,11 +5,21 @@
  *
  * This is mostly copied from the `wordcamp-central-2012` theme.
  */
-var WP20MeetupEvents = ( function( $ ) {
-	// `templateOptions` is copied from Core in order to avoid an extra HTTP request just to get `wp.template`.
+var WP20MeetupEvents = app = ( function( $ ) {
+	/**
+	 * @param {google.maps.Map} map
+	 * @param {object}          markers
+	 * @param {MarkerClusterer} markerCluster
+	 * @param {object}          templateOptions
+	 *                              copied from Core in order to avoid an extra HTTP request just
+	 *                              to get `wp.template`.
+	 */
 	var events,
 	    options,
 	    strings,
+	    map,
+	    markers,
+	    markerCluster,
 	    templateOptions = {
 			evaluate:    /<#([\s\S]+?)#>/g,
 			interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
@@ -51,19 +61,18 @@ var WP20MeetupEvents = ( function( $ ) {
 			throw 'Google Maps library is not loaded.';
 		}
 
-		var map, markerCluster,
-			mapOptions = {
-				center            : new google.maps.LatLng( 15.000, 7.000 ),
-				zoom              : 2,
-				zoomControl       : true,
-				mapTypeControl    : false,
-				streetViewControl : false,
-				styles            : getMapStyles()
+		var mapOptions = {
+			center            : new google.maps.LatLng( 15.000, 7.000 ),
+			zoom              : 2,
+			zoomControl       : true,
+			mapTypeControl    : false,
+			streetViewControl : false,
+			styles            : getMapStyles()
 		};
 
-		map           = new google.maps.Map( document.getElementById( container ), mapOptions );
-		markers       = createMarkers(  map, markers );
-		markerCluster = clusterMarkers( map, markers );
+		app.map           = new google.maps.Map( document.getElementById( container ), mapOptions );
+		app.markers       = createMarkers( markers );
+		app.markerCluster = clusterMarkers();
 	}
 
 	/**
@@ -329,12 +338,11 @@ var WP20MeetupEvents = ( function( $ ) {
 	 * Normally the markers would be assigned to the map at this point, but we'll run them through MarkerClusterer
 	 * later on, so adding them to the map now is unnecessary and negatively affects performance.
 	 *
-	 * @param {google.maps.Map} map
 	 * @param {object}          markers
 	 *
 	 * @return {object}
 	 */
-	function createMarkers( map, markers ) {
+	function createMarkers( markers ) {
 		var markerID,
 			infoWindowTemplate = _.template( $( '#tmpl-wp20-map-marker' ).html(), null, templateOptions ),
 			infoWindow         = new google.maps.InfoWindow( {
@@ -369,7 +377,7 @@ var WP20MeetupEvents = ( function( $ ) {
 			google.maps.event.addListener( markers[ markerID ], 'click', function() {
 				try {
 					infoWindow.setContent( infoWindowTemplate( { 'event': markers[ this.id ] } ) );
-					infoWindow.open( map, markers[ this.id ] );
+					infoWindow.open( app.map, markers[ this.id ] );
 				} catch ( exception ) {
 					log( exception );
 				}
@@ -386,12 +394,9 @@ var WP20MeetupEvents = ( function( $ ) {
 	 * MarkerClusterer Plus does, but it doesn't seem as official, so I'm not as confident that it's secure,
 	 * stable, etc.
 	 *
-	 * @param {google.maps.Map} map
-	 * @param {object}          markers
-	 *
 	 * @return MarkerClusterer
 	 */
-	function clusterMarkers( map, markers ) {
+	function clusterMarkers() {
 		var clusterOptions,
 			markersArray = [];
 
@@ -400,8 +405,8 @@ var WP20MeetupEvents = ( function( $ ) {
 		 * loop through them to find one. MarkerClusterer requires them to be passed in as an object, though, so
 		 * we need to convert them here.
 		 */
-		for ( var m in markers ) {
-			markersArray.push( markers[ m ] );
+		for ( var m in app.markers ) {
+			markersArray.push( app.markers[ m ] );
 		}
 
 		clusterOptions = {
@@ -419,7 +424,7 @@ var WP20MeetupEvents = ( function( $ ) {
 			]
 		};
 
-		return new MarkerClusterer( map, markersArray, clusterOptions );
+		return new MarkerClusterer( app.map, markersArray, clusterOptions );
 	}
 
 	/**
