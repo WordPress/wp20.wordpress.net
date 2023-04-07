@@ -16,13 +16,12 @@ Your local environment should be running at http://localhost:8888
 1. `npm run setup:wp`
 1. Activate the Twenty Seventeen - WP20 child theme
 1. Import the posts from wp20.wordpress.net
-1. Install Plugins: Surge, Custom Twitter Feeds, and 
 1. Add the Surge constants to your `wp-config.php`:
 	```php
 	define( 'WP_CACHE', true ); # This may already be existent below, so no need to add if it is.
 	define( 'WP_CACHE_CONFIG', __DIR__ . '/surge-config.php' );
 	```
-1. Add pages titled `What's on`, `News`, `＃WP20 Live` and `Swag`
+1. Add pages titled `What's on`, `News`, `＃WP20 Live (slug: "live")` and `Swag`
 1. In Appearance > Menus, add a navigation menu with the pages `What's on`, `News`, `＃WP20 Live` and `Swag` and set as `Top Menu`
 1. In Appearance > Menus, add a social menu with items such as Facebook, Twitter, etc. and set as `Social Links Menu`
 1. In Appearance > Widgets, remove everything.
