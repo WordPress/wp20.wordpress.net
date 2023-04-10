@@ -893,7 +893,7 @@ body.page-slug-whats-on #primary .entry-header {
 }
 
 body.page-slug-whats-on h1.entry-title {
-	width: 639px;
+	flex-basis: 55%;
 	font-size: clamp( 20px, 2.4vw, 30px);
 	margin-right: var(--wp20--spacing--medium);
 	margin-bottom: 0;
@@ -930,27 +930,29 @@ body.page-slug-whats-on h1.entry-title {
 #wp20-events-filter {
 	position: relative;
 	display: flex;
-	flex-wrap: nowrap;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	flex-basis: 45%;
 	box-sizing: border-box;
-	min-width: 325px;
 	margin-bottom: 0;
 	padding-right: 0;
 }
 
 #wp20-events-filter label {
-	margin-right: 30px;
 	margin-bottom: 0;
 	padding: 0.7em 0; /* Must match `.wp20-events-query` (inherited from TwentySeventeen. */
 }
 
 #wp20-events-filter label span {
 	font-size: 13px;
+	white-space: nowrap;
 }
 
 #wp20-events-filter .wp20-events-query {
 	flex-shrink: 0;
-	flex-grow: 1;
+	flex-grow: 0;
 	flex-basis: 200px;
+	margin-left: 30px;
 	border-radius: 2px;
 	border-color: var(--wp20--color--grey-0);
 	font-size: 12px;
@@ -966,7 +968,7 @@ body.page-slug-whats-on h1.entry-title {
 
 #wp20-events-filter button {
 	position: absolute;
-	top: 6px;
+	bottom: 7px;
 	right: 10px;
 	width: 24px;
 	height: 24px;
@@ -982,6 +984,10 @@ body.page-slug-whats-on h1.entry-title {
 
 	#wp20-events-filter label {
 		display: none;
+	}
+
+	#wp20-events-filter .wp20-events-query {
+		margin-left: 0;
 	}
 
 	#wp20-events-query-mobile {
