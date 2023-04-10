@@ -941,11 +941,11 @@ body.page-slug-whats-on h1.entry-title {
 #wp20-events-filter label {
 	margin-bottom: 0;
 	padding: 0.7em 0; /* Must match `.wp20-events-query` (inherited from TwentySeventeen. */
+	text-align: right;
 }
 
 #wp20-events-filter label span {
 	font-size: 13px;
-	white-space: nowrap;
 }
 
 #wp20-events-filter .wp20-events-query {
