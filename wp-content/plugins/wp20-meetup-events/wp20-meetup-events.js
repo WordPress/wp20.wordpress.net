@@ -439,14 +439,16 @@ var WP20MeetupEvents = app = ( function( $ ) {
 
 		filterEventList( this.value );
 
-		/*
-		 * Sometimes the map may be taking up most of the viewport, so the user won't see the list changing as
-		 * they type their query. This helps direct them to the results.
-		 */
-		event.target.scrollIntoView( {
-			inline: 'start',
-			behavior: 'smooth',
-		} );
+		_.debounce( function() {
+			/*
+			* Sometimes the map may be taking up most of the viewport, so the user won't see the list changing as
+			* they type their query. This helps direct them to the results.
+			*/
+			event.target.scrollIntoView( {
+				inline: 'start',
+				behavior: 'smooth',
+			} );
+		}, 300 )();
 	}
 
 	/**
