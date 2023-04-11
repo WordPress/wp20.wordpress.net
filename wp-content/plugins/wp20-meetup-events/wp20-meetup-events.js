@@ -365,6 +365,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 				name      : events[ markerID ].name,
 				time      : events[ markerID ].time,
 				url       : events[ markerID ].eventUrl,
+				location  : events[ markerID ].location, // Custom property for `filterEventMap()`.
 
 				icon : {
 					url        : options.markerIconBaseURL + options.markerIcon,
@@ -484,6 +485,8 @@ var WP20MeetupEvents = app = ( function( $ ) {
 
 	/**
 	 * Filter the list of events based on a user's search query.
+	 *
+	 * @param {string} query
 	 */
 	function filterEventList( query ) {
 		var events = $( '.wp20-events-list' ).children( 'li' );
@@ -500,13 +503,15 @@ var WP20MeetupEvents = app = ( function( $ ) {
 
 		events.each( function( index, event ) {
 			var groupName = $( event ).children( '.wp20-event-group' ).text().trim(),
-			    location  = $( event ).data( 'location' );
+			    location  = $( event ).data( 'location' ),
+			    eventName = $( event ).data( 'name' ),
+			    haystack  = groupName + ' ' + eventName + ' ' + location;
 
-			if ( -1 === groupName.search( new RegExp( query, 'i' ) ) && -1 === location.search( new RegExp( query, 'i' ) ) ) {
+			if ( eventMatchesQuery( haystack, query ) ) {
+				$( event ).attr( 'aria-hidden', false );
+			} else {
 				$( event ).attr( 'aria-hidden', true );
 				countHidden++;
-			} else {
-				$( event ).attr( 'aria-hidden', false );
 			}
 		} );
 
