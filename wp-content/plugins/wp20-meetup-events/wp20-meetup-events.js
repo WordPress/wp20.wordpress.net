@@ -450,6 +450,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 		if ( undefined !== event.target.value ) {
 			app.searchQuery = event.target.value;
 			filterEventList( app.searchQuery );
+			filterEventMap( this.value );
 		}
 
 		/*
@@ -460,6 +461,25 @@ var WP20MeetupEvents = app = ( function( $ ) {
 			inline: 'start',
 			behavior: 'smooth',
 		} );
+	}
+
+	/**
+	 * Filter the map markers based on a user's search query.
+	 *
+	 * @param {string} query
+	 */
+	function filterEventMap( query ) {
+		var haystack;
+
+		app.markerCluster.clearMarkers();
+
+		for ( var markerID in app.markers ) {
+			haystack = app.markers[ markerID ].group + ' ' + app.markers[ markerID ].name + ' ' + app.markers[ markerID ].location;
+
+			if ( eventMatchesQuery( haystack, query ) ) {
+				app.markerCluster.addMarker( app.markers[ markerID ] );
+			}
+		}
 	}
 
 	/**
@@ -497,6 +517,22 @@ var WP20MeetupEvents = app = ( function( $ ) {
 			noMatches.css( 'display', 'none' );
 			speak( strings.search_match.replace( '%s', query ) );
 		}
+	}
+
+	/**
+	 * Test if an event matches a search query.
+	 *
+	 * @param {string} eventTerms
+	 * @param {string} query
+	 *
+	 * @returns {boolean}
+	 */
+	function eventMatchesQuery( eventTerms, query ) {
+		// Sometimes `&nbsp` is used as a hack to prevent runts. If we don't replace that then a `query` of
+		// `los angeles` wouldn't match `los&nbspangeles`.
+		eventTerms = eventTerms.replace(/\u00A0/g, ' ');
+
+		return eventTerms.search( new RegExp( query, 'i' ) ) >= 0;
 	}
 
 	/**
