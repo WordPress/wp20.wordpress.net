@@ -895,7 +895,6 @@ body.page-slug-whats-on #primary .entry-header {
 body.page-slug-whats-on h1.entry-title {
 	flex-basis: 55%;
 	font-size: clamp( 20px, 2.4vw, 30px);
-	margin-right: var(--wp20--spacing--medium);
 	margin-bottom: 0;
 }
 @media screen and ( max-width: 48em ) {
