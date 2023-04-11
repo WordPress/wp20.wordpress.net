@@ -917,13 +917,21 @@ body.page-slug-whats-on h1.entry-title {
 #wp20-events-map {
 	background-color: #AADAFF;
 	margin: 0 auto 40px;
+	min-height: 175px;
 	height: 530px;
+
+	/*
+	 * The map should be short enough that the user can view it and the search field at the same time.
+	 * `160` is the height of the search box plus all the padding/margin around it and the map.t
+	 */
+	max-height: calc( 100vh - 160px );
 }
 @media screen and ( max-width: 48em ) {
 	#wp20-events-map {
 		position: relative;
 		width: 100vw;
 		height: 490px;
+		max-height: calc( 100vh - 130px );
 		left: calc( -1 * var(--wp20--spacing--edge-space) );
 	}
 }
