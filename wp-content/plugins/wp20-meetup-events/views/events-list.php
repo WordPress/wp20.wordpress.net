@@ -14,7 +14,10 @@ defined( 'WPINC' ) || die();
 
 <ul class="wp20-events-list">
 	<?php foreach ( $events as $event ) : ?>
-		<li data-location="<?php echo esc_attr( $event['location'] ); ?>">
+		<li
+			data-name="<?php echo esc_attr( $event['name'] ); ?>"
+			data-location="<?php echo esc_attr( $event['location'] ); ?>"
+		>
 			<h3 class="wp20-event-group">
 				<?php echo Theme\prevent_widows_in_content( esc_html( $event['group'] ) ); ?>
 			</h3>
