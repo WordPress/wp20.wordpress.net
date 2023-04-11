@@ -93,8 +93,8 @@ p {
 
 h1,
 h2,
+h2.wp20-event-group,
 h3,
-h3.wp20-event-group,
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.twentyseventeen-front-page) .entry-title,
@@ -1037,7 +1037,7 @@ body.page-slug-whats-on h1.entry-title {
 	margin-right: 0;
 }
 
-h3.wp20-event-group,
+h2.wp20-event-group,
 .wp20-event-title {
 	margin-bottom: 6px;
 }

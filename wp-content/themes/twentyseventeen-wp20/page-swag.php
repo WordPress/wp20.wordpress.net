@@ -22,9 +22,9 @@ use WP20\Theme;
 									<div class="downloads-item-preview">
 										<img src="<?php echo esc_attr( $item['preview_image_url'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>" />
 									</div>
-									<h3 class="downloads-item-header">
+									<h2 class="downloads-item-header">
 										<?php echo esc_html( $item['title'] ); ?>
-									</h3>
+									</h2>
 									<p class="downloads-item-content"><?php echo esc_html( $item['content'] ); ?></p>
 									<?php if ( ! empty( $item['files'] ) ) : ?>
 										<ul class="downloads-item-files">
