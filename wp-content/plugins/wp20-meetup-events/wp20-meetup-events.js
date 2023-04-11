@@ -20,7 +20,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 	    map,
 	    markers,
 	    markerCluster,
-		searchQuery,
+	    searchQuery,
 	    templateOptions = {
 			evaluate:    /<#([\s\S]+?)#>/g,
 			interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
@@ -35,7 +35,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 		options = data.map_options;
 		strings = data.strings;
 
-		var debouncedHandleFilterEvent = _.debounce( handleFilterInput, 300 );
+		var debouncedHandleFilterEvent = _.debounce( handleFilterInput, 200 );
 
 		try {
 			$( '#wp20-events-query-mobile' ).keyup( debouncedHandleFilterEvent );
@@ -440,25 +440,22 @@ var WP20MeetupEvents = app = ( function( $ ) {
 	function handleFilterInput( event ) {
 		event.preventDefault();
 
-		// On submit this is called twice, once with the form and once with the input. We only want to handle the input.
-		// We also don't want to handle `keyup` events that aren't searches, like `alt-tab`.
-		if ( undefined === event.target.value || event.target.value === app.searchQuery ) {
+		// We don't want to handle `keyup` events that aren't searches, like `alt-tab`.
+		if ( event.target.value === app.searchQuery ) {
 			return;
-			// this prevents submit from scrolling to map/list if they scrolled away, so there's no point in listening for submit
-			// fix that or just remove the submit handler
 		}
 
-		app.searchQuery = event.target.value;
-
-		filterEventList( app.searchQuery );
-
-		// console.log( event.target.value	);
-		// console.log( event.target );
+		// On submit this is called twice, once with the `form` and once with the `input`. The `form` wont have a
+		// value to filter by, so it can be ignored. It should still trigger a scroll though.
+		if ( undefined !== event.target.value ) {
+			app.searchQuery = event.target.value;
+			filterEventList( app.searchQuery );
+		}
 
 		/*
-		* Sometimes the map may be taking up most of the viewport, so the user won't see the list changing as
-		* they type their query. This helps direct them to the results.
-		*/
+		 * Sometimes the map may be taking up most of the viewport, so the user won't see the list changing as
+		 * they type their query. This helps direct them to the results.
+		 */
 		event.target.scrollIntoView( {
 			inline: 'start',
 			behavior: 'smooth',
