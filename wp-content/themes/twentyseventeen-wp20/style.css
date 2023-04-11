@@ -361,13 +361,14 @@ body.page .entry-header {
 .site-branding {
 	display: grid;
 	grid-template-rows: 1fr minmax(80px, 2fr) 1fr;
-	grid-template-columns: 1fr auto 1fr;
+	grid-template-columns: 1fr minmax(110px, 2fr) 1fr;
 	height: 100%;
 	padding: 0 !important;
 }
 
 .twentyseventeen-front-page .site-branding {
 	grid-template-rows: 2fr minmax(100px, 2.2fr) 1fr auto 0.5fr;
+	grid-template-columns: 1fr minmax(135px, 2fr) 1fr;
 }
 
 .site-branding .wp20-wordpress-mark {
@@ -378,6 +379,11 @@ body.page .entry-header {
 }
 
 @media screen and (min-width: 769px) {
+	.site-branding,
+	.twentyseventeen-front-page .site-branding {
+		grid-template-columns: 2fr 1.5fr 2fr;
+	}
+
 	.site-branding .wp20-wordpress-mark {
 		display: none;
 	}
@@ -780,11 +786,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	padding: 0;
 }
 
-.navigation-top-menu-container .select2-search--dropdown .select2-search__field {
-	padding: 13px 50px 13px 12px;
-	border-radius: 0;
-	border: 0 !important;
-	border-bottom: 1px solid var(--wp20--color--border) !important;
+.navigation-top-menu-container .select2-search--dropdown .select2-search__field,
+.error404 .search-form .search-submit {
 	color: var(--wp20--color--text);
 	background-image:  url( 'images/search-icon.svg' );
 	background-repeat: no-repeat;
@@ -792,6 +795,13 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	background-position: calc(100% - 20px) center;
 	font-size: 14px;
 	text-align: end;
+}
+
+.navigation-top-menu-container .select2-search--dropdown .select2-search__field {
+	border-radius: 0;
+	padding: 13px 50px 13px 12px;
+	border: 0 !important;
+	border-bottom: 1px solid var(--wp20--color--border) !important;
 }
 
 .navigation-top-menu-container .select2-search--dropdown .select2-search__field::placeholder {
@@ -893,9 +903,8 @@ body.page-slug-whats-on #primary .entry-header {
 }
 
 body.page-slug-whats-on h1.entry-title {
-	width: 639px;
+	flex-basis: 55%;
 	font-size: clamp( 20px, 2.4vw, 30px);
-	margin-right: var(--wp20--spacing--medium);
 	margin-bottom: 0;
 }
 @media screen and ( max-width: 48em ) {
@@ -930,17 +939,18 @@ body.page-slug-whats-on h1.entry-title {
 #wp20-events-filter {
 	position: relative;
 	display: flex;
-	flex-wrap: nowrap;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	flex-basis: 45%;
 	box-sizing: border-box;
-	min-width: 325px;
 	margin-bottom: 0;
 	padding-right: 0;
 }
 
 #wp20-events-filter label {
-	margin-right: 30px;
 	margin-bottom: 0;
 	padding: 0.7em 0; /* Must match `.wp20-events-query` (inherited from TwentySeventeen. */
+	text-align: right;
 }
 
 #wp20-events-filter label span {
@@ -949,8 +959,9 @@ body.page-slug-whats-on h1.entry-title {
 
 #wp20-events-filter .wp20-events-query {
 	flex-shrink: 0;
-	flex-grow: 1;
+	flex-grow: 0;
 	flex-basis: 200px;
+	margin-left: 30px;
 	border-radius: 2px;
 	border-color: var(--wp20--color--grey-0);
 	font-size: 12px;
@@ -966,7 +977,7 @@ body.page-slug-whats-on h1.entry-title {
 
 #wp20-events-filter button {
 	position: absolute;
-	top: 6px;
+	bottom: 7px;
 	right: 10px;
 	width: 24px;
 	height: 24px;
@@ -982,6 +993,10 @@ body.page-slug-whats-on h1.entry-title {
 
 	#wp20-events-filter label {
 		display: none;
+	}
+
+	#wp20-events-filter .wp20-events-query {
+		margin-left: 0;
 	}
 
 	#wp20-events-query-mobile {
@@ -1719,5 +1734,46 @@ iframe.wp-embedded-content {
 	.wp20-wordpress-logo,
 	.wp20-social {
 		width: 30%;
+	}
+}
+
+/*
+ * 404
+ */
+
+body:not(.has-sidebar):not(.page-one-column) .page-header,
+.error404:not(.has-sidebar) #primary .page-content {
+	float: unset;
+	width: unset;
+}
+
+.error404:not(.has-sidebar) #primary .page-content {
+	padding-bottom: 0;
+}
+
+.error404 .page-content .search-form {
+	margin-bottom: var(--wp20--spacing--medium);
+}
+
+.error404 input[type="search"] {
+	box-sizing: border-box;
+}
+
+.error404 .search-form .search-submit {
+	background-color: unset;
+}
+
+.error404 input[type="search"],
+.error404 .search-form .search-submit {
+	padding: var(--wp20--spacing--xxsmall) var(--wp20--spacing--xsmall);
+}
+
+.error404 .search-form .search-submit .icon {
+	display: none;
+}
+
+@media screen and ( min-width: 769px ) {
+	.error404 .page-content .search-form {
+		width: 50%;
 	}
 }
