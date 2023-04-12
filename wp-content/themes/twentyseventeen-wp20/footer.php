@@ -11,7 +11,7 @@
 								printf(
 									wp_kses_post( __( '<strong>Don’t see your city?</strong><br> Get in touch with <a href="%s">your local group</a>, or <a href="%s">organize a group in your town</a>.', 'wp20' ) ),
 									'https://www.meetup.com/pro/wordpress/',
-									'https://make.wordpress.org/community/handbook/meetup-organizer/welcome/'
+									site_url() . '/celebrate-with-wordpress/'
 								);
 							} else {
 								echo wp_kses_post( __( 'Follow <strong>#WP20</strong> on social for latest updates, or be part of celebration by posting.', 'wp20' ) );
