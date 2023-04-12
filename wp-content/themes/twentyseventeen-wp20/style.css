@@ -708,6 +708,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .navigation-top-menu-container .select2-dropdown {
+	/* port to new */
 	border-top: 1px solid var(--wp20--color--border) !important;
 }
 
@@ -721,6 +722,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	}
 
 	.navigation-top-menu-container .select2-dropdown {
+		/* port to new */
 		border: 1px solid var(--wp20--color--border) !important;
 	}
 }
@@ -729,6 +731,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: absolute;
 	top: 0;
 	right: 0;
+	padding: 8px 10px;
 	text-align: right;
 	width: 50%;
 }
@@ -748,6 +751,14 @@ body:not(.title-tagline-hidden) .site-branding-text {
 @media screen and (max-width:48em) {
 	.wp20-locale-switcher-container.is-toggled {
 		background: var(--wp20--color--active-menu);
+		/* this is the only thing that uses it?
+		yeah, can use #wp20-locale-switcher aria-expanded true instead
+			well, maybe not b/c want to set bg on the container. so maybe need mutator to watch for expanded and set bg on container
+
+
+			reference https://github.com/alphagov/accessible-autocomplete/issues/117 as easier way in future
+
+		*/
 	}
 }
 
@@ -755,8 +766,26 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline;
 }
 
+#wp20-locale-switcher {
+	border: none;
+}
+
 .wp20-locale-switcher-container select {
-	visibility: hidden; /* Prevent iOS native picker UI */
+	/*visibility: hidden; /* Prevent iOS native picker UI */
+	/* maybe change? this and/or other styles?
+	test on ios to see if needed
+	*/
+}
+
+/*  what is that thing that appears to the right? a placeholder?  */
+
+/* make a section just for the library styles? need to put all this in logical order once working */
+.autocomplete__input--show-all-values input[type="text"] {
+	padding: 0; /* maybe make 17 20 */
+}
+
+.autocomplete__hint {
+	position: static;
 }
 
 @media screen and (max-width: 48em) {
@@ -764,6 +793,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 		width: 100% !important; /* override selectWoo rule. locale-swithcer.js L24. */
 	}
 }
+
+/* find all the styles that applied to the old one and update to apply to new */
 
 .wp20-locale-switcher-container .select2-container--default .select2-selection--single {
 	border: none;
@@ -811,17 +842,18 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 @media screen and (max-width: 48em) {
 	#wp20-locale-switcher-form {
-		padding-right: var(--wp20--spacing--edge-space);
+		/* padding-right: var(--wp20--spacing--edge-space); */
 	}
 }
 
 /* Arrow indicators */
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-	top: unset !important;
-}
+.autocomplete__dropdown-arrow-down-wrapper {
+	z-index: 1;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	/* these are rough so far, refine the top-down first */
 
-
-.wp20-locale-switcher-container .select2-selection--single .select2-selection__arrow b {
 	width: 6px !important;
 	height: 6px !important;
 	border: 1px solid var(--wp20--color--text) !important;
@@ -837,16 +869,25 @@ body:not(.title-tagline-hidden) .site-branding-text {
  */
 
 .navigation-top-menu-container .select2-container--default .select2-selection--single {
+	/* port to new */
 	text-align: left;
 	border-bottom: 1px solid var(--wp20--color--border);
 }
 
+.navigation-top-menu-container .select2-container--default,
+.navigation-top-menu-container .select2-container .select2-dropdown {
+	/* port to new */
+	text-align: right;
+}
+
 .navigation-top-menu-container .select2-search--dropdown {
+	/* port to new */
 	padding: 0;
 }
 
 .navigation-top-menu-container .select2-search--dropdown .select2-search__field,
 .error404 .search-form .search-submit {
+	/* port to new */
 	color: var(--wp20--color--text);
 	background-image:  url( 'images/search-icon.svg' );
 	background-repeat: no-repeat;
@@ -856,6 +897,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .navigation-top-menu-container .select2-search--dropdown .select2-search__field {
+	/* port to new */
 	border-radius: 0;
 	padding: 13px 50px 13px var(--wp20--spacing--xsmall);
 	border: 0 !important;
@@ -863,18 +905,22 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .navigation-top-menu-container .select2-search--dropdown .select2-search__field::placeholder {
+	/* port to new */
 	font-size: 14px;
 }
 
 .navigation-top-menu-container  .select2-search--dropdown .select2-search__field::placeholder {
+	/* port to new */
 	color: var(--wp20--color--text-meta);
 }
 
 .navigation-top-menu-container .select2-container .select2-dropdown {
+	/* port to new */
 	border: 0;
 }
 
 .navigation-top-menu-container .select2-results__option {
+	/* port to new */
 	font-size: 14px;
 	padding: 6px 12px;
 }
@@ -882,12 +928,14 @@ body:not(.title-tagline-hidden) .site-branding-text {
 .navigation-top-menu-container .select2-container--default .select2-results__option,
 .navigation-top-menu-container .select2-container--default .select2-results__option--highlighted[aria-selected]
 .navigation-top-menu-container .select2-container--default .select2-results__option--highlighted[aria-selected=false] {
+	/* port to new */
 	background-color: transparent !important;
 	color: var(--wp20--color--text) !important;
 	padding: 12px var(--wp20--spacing--xsmall);
 }
 
 .navigation-top-menu-container .select2-container--default .select2-results__option[aria-selected=true] {
+	/* port to new */
 	color: var(--wp20--color--text-link) !important;
 	font-weight: 700;
 }

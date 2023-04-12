@@ -16,26 +16,105 @@
 			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
 			app.$outerContainer = $( '.wp20-locale-switcher-container' );
+			app.$switcherForm = $( '#wp20-locale-switcher-form' );
 
-			app.$switcher.selectWoo( {
-				language: app.locale,
-				dir: app.dir,
-				dropdownParent: app.$container,
-				width: 'auto',
-				dropdownAutoWidth : true
+			const localeSelect = document.querySelector( '#wp20-locale-switcher' );
+
+
+
+			// todo enable a11yautocom here
+			accessibleAutocomplete.enhanceSelectElement( {
+				selectElement: localeSelect,
+				showAllValues: true,
+				// displayMenu: 'overlay' might be useful
+				// autoselect: false
+
+				// Submit the form.
+				onConfirm: function( localeName ) {
+					// Find the selected locale code.
+					// This is necessary because of https://github.com/alphagov/accessible-autocomplete/issues/387.
+					const selectedOption = Array.from( localeSelect.querySelectorAll( 'option' ) ).find( function( option ) {
+						return option.innerText === localeName;
+					} );
+
+					if ( selectedOption ) {
+						if ( app.locale !== selectedOption.value ) {
+							$( '#wp20-locale-switcher-select' ).val( selectedOption.value );
+							app.$switcherForm.submit();
+						}
+					}
+				},
+
+				dropdownArrow: function() {
+					// Intentionally empty because we'll create the arrow in CSS.
+					return '';
+				},
+
+				// defaultValue: function( value ) {
+				// 	console.log( 'defaultvalue', value );
+				// 	return 'hi';
+				// }
+
+				// . If your use case doesn't fit the above defaults, try reading the source and seeing if you can write your own.
+
+				// souce - use locale code too
+
+				// inputValue: 		function( value ) {
+				// 	console.log( 'inputValue', value );
+				// return value;
+				// },
+				// doesn't give locale code
+
+				// dropdownArrow: () => '' requires showallvalues true
+
+				// transleat "no results found" etc
+				/*
+				do this just like you've done other i18n strings
+				tStatusQueryTooShort: (minQueryLength) => '',
+				tStatusNoResults: () => '',
+				tStatusSelectedOption: (selectedOption, length) => '',
+				tStatusResults: () => ''
+
+				make sure escaped
+				*/
+
+				// { templates: { inputValue, suggestion } } to let search by endonym and english name
+					// make sure escaped
+
+
+				//  placeholder: 'Search for a country' - no, old one didn't
+
+				// supply our dropdown arrow
 			} );
 
-			app.$switcher.on( 'change', function() {
-				$(this).parents( 'form' ).submit();
-			} );
+
+			document.addEventListener("DOMContentLoaded", function(event) {
+				app.$switcher.on( 'focus', function() {
+					console.log('focus');
+				});
+
+				app.$switcher.on( 'blur', function() {
+					console.log('blur');
+				});
+				document.querySelector( '.autocomplete__wrapper' ).addEventListener( 'keydown', function(event) {
+					console.log(event);
+				} );
+			});
 
 			// This has to stay `select2`; `selectWoo:open` will not work.
 			app.$switcher.on( 'select2:open', function() {
-				app.$container.find( 'input' ).attr( 'placeholder', app.$container.attr( 'data-placeholder' ) );
+				// move to other events? there aren't any i don't think
+				// but maybe there are some native ones, or you can use a mutation observer
+
+				// change from ? to "search languages"
+				// app.$container.find( 'input' ).attr( 'placeholder', app.$container.attr( 'data-placeholder' ) );
+				// maybe don't need this b/c they don't recommend using placeholders, and can set via api if need to?
+
 
 				// Turn off the menu if it's open.
 				if( $( '#site-navigation' ).hasClass( 'toggled-on' ) ) {
 					$( '.menu-toggle' ).trigger( 'click' );
+					// should probably port to new lib
 				}
 
 				app.$outerContainer.addClass( 'is-toggled' );

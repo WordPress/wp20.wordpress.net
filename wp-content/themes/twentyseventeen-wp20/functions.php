@@ -119,7 +119,7 @@ function enqueue_scripts() {
 	);
 
 	// Styles for locale switcher.
-	wp_enqueue_style( 'selectWoo' );
+	wp_enqueue_style( 'accessible-autocomplete' );
 
 	wp_enqueue_script(
 		'twentyseventeen-wp20-front-end',
@@ -129,6 +129,8 @@ function enqueue_scripts() {
 		true
 	);
 }
+
+// need to make wp20 styslsheet load after autoacomplete. rebase truk to avoid conflicts
 
 /**
  * Add the post's slug to the body tag
