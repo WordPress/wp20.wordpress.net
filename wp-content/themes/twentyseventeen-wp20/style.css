@@ -1294,12 +1294,12 @@ body.page-slug-whats-on h1.entry-title {
 }
 
 .posts-navigation .page-numbers.next::before {
-	content: "·";
+	content: '\00B7';
 	margin-right: var(--wp20--spacing--xxxsmall);
 }
 
 .posts-navigation .page-numbers.prev::after {
-	content: "·";
+	content: '\00B7';
 	margin-left: var(--wp20--spacing--xxxsmall);
 }
 
@@ -1392,7 +1392,7 @@ body.page-slug-whats-on h1.entry-title {
 	}
 
 	.post-navigation .nav-previous + .nav-next::before {
-		content: "·";
+		content: '\00B7';
 		display: block;
 		margin: 0 var(--wp20--spacing--xxxsmall);
 	}
