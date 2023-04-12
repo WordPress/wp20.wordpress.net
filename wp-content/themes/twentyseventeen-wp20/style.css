@@ -665,7 +665,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 		left: auto !important;
 		right: 0 !important;
 		width: 50% !important;
-		max-width: 400px;
+		max-width: 250px;
 	}
 
 	.navigation-top-menu-container .select2-dropdown {
@@ -787,11 +787,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 .navigation-top-menu-container .select2-container--default .select2-selection--single {
 	text-align: left;
 	border-bottom: 1px solid var(--wp20--color--border);
-}
-
-.navigation-top-menu-container .select2-container--default,
-.navigation-top-menu-container .select2-container .select2-dropdown {
-	text-align: right;
 }
 
 .navigation-top-menu-container .select2-search--dropdown {
