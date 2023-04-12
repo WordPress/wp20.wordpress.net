@@ -366,6 +366,7 @@ var WP20MeetupEvents = app = ( function( $ ) {
 				time      : events[ markerID ].time,
 				url       : events[ markerID ].eventUrl,
 				location  : events[ markerID ].location, // Custom property for `filterEventMap()`.
+				title     : events[ markerID ].group,
 
 				icon : {
 					url        : options.markerIconBaseURL + options.markerIcon,
