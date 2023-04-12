@@ -94,7 +94,6 @@ p {
 h1,
 h2,
 h3,
-h3.wp20-event-group,
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.twentyseventeen-front-page) .entry-title,
@@ -114,7 +113,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 @media screen and ( min-width: 769px ) {
 	h1,
 	h2,
-	h3,
+	h3:not(.wp20-event-group),
 	.page .panel-content .entry-title,
 	.page-title,
 	body.page:not(.twentyseventeen-front-page) .entry-title,
@@ -151,6 +150,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 	color: var(--wp20--color--text-link);
 }
 
+.entry-content a:not(.downloads-item a):not(.post-navigation a):not(.wp20-events-list a),
 .entry-content a:focus,
 .entry-content a:hover,
 .entry-summary a:focus,
@@ -1037,7 +1037,7 @@ body.page-slug-whats-on h1.entry-title {
 	margin-right: 0;
 }
 
-h3.wp20-event-group,
+.wp20-event-group,
 .wp20-event-title {
 	margin-bottom: 6px;
 }
