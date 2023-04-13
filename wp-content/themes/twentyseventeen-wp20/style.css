@@ -81,6 +81,14 @@ p {
 	margin-bottom: var(--wp20--spacing--small);
 }
 
+.wp-block-buttons {
+	margin-bottom: var(--wp20--spacing--small);
+}
+
+.wp-block-button .wp-block-button__link {
+	margin-top: 0;
+}
+
 @media screen and ( min-width: 769px ) {
 	body {
 		font-size: 14px;
