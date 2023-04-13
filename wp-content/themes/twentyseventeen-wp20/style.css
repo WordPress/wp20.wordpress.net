@@ -821,12 +821,11 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	background-size: 13px;
 	background-position: calc(100% - 20px) center;
 	font-size: 14px;
-	text-align: end;
 }
 
 .navigation-top-menu-container .select2-search--dropdown .select2-search__field {
 	border-radius: 0;
-	padding: 13px 50px 13px 12px;
+	padding: 13px 50px 13px var(--wp20--spacing--xsmall);
 	border: 0 !important;
 	border-bottom: 1px solid var(--wp20--color--border) !important;
 }
