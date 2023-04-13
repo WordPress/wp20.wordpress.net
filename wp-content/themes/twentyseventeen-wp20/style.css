@@ -240,13 +240,7 @@ input[type="submit"]:focus {
 }
 
 .admin-bar #page {
-	min-height: calc(100vh - 32px);
-}
-
-@media screen and (max-width: 782px) {
-	.admin-bar #page {
-		min-height: calc(100vh - 46px);
-	}
+	min-height: calc(100vh - var(--wp-admin--admin-bar--height));
 }
 
 .site-content-contain,
