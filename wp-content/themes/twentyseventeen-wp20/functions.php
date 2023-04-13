@@ -5,7 +5,7 @@ namespace WP20\Theme;
 defined( 'WPINC' ) || die();
 
 add_filter( 'template_include',      __NAMESPACE__ . '\get_front_page_template'          );
-add_action( 'wp_enqueue_scripts',    __NAMESPACE__ . '\enqueue_scripts'                  );
+add_action( 'wp_enqueue_scripts',    __NAMESPACE__ . '\enqueue_scripts', 11              );
 add_filter( 'get_custom_logo',       __NAMESPACE__ . '\set_custom_logo'                  );
 add_filter( 'body_class',            __NAMESPACE__ . '\add_body_classes'                 );
 add_filter( 'the_title',             __NAMESPACE__ . '\internationalize_titles'          );
@@ -97,15 +97,22 @@ function enqueue_scripts() {
 		get_fonts_url()
 	);
 
-	wp_register_style(
-		'twentyseventeen-parent-style',
-		get_template_directory_uri() . '/style.css'
-	);
+	// TwentySeventeen enqueues the child theme instead of itself, which makes things like
+	// `twentyseventeen-block-style` load _after_ `twentyseventeen-wp20-style`. That makes it difficult to
+	// override parent theme styles. We need to reregister it so the parent theme styles load first.
+	wp_deregister_style( 'twentyseventeen-style' );
 
 	wp_enqueue_style(
 		'twentyseventeen-style',
+		get_template_directory_uri() . '/style.css',
+		array(),
+		filemtime( get_template_directory() . '/style.css' )
+	);
+
+	wp_enqueue_style(
+		'twentyseventeen-wp20-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( 'twentyseventeen-parent-style', 'twentyseventeen-wp20-fonts', 'dashicons' ),
+		array( 'twentyseventeen-style', 'twentyseventeen-wp20-fonts', 'dashicons' ),
 		filemtime( __DIR__ . '/style.css' )
 	);
 

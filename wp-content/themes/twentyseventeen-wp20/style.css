@@ -87,6 +87,18 @@ p {
 	}
 }
 
+/* 
+ * Blocks
+ */
+
+.wp-block-buttons {
+	margin-bottom: var(--wp20--spacing--small);
+}
+
+.wp-block-button .wp-block-button__link {
+	margin-top: 0;
+}
+
 /*
  * Typography
  */
@@ -150,7 +162,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 	color: var(--wp20--color--text-link);
 }
 
-.entry-content a:not(.downloads-item a):not(.post-navigation a):not(.wp20-events-list a),
+.entry-content a:not(.downloads-item a):not(.post-navigation a):not(.wp20-events-list a):not(.wp-block-button__link),
 .entry-content a:focus,
 .entry-content a:hover,
 .entry-summary a:focus,
