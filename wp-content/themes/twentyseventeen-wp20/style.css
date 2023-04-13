@@ -130,7 +130,8 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
 	.page-title,
 	body.page:not(.twentyseventeen-front-page) .entry-title,
 	.entry-header .entry-title,
-	.single-post .entry-title, .page .entry-title {
+	.single-post .entry-title,
+	.page .entry-title {
 		font-size: 30px;
 	}
 }
@@ -1429,7 +1430,8 @@ body.page-slug-whats-on h1.entry-title {
 
 .downloads-wrapper,
 .downloads-wrapper *,
-.downloads-wrapper :before, .downloads-wrapper :after {
+.downloads-wrapper :before,
+.downloads-wrapper :after {
 	box-sizing: border-box;
 }
 
