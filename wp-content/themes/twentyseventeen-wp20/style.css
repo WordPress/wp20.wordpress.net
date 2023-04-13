@@ -232,6 +232,23 @@ input[type="submit"]:focus {
  * Layout
  */
 
+#page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-content-contain,
+.site-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-content > .wrap {
+	flex: 1;
+}
+
 .page-header,
 body.page .entry-content,
 body.page .entry-header {
@@ -264,9 +281,9 @@ body.page .entry-header {
 }
 
 .wrap {
-	box-sizing: content-box;
 	padding-left: var(--wp20--spacing--edge-space);
 	padding-right: var(--wp20--spacing--edge-space);
+	width: 100%;
 	max-width: unset;
 }
 
@@ -289,6 +306,7 @@ body.page .entry-header {
 	}
 
 	.wrap {
+		box-sizing: content-box;
 		max-width: var(--wp20--screen-width);
 	}
 
@@ -1283,8 +1301,7 @@ body.page-slug-whats-on h1.entry-title {
 .post-navigation .nav-links > * {
 	display: flex;
 	align-items: baseline;
-	padding: var(--wp20--spacing--xxsmall) 0 0;
-	height: 33px;
+	padding: var(--wp20--spacing--xxsmall) 0;
 	background: none;
 	box-shadow: none;
 	border-radius: unset;
