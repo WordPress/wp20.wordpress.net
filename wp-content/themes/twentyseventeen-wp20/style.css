@@ -37,8 +37,8 @@ Template:    twentyseventeen
 
 	--wp20--spacing--menu-spacing: 17px;
 
-	--wp20--screen-width: 940px;
-	--wp20--screen-width-wide: 1160px;
+	--wp20--content-width: calc( 940px + 2 * var(--wp20--spacing--edge-space) );
+	--wp20--content-width-wide: calc( 1160px + 2 * var(--wp20--spacing--edge-space) );
 
 	--wp20--column-width-left: 25%;
 }
@@ -239,6 +239,16 @@ input[type="submit"]:focus {
 	flex-direction: column;
 }
 
+.admin-bar #page {
+	min-height: calc(100vh - 32px);
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar #page {
+		min-height: calc(100vh - 46px);
+	}
+}
+
 .site-content-contain,
 .site-content {
 	flex: 1;
@@ -246,8 +256,53 @@ input[type="submit"]:focus {
 	flex-direction: column;
 }
 
+.wrap {
+	padding-left: var(--wp20--spacing--edge-space);
+	padding-right: var(--wp20--spacing--edge-space);
+	max-width: unset;
+}
+
+.wrap::after {
+	display: none;
+}
+
+.wrap .wrap {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .site-content > .wrap {
 	flex: 1;
+	width: 100%;
+}
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.entry-footer:before,
+.entry-footer:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.nav-links:before,
+.nav-links:after,
+.pagination:before,
+.pagination:after,
+.comment-author:before,
+.comment-author:after,
+.widget-area:before,
+.widget-area:after,
+.widget:before,
+.widget:after,
+.comment-meta:before,
+.comment-meta:after {
+	display: none;
 }
 
 .page-header,
@@ -281,22 +336,6 @@ body.page .entry-header {
 	border-top: unset;
 }
 
-.wrap {
-	padding-left: var(--wp20--spacing--edge-space);
-	padding-right: var(--wp20--spacing--edge-space);
-	width: 100%;
-	max-width: unset;
-}
-
-.wrap::after {
-	display: none;
-}
-
-.wrap .wrap {
-	padding-left: 0;
-	padding-right: 0;
-}
-
 @media screen and ( min-width: 769px ) {
 	:root {
 		--wp20--spacing--edge-space: var(--wp20--spacing--large);
@@ -307,12 +346,11 @@ body.page .entry-header {
 	}
 
 	.wrap {
-		box-sizing: content-box;
-		max-width: var(--wp20--screen-width);
+		max-width: var(--wp20--content-width);
 	}
 
 	.wrap.wrap-wide {
-		max-width: var(--wp20--screen-width-wide);
+		max-width: var(--wp20--content-width-wide);
 	}
 
 	.page.page-one-column .entry-header,
@@ -1267,7 +1305,7 @@ body.page-slug-whats-on h1.entry-title {
 
 .single-featured-image-header img {
 	width: 100%;
-	max-width: var(--wp20--screen-width-wide);
+	max-width: var(--wp20--content-width-wide);
 }
 
 /*
