@@ -1636,6 +1636,15 @@ body.page-slug-whats-on h1.entry-title {
 	display: none;
 }
 
+#ctf .ctf-quoted-tweet,
+#ctf .ctf-twitter-card,
+#ctf .ctf-quoted-tweet:focus,
+#ctf .ctf-quoted-tweet:hover,
+#ctf .ctf-twitter-card:focus,
+#ctf .ctf-twitter-card:hover {
+	border: none;
+}
+
 /*
  * Embeds
  */
