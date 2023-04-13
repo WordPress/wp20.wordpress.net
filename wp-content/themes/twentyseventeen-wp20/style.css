@@ -216,6 +216,7 @@ a:hover .nav-title,
 	color: var(--wp20--color--text-link);
 	text-decoration: underline;
 	box-shadow: none !important;
+	outline: none;
 }
 
 :not( .mejs-button ) > button:hover,
