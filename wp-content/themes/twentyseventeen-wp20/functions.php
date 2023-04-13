@@ -341,13 +341,13 @@ function render_social_meta_tags() {
 	<meta property="og:description" content="<?php echo internationalize_titles( 'WordPress turns 20 on May 27, 2023' ); ?>" />
 	<meta property="og:url" content="https://wp20.wordpress.net/" />
 	<meta property="og:site_name" content="<?php echo internationalize_titles( 'WP20' ); ?>" />
-	<meta property="og:image" content="https://wp20.wordpress.net/wp-content/uploads/wp20-logo-anniversary-blueberry@3x.jpeg" />
+	<meta property="og:image" content="https://wp20.wordpress.net/wp-content/uploads/opengraph-scaled.jpg" />
 	<meta property="og:locale" content="<?php echo get_locale(); ?>" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:url" content="https://wp20.wordpress.net/" />
 	<meta name="twitter:title" content="<?php echo wp_get_document_title(); ?>" />
 	<meta name="twitter:description" content="<?php echo internationalize_titles( 'WordPress turns 20 on May 27, 2023' ); ?>" />
-	<meta name="twitter:image" content="https://wp20.wordpress.net/wp-content/uploads/wp20-logo-anniversary-blueberry@3x.jpeg" />
+	<meta name="twitter:image" content="https://wp20.wordpress.net/wp-content/uploads/opengraph-scaled.jpg" />
 	<?php
 }
 
