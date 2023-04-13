@@ -1600,6 +1600,10 @@ body.page-slug-whats-on h1.entry-title {
 	display: none;
 }
 
+#ctf .ctf-tweet-media a:after {
+	display: none;
+}
+
 /*
  * Embeds
  */
