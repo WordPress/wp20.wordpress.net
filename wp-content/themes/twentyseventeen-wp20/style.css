@@ -734,6 +734,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	padding: 8px 10px;
 	text-align: right;
 	width: 50%;
+
+	background: transparent;
 }
 
 @media screen and (min-width: 769px) {
@@ -780,13 +782,24 @@ body:not(.title-tagline-hidden) .site-branding-text {
 /*  what is that thing that appears to the right? a placeholder?  */
 
 /* make a section just for the library styles? need to put all this in logical order once working */
-.autocomplete__input--show-all-values input[type="text"] {
-	padding: 0; /* maybe make 17 20 */
+input[type="text"].autocomplete__input--show-all-values {
+	background-color: transparent;
+}
+
+.autocomplete__input--show-all-values.autocomplete__input--focused {
+	cursor: text;
+	border: 1px solid blue none;
+	/* covered up by focus outline? */
 }
 
 .autocomplete__hint {
+	border: none;
+	background-color: var(--wp20--color--active-menu);
 	position: static;
+	cursor: pointer;
 }
+
+
 
 @media screen and (max-width: 48em) {
 	.wp20-locale-switcher-container .select2-container {
