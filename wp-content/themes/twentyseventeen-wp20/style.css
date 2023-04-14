@@ -770,6 +770,20 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 #wp20-locale-switcher {
 	border: none;
+	width: 100vw;
+	position: absolute;
+	left: -50vw;
+
+	/*  need more dynamic positioning, these are just hardcoded to get rough sense of things */
+}
+
+.autocomplete__menu {
+	width: 100vw;
+	position: absolute;
+	left: -50vw;
+	text-align: left;
+	top: 80px;
+	/*  need more dynamic positioning, these are just hardcoded to get rough sense of things */
 }
 
 .wp20-locale-switcher-container select {
@@ -789,17 +803,20 @@ input[type="text"].autocomplete__input--show-all-values {
 .autocomplete__input--show-all-values.autocomplete__input--focused {
 	cursor: text;
 	border: 1px solid blue none;
-	/* covered up by focus outline? */
+	/* covered up by focus outline?
+	blue not final color , just to identify*/
 }
 
 .autocomplete__hint {
+	position: relative;
+	top: 8px;
 	border: none;
 	background-color: var(--wp20--color--active-menu);
-	position: static;
+	padding-right: 40px;
 	cursor: pointer;
+	font-weight: 400;
+	text-align: right;
 }
-
-
 
 @media screen and (max-width: 48em) {
 	.wp20-locale-switcher-container .select2-container {

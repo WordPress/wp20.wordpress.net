@@ -26,8 +26,13 @@
 			accessibleAutocomplete.enhanceSelectElement( {
 				selectElement: localeSelect,
 				showAllValues: true,
-				// displayMenu: 'overlay' might be useful
+				placeholder: 'Search languages [glass]', // only shown when clear current manually
+				// might need to dynamically set `.autocomplete__input--show-all-values.autocomplete__input--focused { value }` field to set visible placeholder text
+
+
+				// displayMenu: 'overlay',// might be useful
 				// autoselect: false
+
 
 				// Submit the form.
 				onConfirm: function( localeName ) {
