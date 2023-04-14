@@ -10,7 +10,10 @@ wp-content/themes/*
 wp-content/plugins/*
 
 wp-includes
-index.php
+/wp-content/index.php
+/index.php
+/license.txt
+/readme.html
 wp-*.php
 xmlrpc.php
 
