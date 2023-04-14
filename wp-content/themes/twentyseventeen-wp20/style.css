@@ -87,7 +87,7 @@ p {
 	}
 }
 
-/* 
+/*
  * Blocks
  */
 
@@ -1191,6 +1191,13 @@ body.page-slug-whats-on h1.entry-title {
 	margin-bottom: unset;
 }
 
+.wp20-news .post .entry-summary p {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
 @media screen and ( max-width: 48em ) {
 	.wp20-news .page-title br {
 		display: none;
@@ -1222,10 +1229,7 @@ body.page-slug-whats-on h1.entry-title {
 	}
 
 	.wp20-news .post .entry-summary p {
-		display: -webkit-box;
 		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
 	}
 }
 
