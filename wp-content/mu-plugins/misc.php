@@ -15,6 +15,7 @@ defined( 'WPINC' ) || die();
 add_filter( 'map_meta_cap', __NAMESPACE__ . '\allow_css_editing', 10, 2 );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets', 1 );
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_assets', 1 );
+add_action( 'template_redirect', __NAMESPACE__ . '\redirect_old_content', 9 ); // Before redirect_canonical();
 
 
 /**
@@ -57,4 +58,30 @@ function register_assets() {
 		'1.0.10',
 		true
 	);
+}
+
+/**
+ * Redirects old URLs to new ones.
+ */
+function redirect_old_content() {
+	$path_redirects = [
+		'/wp20-celebrations/' => '/whats-on/',
+	];
+
+	foreach ( $path_redirects as $old_path => $new_url ) {
+		if ( str_starts_with( $_SERVER['REQUEST_URI'], $old_path ) ) {
+			do_redirect_and_exit( $new_url );
+		}
+	}
+}
+
+/**
+ * Do the 301 redirect and exit the script.
+ */
+function do_redirect_and_exit( $location ) {
+	header_remove( 'expires' );
+	header_remove( 'cache-control' );
+
+	wp_safe_redirect( $location, 301 );
+	exit;
 }
