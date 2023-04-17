@@ -944,6 +944,13 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 /*
+ * All content
+ */
+.entry-content img:not(.downloads-item-preview img) {
+	border-radius: 5px;
+}
+
+/*
  * What's On - Builds on top of the default styles from WP20 Meetup Events.
  */
 
