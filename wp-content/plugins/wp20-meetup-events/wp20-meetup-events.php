@@ -258,11 +258,14 @@ function get_formatted_events() : array {
  * Sort events by their timestamp.
  */
 function sort_events( array $a, array $b ) : int {
-	if ( $a['time'] === $b['time'] ) {
+	$a_timestamp = strtotime( $a['time'] );
+	$b_timestamp = strtotime( $b['time'] );
+
+	if ( $a_timestamp === $b_timestamp ) {
 		return 0;
 	}
 
-	return $a['time'] > $b['time'] ? 1 : - 1;
+	return $a_timestamp > $b_timestamp ? 1 : - 1;
 }
 
 /**
