@@ -43,10 +43,6 @@
 				<a class="wp20-wordpress-mark" href="https://wordpress.org/">
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/wordpress-mark.svg" alt="<?php esc_html_e( 'WordPress mark', 'wp20' ); ?>">
 				</a>
-				
-				<div class="wp20-poetry">
-					<img src="https://s.w.org/style/images/code-is-poetry-for-dark-bg.svg" alt="Code is Poetry" width="188" height="13">
-				</div>
 
 				<?php if ( has_nav_menu( 'social' ) ) :
 				?>
