@@ -12,7 +12,7 @@ defined( 'WPINC' ) || die();
 
 ?>
 
-<h2 class="screen-reader-text"><?php echo esc_html( 'Events list', 'wp20' ); ?></h2>
+<h2 class="screen-reader-text"><?php esc_html_e( 'Events list', 'wp20' ); ?></h2>
 
 <ul class="wp20-events-list">
 	<?php foreach ( $events as $event ) : ?>
