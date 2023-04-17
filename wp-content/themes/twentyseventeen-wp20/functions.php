@@ -8,12 +8,14 @@ add_filter( 'template_include',      __NAMESPACE__ . '\get_front_page_template' 
 add_action( 'wp_enqueue_scripts',    __NAMESPACE__ . '\enqueue_scripts', 11              );
 add_filter( 'get_custom_logo',       __NAMESPACE__ . '\set_custom_logo'                  );
 add_filter( 'body_class',            __NAMESPACE__ . '\add_body_classes'                 );
-add_filter( 'the_title',             __NAMESPACE__ . '\internationalize_titles'          );
-add_filter( 'document_title_parts',  __NAMESPACE__ . '\internationalize_document_titles' );
+add_filter( 'the_title',             __NAMESPACE__ . '\internationalize_titles', 11      );
+add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_content', 12    );
+add_filter( 'document_title',        __NAMESPACE__ . '\set_document_title'               );
+add_filter( 'wpseo_title',           __NAMESPACE__ . '\set_document_title'               );
 add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\internationalize_menu_items'      );
 add_action( 'wp_head',               __NAMESPACE__ . '\render_social_meta_tags'          );
 add_filter( 'upload_mimes' ,         __NAMESPACE__ . '\custom_upload_mimes'              );
-add_filter( 'the_title',             __NAMESPACE__ . '\prevent_widows_in_content'        );
+
 
 /**
  * Bypass TwentySeventeen's front-page template.
@@ -208,30 +210,13 @@ function internationalize_titles( $title ) {
 			// translators: "Swag" is a term for promotional items. This is the title of the page.
 			$title = esc_html__( 'Swag', 'wp20' );
 			break;
+
+		case 'Celebrating 20 years of WordPress':
+			$title = esc_html__( 'Celebrating 20 years of WordPress', 'wp20' );
+			break;
 	}
 
 	return $title;
-}
-
-/**
- * Internationalize the document's `<title>` element.
- *
- * @param array $title_parts
- *
- * @return array
- */
-function internationalize_document_titles( $title_parts ) {
-	$title_parts['title'] = internationalize_titles( $title_parts['title'] );
-
-	if ( isset( $title_parts['site'] ) ) {
-		$title_parts['site'] = internationalize_titles( $title_parts['site'] );
-	}
-
-	if ( isset( $title_parts['tagline'] ) ) {
-		$title_parts['tagline'] = internationalize_titles( $title_parts['tagline'] );
-	}
-
-	return $title_parts;
 }
 
 /**
@@ -248,6 +233,28 @@ function internationalize_menu_items( $items ) {
 
 	return $items;
 }
+
+/**
+ * Set the document title.
+ */
+function set_document_title( string $title ) : string {
+	if ( is_front_page() ) {
+		$title = esc_html( sprintf(
+			'%s &mdash; %s',
+			internationalize_titles( get_bloginfo( 'name' ) ),
+			internationalize_titles( get_bloginfo( 'description' ) ),
+		) );
+	} elseif ( is_singular() ) {
+		$title = esc_html( sprintf(
+			'%s &mdash; %s',
+			internationalize_titles( str_replace( '&nbsp;', ' ', get_the_title() ) ),
+			internationalize_titles( get_bloginfo( 'name' ) ),
+		) );
+	}
+
+	return $title;
+}
+
 
 /**
  * Allow extra mime types for the upload of swag files.
