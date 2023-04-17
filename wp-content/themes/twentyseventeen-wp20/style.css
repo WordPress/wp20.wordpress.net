@@ -1757,11 +1757,6 @@ iframe.wp-embedded-content {
 	width: 24px;
 }
 
-.wp20-poetry {
-	flex: 1;
-	text-align: center;
-}
-
 .wp20-social {
 	text-align: end;
 }
@@ -1813,9 +1808,10 @@ iframe.wp-embedded-content {
 		display: flex;
 	}
 
-	.wp20-wordpress-logo,
-	.wp20-social {
-		width: 30%;
+	.site-footer .wrap {
+		background-image: url( 'https://s.w.org/style/images/code-is-poetry-for-dark-bg.svg' );
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 }
 
