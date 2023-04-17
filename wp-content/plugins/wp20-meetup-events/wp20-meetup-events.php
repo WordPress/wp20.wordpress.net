@@ -269,8 +269,6 @@ function sort_events( array $a, array $b ) : int {
  * Render the WP20 events map shortcode.
  */
 function render_events_map_shortcode() : string {
-	$events = get_formatted_events();
-
 	ob_start();
 	require_once( __DIR__ . '/views/events-map.php' );
 	return ob_get_clean();
@@ -292,8 +290,6 @@ function render_events_list_shortcode() : string {
  * Render the WP20 events filter shortcode.
  */
 function render_events_filter_shortcode() : string {
-	$events = get_formatted_events();
-
 	ob_start();
 	require_once( __DIR__ . '/views/events-filter.php' );
 	return ob_get_clean();
