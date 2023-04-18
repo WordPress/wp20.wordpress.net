@@ -539,6 +539,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 .navigation-top > * {
 	flex-basis: 50%;
+	/* it's parent isn't a flex container, so this can/should be deleted? */
 }
 
 .navigation-top a {
@@ -710,7 +711,11 @@ body:not(.title-tagline-hidden) .site-branding-text {
  * Locale Switcher
  */
 
-.navigation-top-menu-container {
+ /* .menu-toggle {
+	 visibility: hidden; /* temp to help identify items. remove when ready to style *
+ } */
+
+ .navigation-top-menu-container {
 	position: relative;
 }
 
@@ -741,6 +746,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	}
 }
 
+
 .wp20-locale-switcher-container {
 	position: absolute;
 	top: 0;
@@ -754,7 +760,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 @media screen and (min-width: 769px) {
 	.wp20-locale-switcher-container {
-		right: 80px;
+		/* right: 80px; */
 	}
 }
 
@@ -784,9 +790,9 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 #wp20-locale-switcher {
 	border: none;
-	width: 100vw;
-	position: absolute;
-	left: -50vw;
+	/* position: absolute; */
+	/* width: 100vw; */
+	/* left: -50vw; */
 
 	/*  need more dynamic positioning, these are just hardcoded to get rough sense of things */
 }
