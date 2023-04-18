@@ -692,6 +692,20 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline-block;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * Locale Switcher
  */
@@ -826,50 +840,6 @@ input[type="text"].autocomplete__input--show-all-values {
 
 /* find all the styles that applied to the old one and update to apply to new */
 
-.wp20-locale-switcher-container .select2-container--default .select2-selection--single {
-	border: none;
-	height: 60px;
-	background: transparent;
-	text-align:right;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-/* The select language label */
-.wp20-locale-switcher-container .select2-selection .select2-selection__rendered {
-	font-size: 14px;
-	max-width: 150px;
-	text-overflow: ellipsis;
-}
-
-/* Remove the ellipsis overflow */
-@media screen and (min-width: 375px) {
-	.wp20-locale-switcher-container .select2-selection .select2-selection__rendered {
-		max-width: unset;
-	}
-}
-
-.wp20-locale-switcher-container .select2-container .select2-selection--single .select2-selection__rendered {
-	padding-right: 22px !important;
-	color: var(--wp20--color--grey-6);
-}
-
-.wp20-locale-switcher-container .select2-container--open .select2-selection--single .select2-selection__rendered {
-	color: var(--wp20--color--text);
-	font-weight: 700;
-}
-
-.wp20-locale-switcher-container.select2-selection--single .select2-selection__rendered {
-	color: var(--wp20--color--grey-6) !important;
-}
-
-@media screen and (min-width: 769px) {
-	.wp20-locale-switcher-container .select2-container--focus .select2-selection__rendered {
-		outline: thin dotted;
-	}
-}
-
 @media screen and (max-width: 48em) {
 	#wp20-locale-switcher-form {
 		/* padding-right: var(--wp20--spacing--edge-space); */
@@ -898,77 +868,18 @@ input[type="text"].autocomplete__input--show-all-values {
  * Locale Switcher: Dropdown portion of SelectWoo
  */
 
-.navigation-top-menu-container .select2-container--default .select2-selection--single {
-	/* port to new */
-	text-align: left;
-	border-bottom: 1px solid var(--wp20--color--border);
-}
 
-.navigation-top-menu-container .select2-container--default,
-.navigation-top-menu-container .select2-container .select2-dropdown {
-	/* port to new */
-	text-align: right;
-}
 
-.navigation-top-menu-container .select2-search--dropdown {
-	/* port to new */
-	padding: 0;
-}
 
-.navigation-top-menu-container .select2-search--dropdown .select2-search__field,
-.error404 .search-form .search-submit {
-	/* port to new */
-	color: var(--wp20--color--text);
-	background-image:  url( 'images/search-icon.svg' );
-	background-repeat: no-repeat;
-	background-size: 13px;
-	background-position: calc(100% - 20px) center;
-	font-size: 14px;
-}
 
-.navigation-top-menu-container .select2-search--dropdown .select2-search__field {
-	/* port to new */
-	border-radius: 0;
-	padding: 13px 50px 13px var(--wp20--spacing--xsmall);
-	border: 0 !important;
-	border-bottom: 1px solid var(--wp20--color--border) !important;
-}
 
-.navigation-top-menu-container .select2-search--dropdown .select2-search__field::placeholder {
-	/* port to new */
-	font-size: 14px;
-}
 
-.navigation-top-menu-container  .select2-search--dropdown .select2-search__field::placeholder {
-	/* port to new */
-	color: var(--wp20--color--text-meta);
-}
 
-.navigation-top-menu-container .select2-container .select2-dropdown {
-	/* port to new */
-	border: 0;
-}
 
-.navigation-top-menu-container .select2-results__option {
-	/* port to new */
-	font-size: 14px;
-	padding: 6px 12px;
-}
 
-.navigation-top-menu-container .select2-container--default .select2-results__option,
-.navigation-top-menu-container .select2-container--default .select2-results__option--highlighted[aria-selected]
-.navigation-top-menu-container .select2-container--default .select2-results__option--highlighted[aria-selected=false] {
-	/* port to new */
-	background-color: transparent !important;
-	color: var(--wp20--color--text) !important;
-	padding: 12px var(--wp20--spacing--xsmall);
-}
 
-.navigation-top-menu-container .select2-container--default .select2-results__option[aria-selected=true] {
-	/* port to new */
-	color: var(--wp20--color--text-link) !important;
-	font-weight: 700;
-}
+
+
 
 /*
  * Locale Notice
