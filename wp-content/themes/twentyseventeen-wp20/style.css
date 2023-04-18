@@ -265,6 +265,17 @@ input[type="submit"]:focus {
 	padding-right: 0;
 }
 
+.wrap.wrap-wide {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0;
+}
+
+.wrap.wrap-wide > {
+	flex: 0 0 50%;
+}
+
 .site-content > .wrap {
 	flex: 1;
 	width: 100%;
