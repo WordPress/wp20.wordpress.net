@@ -266,14 +266,17 @@ input[type="submit"]:focus {
 }
 
 .wrap.wrap-wide {
-	display: flex;
+	/* display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0;
+
+	can't do this b/c the child menu needs to take up space and push content down
+	*/
 }
 
-.wrap.wrap-wide > {
-	flex: 0 0 50%;
+.wrap.wrap-wide > * {
+	/* flex: 0 0 50%; */
 }
 
 .site-content > .wrap {
@@ -722,9 +725,23 @@ body:not(.title-tagline-hidden) .site-branding-text {
  * Locale Switcher
  */
 
- /* .menu-toggle {
-	 visibility: hidden; /* temp to help identify items. remove when ready to style *
- } */
+ .menu-toggle {
+	 /* visibility: hidden; /* temp to help identify items. remove when ready to style * */
+
+	 border: 1px solid grey;
+ }
+ .wp20-locale-switcher-container {
+	border: 1px solid blue;;
+ }
+ #wp20-locale-switcher {
+	border: 1px solid red !important;
+ }
+
+
+
+
+
+
 
  .navigation-top-menu-container {
 	position: relative;
@@ -762,10 +779,11 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 8px 10px;
+	/* padding: 0 20px; */
 	text-align: right;
 	width: 50%;
 
+	/* cursor: pointer; cant b/c wont hit the box, maybe  need to make the input bigger instead */
 	background: transparent;
 }
 
@@ -805,6 +823,17 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	/* width: 100vw; */
 	/* left: -50vw; */
 
+	text-align: right;
+	/*width: calc( 100% - 40px ); /* explain to make room for the dropdown arrow */
+		/* replace with margin-right? */
+		/*  use a variable ^ ? */
+	/* margin: 10px 0; */
+
+	margin: 0;
+	padding: 20px 40px 20px 0;
+
+	/* right: 40px; this makes it grow outside the container, need another way to make room for the drowdown arrow */
+
 	/*  need more dynamic positioning, these are just hardcoded to get rough sense of things */
 }
 
@@ -829,6 +858,10 @@ body:not(.title-tagline-hidden) .site-branding-text {
 /* make a section just for the library styles? need to put all this in logical order once working */
 input[type="text"].autocomplete__input--show-all-values {
 	background-color: transparent;
+}
+
+.autocomplete__input {
+	font-size: 14px;
 }
 
 .autocomplete__input--show-all-values.autocomplete__input--focused {
@@ -865,9 +898,11 @@ input[type="text"].autocomplete__input--show-all-values {
 
 /* Arrow indicators */
 .autocomplete__dropdown-arrow-down-wrapper {
+/* this needs to be on top of the `input` so user can click on it to open menu */
+
 	z-index: 1;
 	position: absolute;
-	top: 20px;
+	top: 30px;
 	right: 20px;
 	/* these are rough so far, refine the top-down first */
 
