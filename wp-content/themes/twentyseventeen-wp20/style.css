@@ -265,7 +265,7 @@ input[type="submit"]:focus {
 	padding-right: 0;
 }
 
-.wrap.wrap-wide {
+.site-header .wrap.wrap-wide {
 	/* display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -273,7 +273,38 @@ input[type="submit"]:focus {
 
 	can't do this b/c the child menu needs to take up space and push content down
 	*/
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"menu-toggle locale-switcher"
+		"menu1 menu1"
+		"menu2 menu2"
+	;
+	align-items: start;
 }
+
+.menu-toggle {
+	grid-area: menu-toggle;
+}
+
+#site-navigation {
+	grid-area: menu1;
+}
+
+.wp20-locale-switcher-container {
+	grid-area: locale-switcher;
+	/* can't have dash in name? */
+}
+
+.navigation-top-menu-container {
+	grid-area: menu2;
+	/* name better */
+}
+
+/* tmp move styles above to be grouped with their others rather than separate. just separate here for testing convenience */
+
+
 
 .wrap.wrap-wide > * {
 	/* flex: 0 0 50%; */
@@ -657,7 +688,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	font-weight: 400;
 	text-align: left;
 	border-radius: 0;
-	width: 50%;
+	/* width: 50%; */
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif; /* Override TT17 Rule */
 	line-height: 26px;
@@ -745,6 +776,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
  .navigation-top-menu-container {
 	position: relative;
+
+	/* does this element do anything anymore? can maybe just remove it b/c empty and not used for anything? remove styles too */
 }
 
 .navigation-top-menu-container > * {
@@ -782,7 +815,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	right: 0;
 	/* padding: 0 20px; */
 	text-align: right;
-	width: 50%;
+	/* width: 50%; */
 
 	/* cursor: pointer; cant b/c wont hit the box, maybe  need to make the input bigger instead */
 	background: transparent;
@@ -818,10 +851,17 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline;
 }
 
+.autocomplete__wrapper {
+	/* width: 100vw;
+	left: -50vw;
+	this makes the parent grow larger than it's intended 50vw, but i can't make this pos:absolute b/c it needs to push down the .site-content-contain
+	*/
+}
+
 #wp20-locale-switcher {
 	border: none;
 	/* position: absolute; */
-	width: 100vw;
+	/* width: 100vw; */
 	/* left: -50vw; */
 
 	text-align: left;
@@ -841,7 +881,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .autocomplete__menu {
-	width: 100vw;
+	/* width: 100vw; */
 	/* position: absolute; */
 	position: relative;
 	/* left: -50vw; */
@@ -876,6 +916,7 @@ input[type="text"].autocomplete__input--show-all-values {
 }
 
 .autocomplete__hint {
+	max-width: 50vw;
 	position: relative;
 	top: 8px;
 	border: none;
