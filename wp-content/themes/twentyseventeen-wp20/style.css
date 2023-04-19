@@ -731,7 +731,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	 border: 1px solid grey;
  }
  .wp20-locale-switcher-container {
-	border: 1px solid blue;;
+	border: 1px solid blue;
  }
  #wp20-locale-switcher {
 	border: 1px solid red !important;
@@ -776,7 +776,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 
 .wp20-locale-switcher-container {
-	position: absolute;
+	/* position: absolute; */
+	position: relative;
 	top: 0;
 	right: 0;
 	/* padding: 0 20px; */
@@ -820,17 +821,19 @@ body:not(.title-tagline-hidden) .site-branding-text {
 #wp20-locale-switcher {
 	border: none;
 	/* position: absolute; */
-	/* width: 100vw; */
+	width: 100vw;
 	/* left: -50vw; */
 
-	text-align: right;
+	text-align: left;
 	/*width: calc( 100% - 40px ); /* explain to make room for the dropdown arrow */
 		/* replace with margin-right? */
 		/*  use a variable ^ ? */
 	/* margin: 10px 0; */
 
 	margin: 0;
+	margin-top: 40px; /* push down under autocomplete_hint */
 	padding: 20px 40px 20px 0;
+
 
 	/* right: 40px; this makes it grow outside the container, need another way to make room for the drowdown arrow */
 
@@ -839,10 +842,11 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 .autocomplete__menu {
 	width: 100vw;
-	position: absolute;
-	left: -50vw;
+	/* position: absolute; */
+	position: relative;
+	/* left: -50vw; */
 	text-align: left;
-	top: 80px;
+	/* top: 80px; */
 	/*  need more dynamic positioning, these are just hardcoded to get rough sense of things */
 }
 
