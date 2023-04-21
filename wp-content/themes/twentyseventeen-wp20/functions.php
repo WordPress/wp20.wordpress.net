@@ -189,26 +189,24 @@ function internationalize_titles( $title ) {
 			$title = esc_html__( 'WordPress turns 20 on May 27, 2023', 'wp20' );
 			break;
 
-		case "What's On":
-		case "What’s On":
-		case 'What&#8217;s On':
-			// translators: The name of the page that lists the global WP20 meetup events. "What's on" means something similar to "what's going on" or "what's happening".
-			$title = esc_html__( "What's On", 'wp20' );
+		case "Events":
+			// translators: The name of the page that lists the global WP20 meetup events.
+			$title = esc_html__( "Events", 'wp20' );
 			break;
 
-		case 'News':
+		case 'Things to Do':
 			// translators: The name of the page that list recent posts.
-			$title = esc_html__( 'News', 'wp20' );
+			$title = esc_html__( 'Things to Do', 'wp20' );
 			break;
 
-		case '#WP Live':
+		case '#WP20 Live':
 			// translators: The name of the page that displays the #wp20 social media posts in real time.
-			$title = esc_html_x( '#WP Live', 'adjective', 'wp20' );
+			$title = esc_html_x( '#WP20 Live', 'adjective', 'wp20' );
 			break;
 
-		case 'Swag':
-			// translators: "Swag" is a term for promotional items. This is the title of the page.
-			$title = esc_html__( 'Swag', 'wp20' );
+		case 'Merchandise':
+			// translators: "Merchandise" is a term for promotional items. This is the text for a navigation link to mercantile.wordpress.org.
+			$title = esc_html__( 'Merchandise', 'wp20' );
 			break;
 
 		case 'Celebrating 20 years of WordPress':
