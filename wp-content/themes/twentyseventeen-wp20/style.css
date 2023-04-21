@@ -1875,30 +1875,29 @@ body:not(.has-sidebar):not(.page-one-column) .page-header,
 	margin: var(--wp20--spacing--small) 0;
 }
 
-.sd-content ul li {
+.sharedaddy .sd-content ul li {
 	margin: 0;
 }
 
-.jp-sharing-input-touch .sd-content ul li {
+.jp-sharing-input-touch .sharedaddy .sd-content ul li {
 	padding-left: 0;
 }
 
-.sd-button span {
+.sharedaddy .sd-button span {
 	display: none;
 }
 
-.sd-content ul li:first-child {
+.sharedaddy .sd-content ul li:first-child {
 	/* offset the button padding */
 	margin-left: -8px;
 }
 
-.sd-content ul li a.sd-button,
-.sd-social-icon-text .sd-content ul li a.sd-button {
+.sharedaddy .sd-content ul li a.sd-button {
 	/* (40px hit area - 24px icon size) / 2 */
 	padding: 8px;
 }
 
-.sd-content ul li a.sd-button:before {
+.sharedaddy .sd-content ul li a.sd-button:before {
 	/* 24px icon size */
 	font-size: 24px;
 }
