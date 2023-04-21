@@ -1892,7 +1892,8 @@ body:not(.has-sidebar):not(.page-one-column) .page-header,
 	margin-left: -8px;
 }
 
-.sharedaddy .sd-content ul li a.sd-button {
+.sharedaddy .sd-content ul li a.sd-button,
+.sharedaddy .sd-social-icon-text .sd-content ul li a.sd-button {
 	/* (40px hit area - 24px icon size) / 2 */
 	padding: 8px;
 }
