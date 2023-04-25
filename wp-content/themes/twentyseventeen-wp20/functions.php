@@ -204,6 +204,11 @@ function internationalize_titles( $title ) {
 			$title = esc_html_x( '#WP20 Live', 'adjective', 'wp20' );
 			break;
 
+		case 'Downloads':
+			// translators: The name of the page that lists the downloadable assets.
+			$title = esc_html__( 'Downloads', 'wp20' );
+			break;
+
 		case 'Merchandise':
 			// translators: "Merchandise" is a term for promotional items. This is the text for a navigation link to mercantile.wordpress.org.
 			$title = esc_html__( 'Merchandise', 'wp20' );
