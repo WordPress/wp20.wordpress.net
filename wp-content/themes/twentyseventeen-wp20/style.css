@@ -502,11 +502,14 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .navigation-top {
-	position: relative;
 	z-index: 20;
 	background: #fff;
 	border: unset;
 	font-size: 14px;
+}
+
+.navigation-top .wrap {
+	display: flex;
 }
 
 @media screen and (max-width: 48em) {
@@ -524,7 +527,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 @media screen and (min-width: 769px) {
 	.navigation-top {
-		width: unset;
+		position: unset;
 	}
 
 	.navigation-top .wrap {
@@ -697,11 +700,15 @@ body:not(.title-tagline-hidden) .site-branding-text {
  */
 
 .wp20-locale-switcher-container {
+	flex: 1;
+	position: relative;
+	text-align: end;
+}
+
+.wp20-locale-switcher-container form {
 	position: absolute;
-	top: 0;
 	right: 0;
-	text-align: right;
-	width: 50%;
+	width: 100%;
 }
 
 .wp20-locale-switcher-container label {
@@ -713,10 +720,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 @media screen and (min-width: 769px) {
-	.wp20-locale-switcher-container {
-		right: 80px;
-	}
-
 	.autocomplete__wrapper {
 		display: flex;
 		flex-direction: column;
