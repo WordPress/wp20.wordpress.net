@@ -778,6 +778,7 @@ input.autocomplete__input::placeholder {
 	outline: none;
 }
 
+/* When both the hint and input are displayed stacked */
 span + .autocomplete__input.autocomplete__input--focused {
 	border: 1px solid var(--wp20--color--border);
 	border-bottom: none;
@@ -786,6 +787,9 @@ span + .autocomplete__input.autocomplete__input--focused {
 	background-repeat: no-repeat;
 	background-size: 13px;
 	background-position: calc(100% - 20px) center;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	line-height: 1.4;
 }
 
 .autocomplete__hint {
