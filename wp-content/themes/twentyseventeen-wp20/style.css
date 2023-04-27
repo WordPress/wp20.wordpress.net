@@ -696,27 +696,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
  * Locale Switcher
  */
 
-.navigation-top-menu-container {
-	position: relative;
-}
-
-.navigation-top-menu-container > * {
-	position: relative !important;
-	width: 100% !important;
-	left: 0 !important;
-	top: 0 !important;
-}
-
-@media screen and (min-width: 769px) {
-	.navigation-top-menu-container > * {
-		position: absolute !important;
-		left: auto !important;
-		right: 0 !important;
-		width: 50% !important;
-		max-width: 250px;
-	}
-}
-
 .wp20-locale-switcher-container {
 	position: absolute;
 	top: 0;
