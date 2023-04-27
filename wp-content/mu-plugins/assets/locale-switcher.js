@@ -82,7 +82,7 @@
 					// make sure escaped
 
 
-				placeholder: 'Search languages...',
+				placeholder: app.$switcher.data( 'placeholder' ),
 
 				// supply our dropdown arrow
 			} );

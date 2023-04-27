@@ -190,7 +190,7 @@ function locale_switcher() : void {
 				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp20' ); ?></span>
 			</label>
 
-			<select id="wp20-locale-switcher" name="locale">
+			<select id="wp20-locale-switcher" name="locale" data-placeholder="<?php esc_attr_e( 'Search languages...', 'wp20' ); ?>">
 				<?php
 
 				foreach ( get_locales() as $locale => $locale_name ) {

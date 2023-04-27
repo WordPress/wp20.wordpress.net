@@ -27,7 +27,6 @@ use WP20\Locales;
 						<div class="wrap wrap-wide">
 							<?php get_template_part( 'template-parts/header/navigation', 'top' ); ?>
 							<?php Locales\locale_switcher(); ?>
-							<!-- data-placeholder="<?php esc_attr_e( 'Search languages...', 'wp20' ); ?>" -->
 							<div class="navigation-top-menu-container"></div>
 						</div>
 					</div>
