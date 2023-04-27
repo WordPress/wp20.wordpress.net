@@ -82,7 +82,7 @@
 					// make sure escaped
 
 
-				//  placeholder: 'Search for a country' - no, old one didn't
+				placeholder: 'Search languages...',
 
 				// supply our dropdown arrow
 			} );
