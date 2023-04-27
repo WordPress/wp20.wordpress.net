@@ -730,10 +730,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .wp20-locale-switcher-container select {
-	/*visibility: hidden; /* Prevent iOS native picker UI */
-	/* maybe change? this and/or other styles?
-	test on ios to see if needed
-	*/
+	visibility: hidden; /* Prevent FOUC and iOS native picker UI */
 }
 
 @media screen and (min-width: 769px) {
