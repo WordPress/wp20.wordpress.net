@@ -130,8 +130,6 @@ function enqueue_scripts() {
 	);
 }
 
-// need to make wp20 styslsheet load after autoacomplete. rebase truk to avoid conflicts
-
 /**
  * Add the post's slug to the body tag
  *

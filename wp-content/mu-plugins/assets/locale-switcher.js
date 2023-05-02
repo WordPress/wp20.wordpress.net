@@ -20,14 +20,9 @@
 
 			const localeSelect = document.querySelector( '#wp20-locale-switcher' );
 
-
-
-			// todo enable a11yautocom here
 			accessibleAutocomplete.enhanceSelectElement( {
 				selectElement: localeSelect,
 				showAllValues: true,
-				// displayMenu: 'overlay' might be useful
-				// autoselect: false
 
 				// Submit the form.
 				onConfirm: function( localeName ) {
@@ -50,22 +45,6 @@
 					return '';
 				},
 
-				// defaultValue: function( value ) {
-				// 	console.log( 'defaultvalue', value );
-				// 	return 'hi';
-				// }
-
-				// . If your use case doesn't fit the above defaults, try reading the source and seeing if you can write your own.
-
-				// souce - use locale code too
-
-				// inputValue: 		function( value ) {
-				// 	console.log( 'inputValue', value );
-				// return value;
-				// },
-				// doesn't give locale code
-
-				// dropdownArrow: () => '' requires showallvalues true
 
 				// transleat "no results found" etc
 				/*
@@ -83,8 +62,6 @@
 
 
 				placeholder: app.$switcher.data( 'placeholder' ),
-
-				// supply our dropdown arrow
 			} );
 
 
