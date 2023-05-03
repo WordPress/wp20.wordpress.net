@@ -45,10 +45,18 @@
 
 				placeholder: __( 'Search languages...', 'wp20' ),
 
+				// Warning: Accessible Autocomplete passes this to `dangerouslySetInnerHTML`, so it must be
+				// escaped if untrusted input is ever added.
 				dropdownArrow: function() {
 					// Intentionally empty because we'll create the arrow in CSS.
 					return '';
 				},
+
+				/*
+				 * Note: Accessible Autocomplete uses React internally, and doesn't call `dangerouslySetInnerHTML`
+				 * when outputting translations, so the following i18n functions don't need to be escaped like
+				 * they normally would.
+				 */
 
 				// Internationalize the text used in the dropdown to indicate that there are no results.
 				tNoResults: function() {
