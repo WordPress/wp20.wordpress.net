@@ -87,22 +87,19 @@
 
 				// Internationalize the text used in the accessibility hint to indicate which options are available and which is selected.
 				tStatusResults: function( length, contentSelectedOption ) {
-					let text = '';
-
 					if ( 1 === length ) {
-						text = sprintf(
+						return sprintf(
 							__( '1 result is available. %s', 'wp20' ),
 							contentSelectedOption
 						);
+
 					} else {
-						text = sprintf(
+						return sprintf(
 							__( '%d results are available. %s', 'wp20' ),
 							length,
 							contentSelectedOption
 						);
 					}
-
-					return '<span>' + text + '</span>';
 				},
 
 				// Internationalize the text to be assigned as the aria description of the html `input` element, via the `aria-describedby` attribute.
