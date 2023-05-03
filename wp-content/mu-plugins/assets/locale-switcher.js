@@ -12,6 +12,8 @@
 		$notice: $(),
 
 		init: function() {
+			// todo doesn't show up on desktop when view clicking on it, but it does when tabbing to it
+
 			app.$switcher = $( '#wp20-locale-switcher' );
 			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
@@ -54,13 +56,22 @@
 
 				// Internationalize the text used in the accessibility hint to indicate that the query is too short.
 				tStatusQueryTooShort: function( minQueryLength ) {
-					return app.i18n.statusQueryTooShort.replace( '%d', minQueryLength );
-					// better to use gutenberg's translate if can
+					console.log( wp.i18n.sprintf(
+						app.i18n.statusQueryTooShort,
+						minQueryLength
+					) );
+
+
+					return minQueryLength;//todo
+
+					//test
 				},
 
 				// Internationalize the text that is used in the accessibility hint to indicate that there are no results.
 				tStatusNoResults: function() {
 					return app.i18n.statusNoResults;
+					//test
+
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate which option is selected.
@@ -68,6 +79,8 @@
 					return app.i18n.statusSelectedOption;
 						// @todo replace all the placeholdrs in string
 						// `${selectedOption} ${index + 1} of ${length} is highlighted`
+
+						//test
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate which options are available and which is selected.
@@ -83,11 +96,15 @@
 					// @todo replace %s w/ contentSelectedOption
 
 					return '<span>' + text + '</span>';
+
+					//test
 				},
 
 				// Internationalize the text to be assigned as the aria description of the html `input` element, via the `aria-describedby` attribute.
 				tAssistiveHint: function() {
 					return app.i18n.assistiveHint;
+
+					//test
 				},
 
 
