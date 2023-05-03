@@ -3,6 +3,9 @@
 
 	'use strict';
 
+	const __ = wp.i18n.__;
+	const sprintf = wp.i18n.sprintf;
+
 	var WP20LocaleSwitcher = window.WP20LocaleSwitcher || {},
 		app;
 
@@ -12,8 +15,6 @@
 		$notice: $(),
 
 		init: function() {
-			// todo doesn't show up on desktop when view clicking on it, but it does when tabbing to it
-
 			app.$switcher = $( '#wp20-locale-switcher' );
 			app.$notice   = $( '.wp20-locale-notice' );
 			app.$container = $( '.navigation-top-menu-container' );
@@ -51,36 +52,36 @@
 
 				// Internationalize the text used in the dropdown to indicate that there are no results.
 				tNoResults: function() {
-					return app.i18n.noResults;
+					return wp.i18n.__( 'No results found', 'wp20' );
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate that the query is too short.
 				tStatusQueryTooShort: function( minQueryLength ) {
 					console.log( wp.i18n.sprintf(
-						app.i18n.statusQueryTooShort,
+						__( 'TOOSHORTTEST Type in %d or more characters for results', 'wp20' ),
 						minQueryLength
-					) );
+						) );
 
 
-					return minQueryLength;//todo
+						return minQueryLength;//todo
 
-					//test
-				},
+						//test
+					},
 
 				// Internationalize the text that is used in the accessibility hint to indicate that there are no results.
 				tStatusNoResults: function() {
-					return app.i18n.statusNoResults;
-					//test
-
+					return __( 'No search results', 'wp20' );
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate which option is selected.
 				tStatusSelectedOption: function( selectedOption, length, index ) {
-					return app.i18n.statusSelectedOption;
-						// @todo replace all the placeholdrs in string
-						// `${selectedOption} ${index + 1} of ${length} is highlighted`
-
-						//test
+					return sprintf(
+						// Translators: 1: Name of language that is highlighted in a list; 2: Position of the highlighted language; 3: Total number of languages. Example: "Afrikaans 2 of 272 is highlighted"
+						__( '%1$s %2$d of %3$d is highlighted', 'wp20' ),
+						selectedOption,
+						index + 1,
+						length
+					);
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate which options are available and which is selected.
@@ -88,30 +89,27 @@
 					let text = '';
 
 					if ( 1 === length ) {
-						text = app.i18n.statusOneResult;
+						text = sprintf(
+							__( '1 result is available. %s', 'wp20' ),
+							contentSelectedOption
+						);
 					} else {
-						text = app.i18n.statusManyResults;
+						text = sprintf(
+							__( '%d results are available. %s', 'wp20' ),
+							length,
+							contentSelectedOption
+						);
+						//test
 					}
-
-					// @todo replace %s w/ contentSelectedOption
+					console.log(text);
 
 					return '<span>' + text + '</span>';
-
-					//test
 				},
 
 				// Internationalize the text to be assigned as the aria description of the html `input` element, via the `aria-describedby` attribute.
 				tAssistiveHint: function() {
-					return app.i18n.assistiveHint;
-
-					//test
+					return __( 'When autocomplete results are available use up and down arrows to review, and enter to select. Touch device users, explore by touch or with swipe gestures.', 'wp20' );
 				},
-
-
-				// @todo make sure all i18n strings escaped
-
-				// @todo  { templates: { inputValue, suggestion } } to let search by endonym and english name
-					// make sure escaped
 			} );
 
 			app.$notice.on( 'click', '.wp20-locale-notice-dismiss', function( event ) {
