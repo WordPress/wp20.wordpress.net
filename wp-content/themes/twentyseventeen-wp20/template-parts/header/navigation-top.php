@@ -6,7 +6,7 @@
 $title = get_the_title();
 
 if ( is_single() || is_archive() ) {
-	$title = __( 'News', 'wp20' );
+	$title = __( 'Things to Do', 'wp20' );
 } elseif ( is_404() ) {
 	$title = __( 'Page not found', 'wp20' );
 }

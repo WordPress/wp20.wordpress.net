@@ -189,26 +189,29 @@ function internationalize_titles( $title ) {
 			$title = esc_html__( 'WordPress turns 20 on May 27, 2023', 'wp20' );
 			break;
 
-		case "What's On":
-		case "What’s On":
-		case 'What&#8217;s On':
-			// translators: The name of the page that lists the global WP20 meetup events. "What's on" means something similar to "what's going on" or "what's happening".
-			$title = esc_html__( "What's On", 'wp20' );
+		case "Events":
+			// translators: The name of the page that lists the global WP20 meetup events.
+			$title = esc_html__( "Events", 'wp20' );
 			break;
 
-		case 'News':
+		case 'Things to Do':
 			// translators: The name of the page that list recent posts.
-			$title = esc_html__( 'News', 'wp20' );
+			$title = esc_html__( 'Things to Do', 'wp20' );
 			break;
 
-		case '#WP Live':
+		case '#WP20 Live':
 			// translators: The name of the page that displays the #wp20 social media posts in real time.
-			$title = esc_html_x( '#WP Live', 'adjective', 'wp20' );
+			$title = esc_html_x( '#WP20 Live', 'adjective', 'wp20' );
 			break;
 
-		case 'Swag':
-			// translators: "Swag" is a term for promotional items. This is the title of the page.
-			$title = esc_html__( 'Swag', 'wp20' );
+		case 'Downloads':
+			// translators: The name of the page that lists the downloadable assets.
+			$title = esc_html__( 'Downloads', 'wp20' );
+			break;
+
+		case 'Merchandise':
+			// translators: "Merchandise" is a term for promotional items. This is the text for a navigation link to mercantile.wordpress.org.
+			$title = esc_html__( 'Merchandise', 'wp20' );
 			break;
 
 		case 'Celebrating 20 years of WordPress':
@@ -277,7 +280,7 @@ function get_swag_download_items() {
 		/*
 		array(
 			'title'             => __( '', 'wp20' ),
-			'excerpt'           => __( '', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( '', 'wp20' ) ),
 			'preview_image_url' => '',
 			'files'             => array(
 				array(
@@ -333,6 +336,21 @@ function get_swag_download_items() {
 					'name' => __( 'Mystery Pack (zip)', 'wp20' ),
 					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/WP20-mystery-pack-1.zip',
 				),
+			),
+		),
+		array(
+			'title'             => __( 'Selfie Props', 'wp20' ),
+			'content'           => prevent_widows_in_content( __( 'Whether attending in-person or virtually, adding a prop to show your spirit is a fun way to celebrate!', 'wp20' ) ),
+			'preview_image_url' => 'https://wp20.wordpress.net/wp-content/uploads/wp20-selfie-glasses.png',
+			'files'             => array(
+				array(
+					'name' => __( 'Selfie Props (zip)', 'wp20' ),
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/Selfie-Props.zip',
+				),
+				array(
+					'name' => __( 'Large Photo Frame Cut-Out (PDF)', 'wp20' ),
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-selfie-photo-frame-print.pdf',
+				)
 			),
 		),
 	);
