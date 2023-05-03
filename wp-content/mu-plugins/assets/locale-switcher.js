@@ -56,17 +56,13 @@
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate that the query is too short.
+				// We're not currently setting a `minLength` option, but this is included in case we add it in the future.
 				tStatusQueryTooShort: function( minQueryLength ) {
-					console.log( wp.i18n.sprintf(
-						__( 'TOOSHORTTEST Type in %d or more characters for results', 'wp20' ),
+					return sprintf(
+						__( 'Type in %d or more characters for results', 'wp20' ),
 						minQueryLength
-						) );
-
-
-						return minQueryLength;//todo
-
-						//test
-					},
+					);
+				},
 
 				// Internationalize the text that is used in the accessibility hint to indicate that there are no results.
 				tStatusNoResults: function() {
@@ -76,7 +72,7 @@
 				// Internationalize the text used in the accessibility hint to indicate which option is selected.
 				tStatusSelectedOption: function( selectedOption, length, index ) {
 					return sprintf(
-						// Translators: 1: Name of language that is highlighted in a list; 2: Position of the highlighted language; 3: Total number of languages. Example: "Afrikaans 2 of 272 is highlighted"
+						// Translators: 1: Name of language that is highlighted in a list; 2: Position of the highlighted language; 3: Total number of languages. Example: "Afrikaans 2 of 171 is highlighted".
 						__( '%1$s %2$d of %3$d is highlighted', 'wp20' ),
 						selectedOption,
 						index + 1,
@@ -99,9 +95,7 @@
 							length,
 							contentSelectedOption
 						);
-						//test
 					}
-					console.log(text);
 
 					return '<span>' + text + '</span>';
 				},
