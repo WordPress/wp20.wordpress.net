@@ -115,19 +115,6 @@
 			} );
 
 
-			document.addEventListener("DOMContentLoaded", function(event) {
-				app.$switcher.on( 'focus', function() {
-					console.log('focus');
-				});
-
-				app.$switcher.on( 'blur', function() {
-					console.log('blur');
-				});
-				document.querySelector( '.autocomplete__wrapper' ).addEventListener( 'keydown', function(event) {
-					console.log(event);
-				} );
-			});
-
 			// This has to stay `select2`; `selectWoo:open` will not work.
 			app.$switcher.on( 'select2:open', function() {
 				// move to other events? there aren't any i don't think
