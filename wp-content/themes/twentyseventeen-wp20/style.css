@@ -724,6 +724,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		z-index: 1;
 	}
 
 	.autocomplete__wrapper > * {
