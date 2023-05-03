@@ -135,7 +135,6 @@ function register_assets() {
 				'secure'  => true,
 			),
 			'i18n' => array(
-				'placeholder' => __( 'Search languages...', 'wp20' ),
 				'noResults' =>  __( 'No results found', 'wp20' ),
 
 				'statusQueryTooShort' => __( 'TOOSHORTTEST Type in %d or more characters for results', 'wp20' ),

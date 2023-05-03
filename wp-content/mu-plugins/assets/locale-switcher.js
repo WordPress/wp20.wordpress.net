@@ -42,7 +42,7 @@
 					}
 				},
 
-				placeholder: app.i18n.placeholder,
+				placeholder: wp.i18n.__( 'Search languages...', 'wp20' ),
 
 				dropdownArrow: function() {
 					// Intentionally empty because we'll create the arrow in CSS.
