@@ -40,28 +40,61 @@
 					}
 				},
 
+				placeholder: app.i18n.placeholder,
+
 				dropdownArrow: function() {
 					// Intentionally empty because we'll create the arrow in CSS.
 					return '';
 				},
 
+				// Internationalize the text used in the dropdown to indicate that there are no results.
+				tNoResults: function() {
+					return app.i18n.noResults;
+				},
 
-				// transleat "no results found" etc
-				/*
-				do this just like you've done other i18n strings
-				tStatusQueryTooShort: (minQueryLength) => '',
-				tStatusNoResults: () => '',
-				tStatusSelectedOption: (selectedOption, length) => '',
-				tStatusResults: () => ''
+				// Internationalize the text used in the accessibility hint to indicate that the query is too short.
+				tStatusQueryTooShort: function( minQueryLength ) {
+					return app.i18n.statusQueryTooShort.replace( '%d', minQueryLength );
+					// better to use gutenberg's translate if can
+				},
 
-				make sure escaped
-				*/
+				// Internationalize the text that is used in the accessibility hint to indicate that there are no results.
+				tStatusNoResults: function() {
+					return app.i18n.statusNoResults;
+				},
 
-				// { templates: { inputValue, suggestion } } to let search by endonym and english name
+				// Internationalize the text used in the accessibility hint to indicate which option is selected.
+				tStatusSelectedOption: function( selectedOption, length, index ) {
+					return app.i18n.statusSelectedOption;
+						// @todo replace all the placeholdrs in string
+						// `${selectedOption} ${index + 1} of ${length} is highlighted`
+				},
+
+				// Internationalize the text used in the accessibility hint to indicate which options are available and which is selected.
+				tStatusResults: function( length, contentSelectedOption ) {
+					let text = '';
+
+					if ( 1 === length ) {
+						text = app.i18n.statusOneResult;
+					} else {
+						text = app.i18n.statusManyResults;
+					}
+
+					// @todo replace %s w/ contentSelectedOption
+
+					return '<span>' + text + '</span>';
+				},
+
+				// Internationalize the text to be assigned as the aria description of the html `input` element, via the `aria-describedby` attribute.
+				tAssistiveHint: function() {
+					return app.i18n.assistiveHint;
+				},
+
+
+				// @todo make sure all i18n strings escaped
+
+				// @todo  { templates: { inputValue, suggestion } } to let search by endonym and english name
 					// make sure escaped
-
-
-				placeholder: app.$switcher.data( 'placeholder' ),
 			} );
 
 

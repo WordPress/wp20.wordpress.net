@@ -133,7 +133,20 @@ function register_assets() {
 				'cpath'   => SITECOOKIEPATH,
 				'domain'  => '',
 				'secure'  => true,
-			)
+			),
+			'i18n' => array(
+				'placeholder' => __( 'Search languages...', 'wp20' ),
+				'noResults' =>  __( 'No results found', 'wp20' ),
+
+				'statusQueryTooShort' => __( 'TOOSHORTTEST Type in %d or more characters for results', 'wp20' ),
+				'statusNoResults' => __( 'STATNORETTEST No search results', 'wp20' ),
+				// Translators: 1: Name of language that is highlighted in a list; 2: Position of the highlighted language; 3: Total number of languages. Example: "Afrikaans 2 of 272 is highlighted"
+				'statusSelectedOption' => __( 'STATSELTEST %1$s %2$d of %3$d is highlighted', 'wp20' ),
+				'statusOneResult' => __( 'STATONERESTEST 1 result is available. %s', 'wp20' ),
+				'statusManyResults' => __( 'STATMANRESTEST %d results are available. %s', 'wp20' ),
+				'assistiveHint' => __( 'ASSISTHINTTEST When autocomplete results are available use up and down arrows to review, and enter to select. Touch device users, explore by touch or with swipe gestures.', 'wp20' ),
+				// @todo remove the "...TEST" prefix when done testing
+			),
 		)
 	);
 }
@@ -190,7 +203,7 @@ function locale_switcher() : void {
 				<span class="screen-reader-text"><?php esc_html_e( 'Select the language:', 'wp20' ); ?></span>
 			</label>
 
-			<select id="wp20-locale-switcher" name="locale" data-placeholder="<?php esc_attr_e( 'Search languages...', 'wp20' ); ?>">
+			<select id="wp20-locale-switcher" name="locale">
 				<?php
 
 				foreach ( get_locales() as $locale => $locale_name ) {
