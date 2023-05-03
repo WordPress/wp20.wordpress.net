@@ -114,30 +114,6 @@
 					// make sure escaped
 			} );
 
-
-			// This has to stay `select2`; `selectWoo:open` will not work.
-			app.$switcher.on( 'select2:open', function() {
-				// move to other events? there aren't any i don't think
-				// but maybe there are some native ones, or you can use a mutation observer
-
-				// change from ? to "search languages"
-				// app.$container.find( 'input' ).attr( 'placeholder', app.$container.attr( 'data-placeholder' ) );
-				// maybe don't need this b/c they don't recommend using placeholders, and can set via api if need to?
-
-
-				// Turn off the menu if it's open.
-				if( $( '#site-navigation' ).hasClass( 'toggled-on' ) ) {
-					$( '.menu-toggle' ).trigger( 'click' );
-					// should probably port to new lib
-				}
-
-				app.$outerContainer.addClass( 'is-toggled' );
-			} );
-
-			app.$switcher.on( 'select2:close', function() {
-				app.$outerContainer.removeClass( 'is-toggled' );
-			} )
-
 			app.$notice.on( 'click', '.wp20-locale-notice-dismiss', function( event ) {
 				event.preventDefault();
 				app.dismissNotice();
