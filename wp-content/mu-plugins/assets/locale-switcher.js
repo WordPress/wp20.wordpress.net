@@ -43,7 +43,7 @@
 					}
 				},
 
-				placeholder: wp.i18n.__( 'Search languages...', 'wp20' ),
+				placeholder: __( 'Search languages...', 'wp20' ),
 
 				dropdownArrow: function() {
 					// Intentionally empty because we'll create the arrow in CSS.
@@ -52,7 +52,7 @@
 
 				// Internationalize the text used in the dropdown to indicate that there are no results.
 				tNoResults: function() {
-					return wp.i18n.__( 'No results found', 'wp20' );
+					return __( 'No results found', 'wp20' );
 				},
 
 				// Internationalize the text used in the accessibility hint to indicate that the query is too short.
