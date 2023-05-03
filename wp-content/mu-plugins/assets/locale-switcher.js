@@ -1,10 +1,7 @@
 /* global wpCookies */
-( function( window, $, wpCookies ) {
+( function( window, $, wpCookies, __, sprintf ) {
 
 	'use strict';
-
-	const __ = wp.i18n.__;
-	const sprintf = wp.i18n.sprintf;
 
 	var WP20LocaleSwitcher = window.WP20LocaleSwitcher || {},
 		app;
@@ -142,4 +139,4 @@
 		app.init();
 	} );
 
-} )( window, jQuery, wpCookies );
+} )( window, jQuery, wpCookies, wp.i18n.__, wp.i18n.sprintf );
