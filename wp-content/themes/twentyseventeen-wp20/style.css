@@ -512,16 +512,14 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: flex;
 }
 
-@media screen and (max-width: 48em) {
-	.navigation-top,
-	.navigation-top .wrap {
-		padding: 0;
-	}
+.navigation-top nav {
+	margin-left: 0;
 }
 
-@media screen and (min-width: 48em) {
-	.navigation-top nav {
-		margin-left: 0;
+@media screen and (max-width: 48em) {
+	.wp20-navigation,
+	.wp20-locale-switcher-container {
+		width: 50vw;
 	}
 }
 
@@ -594,6 +592,10 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 @media screen and (max-width: 48em) {
+	.main-navigation {
+		width: 100vw;
+	}
+
 	.main-navigation li {
 		padding: 0 var(--wp20--spacing--xsmall);
 		display: block;
@@ -656,6 +658,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	display: flex;
 	align-items: center;
 	gap: 14px;
+	width: 100%;
 }
 
 @media screen and (min-width: 769px ){
@@ -706,8 +709,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .wp20-locale-switcher-container form {
-	position: absolute;
-	right: 0;
 	width: 100%;
 }
 
@@ -719,7 +720,18 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	visibility: hidden; /* Prevent FOUC and iOS native picker UI */
 }
 
+@media screen and (max-width: 48em) {
+	.wp20-locale-switcher-container:hover {
+		background: var(--wp20--color--active-menu);
+	}
+}
+
 @media screen and (min-width: 769px) {
+	.wp20-locale-switcher-container form {
+		position: absolute;
+		right: 0;
+	}
+
 	.autocomplete__wrapper {
 		display: flex;
 		flex-direction: column;
@@ -729,12 +741,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 	.autocomplete__wrapper > * {
 		max-width: 250px;
-	}
-}
-
-@media screen and (max-width: 48em) {
-	.wp20-locale-switcher-container:hover {
-		background: var(--wp20--color--active-menu);
 	}
 }
 
@@ -798,7 +804,9 @@ span + .autocomplete__input.autocomplete__input--focused {
 }
 
 .autocomplete__menu {
-	border: 1px solid var(--wp20--color--border);
+	border-style: solid;
+	border-color: var(--wp20--color--border);
+	border-width: 1px 1px 0;
 	text-align: start;
 }
 
