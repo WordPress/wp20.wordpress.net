@@ -21,8 +21,8 @@
 
 					<p class="wp20-nostalgia">
 						<?php printf(
-							wp_kses_post( __( '<strong>Feeling nostalgic?</strong><br> Check out <a href="%s">this post about the WordPress 15th anniversary</a>.', 'wp20' ) ),
-							'https://wordpress.org/news/2018/04/celebrate-the-wordpress-15th-anniversary-on-may-27/'
+							wp_kses_post( __( '<strong>Feeling nostalgic?</strong><br> Check out <a href="%s">this website about the WordPress 15th anniversary</a>.', 'wp20' ) ),
+							'https://wp15.wordpress.net'
 						); ?>
 					</p>
 
