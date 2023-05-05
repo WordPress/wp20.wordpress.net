@@ -810,6 +810,12 @@ span + .autocomplete__input.autocomplete__input--focused {
 	text-align: start;
 }
 
+@media screen and (min-width: 769px) {
+	.autocomplete__menu {
+		border-width: 1px;
+	}
+}
+
 @media screen and (max-width: 48em) {
 	.autocomplete__dropdown-arrow-down-wrapper {
 		right: var(--wp20--spacing--edge-space);
