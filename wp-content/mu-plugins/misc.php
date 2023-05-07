@@ -45,17 +45,17 @@ function allow_css_editing( $required_capabilities, $requested_capability ) {
  */
 function register_assets() {
 	wp_register_style(
-		'selectWoo',
-		WP_CONTENT_URL . '/mu-plugins/assets/selectWoo/css/selectWoo.min.css',
+		'accessible-autocomplete',
+		WP_CONTENT_URL . '/mu-plugins/assets/accessible-autocomplete/accessible-autocomplete.min.css',
 		array(),
-		'1.0.10'
+		filemtime( WP_CONTENT_DIR . '/mu-plugins/assets/accessible-autocomplete/accessible-autocomplete.min.css' )
 	);
 
 	wp_register_script(
-		'selectWoo',
-		WP_CONTENT_URL . '/mu-plugins/assets/selectWoo/js/selectWoo.min.js',
+		'accessible-autocomplete',
+		WP_CONTENT_URL . '/mu-plugins/assets/accessible-autocomplete/accessible-autocomplete.min.js',
 		array(),
-		'1.0.10',
+		filemtime( WP_CONTENT_DIR . '/mu-plugins/assets/accessible-autocomplete/accessible-autocomplete.min.js' ),
 		true
 	);
 }

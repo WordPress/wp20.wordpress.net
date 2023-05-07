@@ -114,12 +114,12 @@ function enqueue_scripts() {
 	wp_enqueue_style(
 		'twentyseventeen-wp20-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( 'twentyseventeen-style', 'twentyseventeen-wp20-fonts', 'dashicons' ),
+		array( 'twentyseventeen-style', 'twentyseventeen-wp20-fonts', 'accessible-autocomplete', 'dashicons' ),
 		filemtime( __DIR__ . '/style.css' )
 	);
 
 	// Styles for locale switcher.
-	wp_enqueue_style( 'selectWoo' );
+	wp_enqueue_style( 'accessible-autocomplete' );
 
 	wp_enqueue_script(
 		'twentyseventeen-wp20-front-end',
