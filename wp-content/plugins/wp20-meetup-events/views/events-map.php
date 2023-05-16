@@ -5,8 +5,6 @@ defined( 'WPINC' ) || die();
 
 ?>
 
-<h2 class="screen-reader-text"><?php esc_html_e( 'Events map', 'wp20' ); ?></h2>
-
 <div id="wp20-events-map">
 	<div class="wp20-spinner spinner spinner-visible"></div>
 </div>

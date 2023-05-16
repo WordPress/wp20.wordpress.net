@@ -912,27 +912,28 @@ span + .autocomplete__input.autocomplete__input--focused {
  */
 
 body.page-slug-whats-on #primary .entry-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
+	margin-bottom: var(--wp20--spacing--small);
 }
 
-@media screen and ( max-width: 48em ) {
-	body.page-slug-whats-on #primary .entry-header {
-		display: block;
-		margin-bottom: var(--wp20--spacing--small);
-	}
-}
-
-body.page-slug-whats-on h1.entry-title {
+.wp20-events-header {
 	flex-basis: 55%;
-	font-size: clamp( 20px, 2.4vw, 30px);
-	margin-bottom: 0;
 }
-@media screen and ( max-width: 48em ) {
-	body.page-slug-whats-on h1.entry-title {
-		width: auto;
-		margin-bottom: var(--wp20--spacing--small);
+
+body.page-slug-whats-on .entry-title,
+body.page-slug-whats-on .entry-header h2 {
+	font-size: clamp( 20px, 2.4vw, 30px);
+}
+
+@media screen and ( min-width: 769px ) {
+	body.page-slug-whats-on #primary .entry-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: var(--wp20--spacing--xxsmall);
+	}
+
+	body.page-slug-whats-on .entry-header h2 {
+		margin-bottom: 0;
 	}
 }
 
