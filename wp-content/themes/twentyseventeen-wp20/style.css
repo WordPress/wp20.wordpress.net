@@ -140,7 +140,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title,
  * Links
  */
 
-.page-slug-whats-on .entry-header a,
 .entry-meta a,
 .page-links a,
 .page-links a .page-number,
@@ -916,8 +915,12 @@ body.page-slug-whats-on #primary .entry-header {
 	margin-bottom: var(--wp20--spacing--small);
 }
 
-body.page-slug-whats-on .entry-title {
+.wp20-events-header {
 	flex-basis: 55%;
+}
+
+body.page-slug-whats-on .entry-title,
+body.page-slug-whats-on .entry-header h2 {
 	font-size: clamp( 20px, 2.4vw, 30px);
 }
 
@@ -929,7 +932,7 @@ body.page-slug-whats-on .entry-title {
 		margin-bottom: var(--wp20--spacing--xxsmall);
 	}
 
-	body.page-slug-whats-on .entry-title {
+	body.page-slug-whats-on .entry-header h2 {
 		margin-bottom: 0;
 	}
 }

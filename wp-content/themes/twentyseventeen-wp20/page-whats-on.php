@@ -6,13 +6,18 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<header class="entry-header">
-					<h1 class="entry-title">
-						<?php printf(
-							wp_kses_post( __( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023.<br><br>Below are listed all of the <a href="%s">WordPress Chapter meetups</a> that are hosting events. Don’t see one in your area? <a href="%s">Apply to start one today!</a>', 'wp20' ) ),
-								'https://make.wordpress.org/community/handbook/meetup-organizer/meetup-program-basics/',
-								'https://make.wordpress.org/community/handbook/meetup-organizer/getting-started/interest-form/'
-						); ?>
-					</h1>
+					<div class="wp20-events-header">
+						<h1 class="entry-title">
+							<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023.', 'wp20' ); ?>
+						</h1>
+						<h2>
+							<?php printf(
+								wp_kses_post( __( 'Below are listed all of the <a href="%s">WordPress Chapter meetups</a> that are hosting events. Don’t see one in your area? <a href="%s">Apply to start one today!</a>', 'wp20' ) ),
+									'https://make.wordpress.org/community/handbook/meetup-organizer/meetup-program-basics/',
+									'https://make.wordpress.org/community/handbook/meetup-organizer/getting-started/interest-form/'
+							); ?>
+						</h2>
+					</div>
 
 					<?php echo do_shortcode( '[wp20_meetup_events_filter]' ); ?>
 				</header>
