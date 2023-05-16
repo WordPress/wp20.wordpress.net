@@ -7,7 +7,11 @@
 
 				<header class="entry-header">
 					<h1 class="entry-title">
-						<?php esc_html_e( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023. Join the meetups throughout the whole year!', 'wp20' ); ?>
+						<?php printf(
+							wp_kses_post( __( 'People all over the world are celebrating the WordPress 20th Anniversary on May 27, 2023.<br><br>Below are listed all of the <a href="%s">WordPress Chapter meetups</a> that are hosting events. Don’t see one in your area? <a href="%s">Apply to start one today!</a>', 'wp20' ) ),
+								'https://make.wordpress.org/community/handbook/meetup-organizer/meetup-program-basics/',
+								'https://make.wordpress.org/community/handbook/meetup-organizer/getting-started/interest-form/'
+						); ?>
 					</h1>
 
 					<?php echo do_shortcode( '[wp20_meetup_events_filter]' ); ?>
