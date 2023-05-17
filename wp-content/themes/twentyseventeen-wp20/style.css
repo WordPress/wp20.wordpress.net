@@ -760,6 +760,8 @@ input.autocomplete__input,
 	line-height: 26px;
 	border-radius: 0;
 	background: transparent;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 input.autocomplete__input::placeholder {
