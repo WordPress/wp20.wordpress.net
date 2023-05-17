@@ -523,11 +523,17 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	}
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48em) {
 	.navigation-top {
 		position: unset;
 	}
 
+	.navigation-top .wrap {
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: 769px) {
 	.navigation-top .wrap {
 		padding: 0 var(--wp20--spacing--edge-space);
 	}
