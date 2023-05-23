@@ -932,6 +932,7 @@ body.page-slug-whats-on #primary .entry-header {
 
 body.page-slug-whats-on .entry-title {
 	font-size: clamp( 20px, 2.4vw, 30px);
+	margin-bottom: var(--wp20--spacing--xxsmall);
 }
 
 @media screen and ( min-width: 769px ) {
@@ -939,7 +940,11 @@ body.page-slug-whats-on .entry-title {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		margin-bottom: var(--wp20--spacing--xxsmall);
+		margin-bottom: var(--wp20--spacing--xsmall);
+	}
+
+	body.page-slug-whats-on .entry-title {
+		margin-bottom: var(--wp20--spacing--xsmall);
 	}
 
 	body.page-slug-whats-on .entry-header h2 {
