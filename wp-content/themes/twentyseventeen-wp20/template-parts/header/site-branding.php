@@ -13,7 +13,7 @@ use WP20\Theme;
 	<?php if ( is_front_page() ): ?>
 	<div class="site-branding-text">
 		<em>
-			<?php echo esc_html( Theme\prevent_widows_in_content( __( 'WordPress celebrates twenty years', 'twentyseventeen' ) ) ) ?>
+			<?php echo esc_html( Theme\prevent_widows_in_content( __( 'WordPress celebrates twenty years', 'wp20' ) ) ) ?>
 		</em>
 	</div><!-- .site-branding-text -->
 	<?php endif; ?>
