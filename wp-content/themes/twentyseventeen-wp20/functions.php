@@ -80,6 +80,14 @@ function get_fonts_url() {
 		$fonts[] = 'EB Garamond:400';
 	}
 
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by EB Garamond Italic, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'EB Garamond Italic font: on or off', 'wp20' ) ) {
+		$fonts[] = 'EB Garamond:ital';
+	}
+
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
 			'family' => rawurlencode( implode( '|', $fonts ) ),
