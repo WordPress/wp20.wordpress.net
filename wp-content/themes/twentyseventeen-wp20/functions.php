@@ -287,10 +287,11 @@ function get_swag_download_items() {
 	return array(
 		/*
 		array(
-			'title'             => __( '', 'wp20' ),
-			'content'           => prevent_widows_in_content( __( '', 'wp20' ) ),
-			'preview_image_url' => '',
-			'files'             => array(
+			'title'                    => __( '', 'wp20' ),
+			'content'                  => prevent_widows_in_content( __( '', 'wp20' ) ),
+			'preview_image_url'        => '',
+			'preview_image_full_bleed' => false,
+			'files'                    => array(
 				array(
 					'name' => __( '', 'wp20' ),
 					'url'  => '',
@@ -359,6 +360,22 @@ function get_swag_download_items() {
 					'name' => __( 'Large Photo Frame Cut-Out (PDF)', 'wp20' ),
 					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-selfie-photo-frame-print.pdf',
 				)
+			),
+		),
+		array(
+			'title'                    => __( '3D Wallpapers', 'wp20' ),
+			'content'                  => prevent_widows_in_content( __( 'A collection of creative anniversary wallpapers made in 3D. Compatible with all your devices.', 'wp20' ) ),
+			'preview_image_full_bleed' => true,
+			'preview_image_url'        => 'https://wp20.wordpress.net/wp-content/uploads/wp20-celebrate-desktop_small.jpg',
+			'files'                    => array(
+				array(
+					'name' => __( 'Desktop Wallpapers (zip)', 'wp20' ),
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-desktop-wallpapers.zip',
+				),
+				array(
+					'name' => __( 'Mobile Wallpapers (zip)', 'wp20' ),
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-mobile-wallpapers.zip',
+				),
 			),
 		),
 	);
