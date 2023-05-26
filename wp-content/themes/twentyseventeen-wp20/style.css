@@ -1493,6 +1493,7 @@ body.page-slug-whats-on .entry-title {
 	background: var(--wp20--color--grey-9);
 	overflow: hidden;
 	aspect-ratio: 275 / 200;
+	max-height: 250px;
 }
 
 .downloads-wrapper .downloads-item-preview.downloads-item-preview-full {
