@@ -19,7 +19,11 @@ use WP20\Theme;
 						<ul class="downloads-wrapper">
 							<?php foreach ( Theme\get_swag_download_items() as $item ) : ?>
 								<li class="downloads-item">
-									<div class="downloads-item-preview">
+									<div class="downloads-item-preview<?php 
+										echo isset( $item['preview_image_full_bleed']) && $item['preview_image_full_bleed']
+											? ' downloads-item-preview-full'
+											: '' 
+									?>">
 										<img src="<?php echo esc_attr( $item['preview_image_url'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>" />
 									</div>
 									<h2 class="downloads-item-header">
