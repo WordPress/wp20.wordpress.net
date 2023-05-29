@@ -366,7 +366,7 @@ function get_swag_download_items() {
 			'title'                    => __( '3D Wallpapers', 'wp20' ),
 			'content'                  => prevent_widows_in_content( __( 'A collection of creative anniversary wallpapers made in 3D. Compatible with all your devices.', 'wp20' ) ),
 			'preview_image_full_bleed' => true,
-			'preview_image_url'        => 'https://wp20.wordpress.net/wp-content/uploads/wp20-celebrate-desktop_small.jpg',
+			'preview_image_url'        => 'https://wp20.wordpress.net/wp-content/uploads/wp20-celebrate-desktop.jpg',
 			'files'                    => array(
 				array(
 					'name' => __( 'Desktop Wallpapers (zip)', 'wp20' ),
@@ -375,6 +375,10 @@ function get_swag_download_items() {
 				array(
 					'name' => __( 'Mobile Wallpapers (zip)', 'wp20' ),
 					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-mobile-wallpapers.zip',
+				),
+				array(
+					'name' => __( 'Animated Wallpapers (zip)', 'wp20' ),
+					'url'  => 'https://wp20.wordpress.net/wp-content/uploads/wp20-wallpapers-animated.zip',
 				),
 			),
 		),
