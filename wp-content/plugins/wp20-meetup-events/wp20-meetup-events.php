@@ -31,9 +31,10 @@ if ( ! wp_next_scheduled( 'wp20_prime_events_cache' ) ) {
  * Fetch the latest WP20 events and cache them locally.
  */
 function prime_events_cache() : void {
-	// We can assume that all celebrations will be within a few weeks of the anniversary.
+	// Most events happen within a few weeks, but there're outliers that happen up to 5 weeks before or after.
+	// If this results in too many false positives, we can narrow the range to ~3 weeks, and manually add the outliers.
 	$start_date = strtotime( 'April 21, 2023' );
-	$end_date   = strtotime( 'June 10, 2023' );
+	$end_date   = strtotime( 'June 16, 2023' );
 
 	/*
 	 * This data will no longer be need to be updated after the event is over. Updating it anyway would use up API
