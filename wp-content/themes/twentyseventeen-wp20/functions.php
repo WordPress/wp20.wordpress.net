@@ -207,6 +207,11 @@ function internationalize_titles( $title ) {
 			$title = esc_html__( 'Things to Do', 'wp20' );
 			break;
 
+		case '#WP20':
+			// translators: The name of the page that displays the curated #wp20 social media posts.
+			$title = esc_html_x( '#WP20', 'adjective', 'wp20' );
+			break;
+
 		case '#WP20 Live':
 			// translators: The name of the page that displays the #wp20 social media posts in real time.
 			$title = esc_html_x( '#WP20 Live', 'adjective', 'wp20' );
