@@ -35,5 +35,11 @@ use WP20\Locales;
 
 		<?php Locales\locale_notice(); ?>
 
+		<?php
+		if ( is_front_page() ) {
+			get_template_part( 'template-parts/announcement-banner' );
+		}
+		?>
+
 		<div class="site-content-contain">
 			<div id="content" class="site-content">

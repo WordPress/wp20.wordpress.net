@@ -911,6 +911,87 @@ span + .autocomplete__input.autocomplete__input--focused {
 	color: var(--wp20--color--primary);
 }
 
+
+/*
+ * Announcement Banner
+ */
+
+.announcement-banner {
+	/*
+	 * Grid is a little overkill for the mobile layout, but it's necessary to set the `order` on the video.
+	 * That's necessary for semantics and accessibility. Grid is useful for the desktop layout, so there's
+	 * also a benefit to them sharing styles.
+	 */
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 100%;
+	grid-template-areas:
+		"video"
+		"heading"
+		"text"
+		"meta-social";
+	gap: var(--wp20--spacing--xxsmall);
+	width: 100%;
+	padding-top: var(--wp20--spacing--small);
+	padding-bottom: var(--wp20--spacing--small);
+	border-bottom: 1px solid var(--wp20--color--border);
+}
+
+.announcement-banner > * {
+	margin: 0; /* Grid `gap` will handle spacing. */
+}
+
+.announcement-banner h2 {
+	grid-area: heading;
+	order: 2;
+}
+
+.announcement-banner .announcement-video {
+	grid-area: video;
+	order: 1;
+}
+
+.announcement-banner p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.announcement-banner a {
+	color: var(--wp20--color--text);
+	text-decoration-line: underline;
+}
+
+.announcement-banner p.announcement-text {
+	grid-area: text;
+	order: 3;
+	padding-bottom: var(--wp20--spacing--xsmall);
+}
+
+.announcement-banner p.announcement-meta-social {
+	grid-area: meta-social;
+	order: 4;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--wp20--spacing--medium);
+	max-width: 315px;
+}
+
+@media screen and ( min-width: 900px ) {
+	.announcement-banner {
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 357px 340px;
+		grid-template-areas:
+			"video heading"
+			"video text"
+			"video meta-social";
+		gap:  var(--wp20--spacing--medium);
+		padding-top: var(--wp20--spacing--medium);
+		padding-bottom: var(--wp20--spacing--medium);
+	}
+}
+
+
 /*
  * All content
  */
