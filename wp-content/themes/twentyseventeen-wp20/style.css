@@ -916,6 +916,10 @@ span + .autocomplete__input.autocomplete__input--focused {
  * Announcement Banner
  */
 
+.announcement-banner-container {
+	border-bottom: 1px solid var(--wp20--color--border);
+}
+
 .announcement-banner {
 	/*
 	 * Grid is a little overkill for the mobile layout, but it's necessary to set the `order` on the video.
@@ -934,7 +938,6 @@ span + .autocomplete__input.autocomplete__input--focused {
 	width: 100%;
 	padding-top: var(--wp20--spacing--small);
 	padding-bottom: var(--wp20--spacing--small);
-	border-bottom: 1px solid var(--wp20--color--border);
 }
 
 .announcement-banner > * {
