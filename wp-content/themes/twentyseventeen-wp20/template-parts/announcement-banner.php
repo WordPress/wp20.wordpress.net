@@ -18,9 +18,11 @@
 
 		<p class="announcement-text">
 			<a href="https://www.youtube.com/watch?v=7Nmz3IjtPh0">
-				Watch the recording of the 2023 WordCamp Europe keynote
+				Watch the recording of the 2023 WordCamp<br />
+				Europe keynote
 			</a>
-			reflecting on 20 years of WordPress and democratizing publishing.
+			reflecting on 20 years of WordPress<br />
+			and democratizing publishing.
 		</p>
 
 		<p class="announcement-meta-social">
