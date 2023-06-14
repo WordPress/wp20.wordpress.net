@@ -980,10 +980,16 @@ span + .autocomplete__input.autocomplete__input--focused {
 	max-width: 315px;
 }
 
-@media screen and ( min-width: 900px ) {
+@media screen and (max-width: 400px) {
+	.announcement-banner .announcement-text br {
+		display: none;
+	}
+}
+
+@media screen and ( min-width: 915px ) {
 	.announcement-banner {
 		grid-template-rows: auto auto auto;
-		grid-template-columns: 357px 340px;
+		grid-template-columns: 357px 360px;
 		grid-template-areas:
 			"video heading"
 			"video text"
