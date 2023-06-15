@@ -994,9 +994,17 @@ span + .autocomplete__input.autocomplete__input--focused {
 			"video heading"
 			"video text"
 			"video meta-social";
-		gap:  var(--wp20--spacing--medium);
 		padding-top: var(--wp20--spacing--medium);
 		padding-bottom: var(--wp20--spacing--medium);
+	}
+
+	.announcement-banner p.announcement-text,
+	.announcement-banner p.announcement-meta-social {
+		align-self: end;
+	}
+
+	.announcement-banner p.announcement-meta-social {
+		line-height: 12px;
 	}
 }
 
