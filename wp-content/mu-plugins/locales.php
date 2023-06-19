@@ -239,7 +239,7 @@ function locale_notice() : void {
 			<p>
 				<?php
 				printf(
-					/* translators: %s placeholder is a URL. */
+					/* translators: %s placeholder is a URL. If using '%' rather than 'percent', be sure to escape by using '%%' */
 					wp_kses_post( __( 'The translation for this locale is incomplete. Help us get to 100 percent by <a href="%s">contributing a translation</a>.', 'wp20' ) ),
 					esc_url( $contribute_url )
 				);
